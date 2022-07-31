@@ -1,0 +1,86 @@
+{
+  "data": {"name": "dataset"},
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "name": "MainMatrix",
+          "mark": {
+            "type": "rect",
+            "tooltip": { "content": "data" }
+          },
+          "encoding": {
+            "x": {
+              "field": "Weekday Initial",
+              "type": "nominal",
+              "sort": null
+            },
+            "y": {
+              "field": "Hour Label"
+            },
+            "fill": {
+              "field": "Activities",
+              "type": "quantitative",
+              "legend": null
+            },
+            "opacity": { 
+              "condition": {
+                "test": {
+                  "field": "_selected_",
+                  "equal": "off"
+                  }, "value": 0.3
+              }, "value": 1
+              
+            }
+          }
+        },
+        {
+          "name": "RowBar",
+          "width": 50,
+          "mark": {
+            "type": "bar",
+            "height": {"band": 0.95},
+            "tooltip": true
+          },
+          "encoding": {
+            "y": {
+              "field": "Hour Label",
+              "axis": null
+            },
+            "x": {
+              "field": "Activities",
+              "type": "quantitative",
+              "aggregate": "sum"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "name": "ColBar",
+          "height": 50,
+          "mark": {
+            "type": "bar",
+            "width": {"band": 0.95},
+            "tooltip": true
+          },
+          "encoding": {
+            "x": {
+              "field": "DayOfWeekName",
+              "sort": null,
+              "axis": null
+            },
+            "y": {
+              "field": "Activities",
+              "type": "quantitative",
+              "aggregate": "sum",
+              "scale": {"reverse": true}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
