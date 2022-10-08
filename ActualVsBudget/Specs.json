@@ -1,73 +1,525 @@
-
 {
+  "data": {"name": "dataset"},
   "autosize": {
     "type": "fit",
     "contains": "padding"
   },
-  "view": {"stroke": "transparent"},
-  "font": "Segoe UI",
-  "arc": {},
-  "area": {
-    "line": true,
-    "opacity": 0.6
-  },
-  "bar": {},
-  "line": {
-    "strokeWidth": 3,
-    "strokeCap": "round",
-    "strokeJoin": "round"
-  },
-  "path": {},
-  "point": {"filled": true, "size": 75},
-  "rect": {},
-  "shape": {},
-  "symbol": {
-    "strokeWidth": 1.5,
-    "size": 50
-  },
-  "text": {
-    "font": "Segoe UI",
-    "fontSize": 12,
-    "fill": "#605E5C"
-  },
-  "axis": {
-    "ticks": false,
-    "grid": false,
-    "domain": false,
-    "labelColor": "#605E5C",
-    "labelFontSize": 12,
-    "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
-    "titleColor": "#252423",
-    "titleFontSize": 16,
-    "titleFontWeight": "normal"
-  },
-  "axisQuantitative": {
-    "tickCount": 3,
-    "grid": true,
-    "gridColor": "#C8C6C4",
-    "gridDash": [1, 5],
-    "labelFlush": false
-  },
-  "axisBand": {"tickExtra": true},
-  "axisX": {"labelPadding": 5},
-  "axisY": {"labelPadding": 10},
-  "header": {
-    "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
-    "titleFontSize": 16,
-    "titleColor": "#252423",
-    "labelFont": "Segoe UI",
-    "labelFontSize": 13.333333333333332,
-    "labelColor": "#605E5C"
-  },
-  "legend": {
-    "titleFont": "Segoe UI",
-    "titleFontWeight": "bold",
-    "titleColor": "#605E5C",
-    "labelFont": "Segoe UI",
-    "labelFontSize": 13.333333333333332,
-    "labelColor": "#605E5C",
-    "symbolType": "circle",
-    "symbolSize": 75
-  },
-  "concat": {"spacing": 0}
+  "vconcat": [
+    {
+      "width": 450,
+      "height": 100,
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "tooltip": true,
+            "strokeWidth": 3
+          },
+          "encoding": {
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth",
+              "axis": null
+            },
+            "y": {
+              "field": "Diff %",
+              "type": "quantitative",
+              "axis": {
+                "title": "△PL%",
+                "titleFontSize": 11,
+                "titleAngle": 0,
+                "titleAlign": "center",
+                "titlePadding": 20,
+                "labels": false
+              }
+            },
+            "color": {
+              "field": "ConditionalColor",
+              "scale": {
+                "domain": [1, 0],
+                "range": [
+                  "#01B8AA",
+                  "#F9605D"
+                ]
+              },
+              "legend": null
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "field": "__selected__",
+                  "equal": "off"
+                },
+                "value": 0.3
+              },
+              "value": 1
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "tooltip": true
+          },
+          "encoding": {
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth"
+            },
+            "y": {
+              "field": "Diff %",
+              "type": "quantitative",
+              "axis": {
+                "title": "△PL%",
+                "titleAngle": 0,
+                "titleAlign": "right",
+                "titlePadding": 20,
+                "labels": false,
+                "grid": false
+              }
+            },
+            "color": {
+              "field": "ConditionalColor",
+              "scale": {
+                "domain": [1, 0],
+                "range": [
+                  "#01B8AA",
+                  "#F9605D"
+                ]
+              },
+              "legend": null
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "field": "__selected__",
+                  "equal": "off"
+                },
+                "value": 0.3
+              },
+              "value": 1
+            },
+            "size": {"value": 50}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontStyle": "italic",
+            "dy": {
+              "expr": "datum['Diff %'] < 0 ? 10 : -10"
+            }
+          },
+          "encoding": {
+            "text": {
+              "field": "Diff % txt"
+            },
+            "x": {
+              "field": "Month Year",
+              "type": "nominal",
+              "timeUnit": "yearmonth"
+            },
+            "y": {
+              "field": "Diff %",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "stroke": "black",
+            "size": 1
+          },
+          "encoding": {
+            "y": {"datum": 0}
+          }
+        }
+      ]
+    },
+    {
+      "width": 450,
+      "height": 100,
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "width": {"band": 0.8},
+            "tooltip": true
+          },
+          "encoding": {
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth",
+              "axis": null
+            },
+            "y": {
+              "field": "Diff",
+              "type": "quantitative",
+              "axis": {
+                "title": "△ PL",
+                "titleFontSize": 11,
+                "titleAngle": 0,
+                "titleAlign": "center",
+                "titlePadding": 20,
+                "labels": false,
+                "grid": false
+              }
+            },
+            "color": {
+              "field": "ConditionalColor",
+              "scale": {
+                "domain": [1, 0],
+                "range": [
+                  "#01B8AA",
+                  "#F9605D"
+                ]
+              },
+              "legend": null
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "field": "__selected__",
+                  "equal": "off"
+                },
+                "value": 0.3
+              },
+              "value": 1
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum['IsCompleteMonth'] === 0"
+            }
+          ],
+          "mark": {
+            "type": "bar",
+            "width": {"band": 0.8},
+            "stroke": {
+              "expr": "datum['Diff'] < 0 ? '#F9605D' : '#01B8AA'"
+            },
+            "fill": "url(#diagonal-stripe-1-10)",
+            "tooltip": true
+          },
+          "encoding": {
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth"
+            },
+            "y": {
+              "field": "Diff",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "ConditionalColor",
+              "scale": {
+                "domain": [1, 0],
+                "range": [
+                  "#01B8AA",
+                  "#F9605D"
+                ]
+              },
+              "legend": null
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "field": "__selected__",
+                  "equal": "off"
+                },
+                "value": 0.3
+              },
+              "value": 1
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 10,
+            "dy": {
+              "expr": "datum['Diff'] < 0 ? 8 : -8"
+            }
+          },
+          "encoding": {
+            "text": {
+              "field": "Diff",
+              "type": "quantitative",
+              "format": ".4s"
+            },
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth"
+            },
+            "y": {
+              "field": "Diff",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "size": 1
+          },
+          "encoding": {
+            "y": {"datum": 0}
+          }
+        }
+      ]
+    },
+    {
+      "width": 450,
+      "height": 150,
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "xOffset": -2,
+            "fill": "white",
+            "width": {"band": 0.8},
+            "stroke": "#5d5d5d",
+            "tooltip": true
+          },
+          "encoding": {
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth",
+              "axis": {
+                "labelFontSize": 10,
+                "format": "%b %y",
+                "labelPadding": 15
+              }
+            },
+            "y": {
+              "field": "Budget",
+              "type": "quantitative",
+              "axis": {
+                "title": "PL/AC",
+                "titleFontSize": 11,
+                "titleAngle": 0,
+                "titleAlign": "center",
+                "titlePadding": 20,
+                "labels": false,
+                "grid": false
+              }
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "field": "__selected__",
+                  "equal": "off"
+                },
+                "value": 0.3
+              },
+              "value": 1
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.IsCompleteMonth===1"
+            }
+          ],
+          "mark": {
+            "type": "bar",
+            "xOffset": 0,
+            "color": "#5d5d5d",
+            "width": {"band": 0.7},
+            "stroke": "#5d5d5d",
+            "tooltip": true
+          },
+          "encoding": {
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth",
+              "axis": {
+                "labelFontSize": 10,
+                "format": "%b %y",
+                "labelPadding": 15
+              }
+            },
+            "y": {
+              "field": "CashEarned",
+              "type": "quantitative"
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "field": "__selected__",
+                  "equal": "off"
+                },
+                "value": 0.3
+              },
+              "value": 1
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum['IsCompleteMonth'] === 0"
+            }
+          ],
+          "mark": {
+            "type": "bar",
+            "width": {"band": 0.7},
+            "fill": "white",
+            "tooltip": true
+          },
+          "encoding": {
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth",
+              "axis": {
+                "labelFontSize": 10,
+                "format": "%b %y",
+                "labelPadding": 15
+              }
+            },
+            "y": {
+              "field": "CashEarned",
+              "type": "quantitative"
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "field": "__selected__",
+                  "equal": "off"
+                },
+                "value": 0.3
+              },
+              "value": 1
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum['IsCompleteMonth'] === 0"
+            }
+          ],
+          "mark": {
+            "type": "bar",
+            "width": {"band": 0.7},
+            "stroke": "#5d5d5d",
+            "fill": "url(#diagonal-stripe-1-90)",
+            "tooltip": true
+          },
+          "encoding": {
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth",
+              "axis": {
+                "labelFontSize": 10,
+                "format": "%b %y",
+                "labelPadding": 15
+              }
+            },
+            "y": {
+              "field": "CashEarned",
+              "type": "quantitative"
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "field": "__selected__",
+                  "equal": "off"
+                },
+                "value": 0.3
+              },
+              "value": 1
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 10,
+            "stroke": "white",
+            "strokeWidth": 2,
+            "align": "center",
+            "dx": -1,
+            "yOffset": -7
+          },
+          "encoding": {
+            "text": {
+              "field": "CashEarned",
+              "type": "quantitative",
+              "format": ".2s"
+            },
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth",
+              "axis": {
+                "labelFontSize": 10,
+                "format": "%b %y",
+                "labelPadding": 15
+              }
+            },
+            "y": {
+              "field": "CashEarned",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 10,
+            "align": "center",
+            "dx": -1,
+            "yOffset": -7
+          },
+          "encoding": {
+            "text": {
+              "field": "CashEarned",
+              "type": "quantitative",
+              "format": ".2s"
+            },
+            "x": {
+              "field": "Month Year",
+              "title": null,
+              "type": "nominal",
+              "timeUnit": "yearmonth",
+              "axis": {
+                "labelFontSize": 10,
+                "format": "%b %y",
+                "labelPadding": 15
+              }
+            },
+            "y": {
+              "field": "CashEarned",
+              "type": "quantitative"
+            }
+          }
+        }
+      ]
+    }
+  ]
 }
