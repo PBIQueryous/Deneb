@@ -1,0 +1,229 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.4.0.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.4.0"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": false,
+      "highlight": false,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "BarVariance_v1",
+      "description": "[No Description Provided]",
+      "author": "PBIQueryous",
+      "uuid": "b3a7885d-9191-4fbe-9fd9-4ff2ddbc1b75",
+      "generated": "2023-03-12T10:32:44.626Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "% Donut A",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__1__",
+        "name": "Total",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "bar": {},
+    "line": {
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 75
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 2.5,
+      "size": 50
+    },
+    "text": {
+      "font": "Segoe UI",
+      "fontSize": 12,
+      "fill": "#605E5C"
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#605E5C",
+      "labelFontSize": 12,
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleColor": "#252423",
+      "titleFontSize": 16,
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#C8C6C4",
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleFontSize": 16,
+      "titleColor": "#252423",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C"
+    },
+    "legend": {
+      "titleFont": "Segoe UI",
+      "titleFontWeight": "bold",
+      "titleColor": "#605E5C",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "Weight": 100,
+  "height": 0,
+  "data": {"name": "dataset"},
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadius": 10,
+        "color": {
+          "x1": 1,
+          "y1": 0.5,
+          "x2": 1,
+          "y2": 1,
+          "r1": 0,
+          "r2": 0.9,
+          "gradient": "radial",
+          "stops": [
+            {
+              "offset": 0.3,
+              "color": "purple"
+            },
+            {
+              "offset": 1,
+              "color": "#695DE2"
+            }
+          ]
+        },
+        "tooltip": true,
+        "Weight": 300,
+        "height": 15
+      },
+      "encoding": {
+        "x": {"field": "__0__"}
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadius": 20,
+        "color": "#0D6ABF",
+        "tooltip": true,
+        "Weight": 100,
+        "height": 10
+      },
+      "encoding": {
+        "x": {
+          "field": "__0____highlight"
+        },
+        "opacity": {
+          "condition": {
+            "test": {
+              "field": "_selected_",
+              "equal": "off"
+            },
+            "value": 0
+          },
+          "value": 1
+        }
+      }
+    },
+    {
+      "mark": {
+        "name": "BarTitle",
+        "type": "text",
+        "fontSize": 10,
+        "align": "left",
+        "dx": -170,
+        "dy": 15,
+        "fontWeight": "bold",
+        "color": "black"
+      },
+      "encoding": {
+        "text": {
+          "value": "Active Enrols"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "opacity": 0.3,
+        "cornerRadius": 30,
+        "color": "grey",
+        "tooltip": true,
+        "Weight": 100,
+        "height": 15
+      },
+      "encoding": {"x": {"datum": 1}}
+    },
+    {
+      "mark": {
+        "type": "text",
+        "tooltip": true,
+        "align": "left",
+        "baseline": "middle",
+        "dx": -35,
+        "dy": 0.2,
+        "fontWeight": "bold",
+        "color": "white"
+      },
+      "encoding": {
+        "text": {
+          "field": "__0__",
+          "format": ".0%"
+        },
+        "x": {"field": "__0__"}
+      }
+    }
+  ],
+  "encoding": {
+    "y": {
+      "type": "nominal",
+      "title": ""
+    },
+    "x": {
+      "type": "quantitative",
+      "axis": false
+    }
+  }
+}
