@@ -19,7 +19,7 @@
       "description": "[No Description Provided]",
       "author": "PBI Queryous",
       "uuid": "34dcbe97-146a-46f3-a528-1fd70be35c76",
-      "generated": "2023-06-20T21:10:08.180Z"
+      "generated": "2023-06-20T21:38:17.095Z"
     },
     "dataset": [
       {
@@ -52,13 +52,6 @@
       },
       {
         "key": "__4__",
-        "name": "Forecast",
-        "description": "Forecast",
-        "type": "numeric",
-        "kind": "measure"
-      },
-      {
-        "key": "__5__",
         "name": "varianceToBudgetAMT",
         "description": "Variance Sales vs Budget",
         "type": "numeric",
