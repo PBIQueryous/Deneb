@@ -1,0 +1,917 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.6.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": false,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "IBCS_Chart_and_Variance",
+      "description": "IBCS_Chart_and_Variance",
+      "author": "PBIQueryous",
+      "uuid": "6d61f74c-381c-42eb-8972-efe9cc47700d",
+      "generated": "2023-06-30T10:01:49.195Z",
+      "previewImageBase64PNG": "data:image/png;base64,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"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Dates",
+        "description": "Dates columns (month and year) - sort by column in PBI)",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "isMonthComplete",
+        "description": "Boolean field in Dates table - is month complete",
+        "type": "bool",
+        "kind": "column"
+      },
+      {
+        "key": "__2__",
+        "name": "Sales",
+        "description": "Actual YTD amount",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__3__",
+        "name": "Budget",
+        "description": "Plan EoY amount",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__4__",
+        "name": "varianceToBudgetAMT",
+        "description": "variance Actual vs Plan",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "params": [
+      {
+        "name": "__fontDIN",
+        "value": "wf_standard-font, helvetica, arial, sans-serif"
+      },
+      {
+        "name": "__labelFontSize",
+        "value": "16"
+      },
+      {
+        "name": "__titleFontSize",
+        "value": "20"
+      },
+      {
+        "name": "__labelColour",
+        "value": "#333"
+      }
+    ],
+    "autosize": {
+      "type": "fit",
+      "contains": "padding"
+    },
+    "font": {"expr": "__fontDIN"},
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "bar": {},
+    "line": {
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 75
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+    "text": {
+      "font": {"expr": "__fontDIN"},
+      "fontSize": {
+        "expr": "__labelFontSize"
+      },
+      "fill": {"expr": "__labelColour"}
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "domainWidth": 2,
+      "domainColor": {
+        "expr": "__labelColour"
+      },
+      "labelColor": {
+        "expr": "__labelColour"
+      },
+      "labelFontSize": {
+        "expr": "__labelFontSize"
+      },
+      "labelAngle": 0,
+      "titleFont": {
+        "expr": "__fontDIN"
+      },
+      "titleColor": {
+        "expr": "__labelColour"
+      },
+      "titleFontSize": {
+        "expr": "__titleFontSize"
+      },
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "title": "",
+      "show": false,
+      "tickCount": 2,
+      "grid": true,
+      "gridColor": "#CCCCCC",
+      "labelFlush": true
+    },
+    "axisX": {
+      "title": "",
+      "domain": true,
+      "ticks": true,
+      "labelPadding": 5
+    },
+    "axisY": {
+      "title": "",
+      "domain": false,
+      "labelPadding": 15
+    },
+    "style": {
+      "colourActual": {
+        "color": "#404040"
+      },
+      "colourBudget": {
+        "color": "darkgrey"
+      },
+      "colourNotSelected": {
+        "color": "lightGrey"
+      },
+      "colourDefault": {
+        "color": "steelblue"
+      },
+      "budgetColour": {
+        "color": {
+          "expr": "pbiPatternSVG(budgetSVGPattern,'darkgrey','white')"
+        }
+      }
+    },
+    "legend": {
+      "titleFont": {
+        "expr": "__fontDIN"
+      },
+      "titleFontWeight": "bold",
+      "titleColor": {
+        "expr": "__labelColour"
+      },
+      "labelFont": {
+        "expr": "__fontDIN"
+      },
+      "labelFontSize": {
+        "expr": "__labelFontSize"
+      },
+      "labelColor": {
+        "expr": "__labelColour"
+      },
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "name": "PARAMETERS",
+  "description": "DENEB_PARAMETERS",
+  "title": {
+    "text": "Actual vs Budget FISCAL YTD",
+    "fontSize": 30,
+    "anchor": "start",
+    "align": "left",
+    "baseline": "line-bottom",
+    "dx": 0,
+    "dy": 0,
+    "offset": null,
+    "orient": "top",
+    "frame": "group",
+    "color": "#333",
+    "subtitle": "(Power BI Visualisation written in Vega-lite for Deneb)",
+    "subtitleFontSize": 20,
+    "subtitleFontWeight": "normal",
+    "subtitleFontStyle": "italic",
+    "subtitlePadding": -5
+  },
+  "data": {"name": "dataset"},
+  "params": [
+    {"name": "_bwActual", "value": 0.9},
+    {"name": "_bwBudget", "value": 0.8},
+    {"name": "_barWidth", "value": 70},
+    {
+      "name": "_label_xOffset",
+      "value": -28
+    },
+    {
+      "name": "_label_yOffset",
+      "value": 5
+    },
+    {
+      "name": "_isCurrencyFormat",
+      "value": 0
+    },
+    {
+      "name": "_deltaText_xOffset",
+      "value": 5
+    },
+    {
+      "name": "_PCTbarWidth",
+      "value": 0.1
+    },
+    {
+      "name": "_chartWidth",
+      "value": 1100
+    },
+    {
+      "name": "__labelSize",
+      "value": 12
+    },
+    {
+      "name": "budgetPattern",
+      "value": "url(#diagonal-stripe-2-90)"
+    },
+    {
+      "name": "budgetSVGPattern",
+      "value": "diagonal-stripe-2-90"
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum['__2__'] - datum['__3__']",
+      "as": "__varianceToBudget"
+    },
+    {
+      "calculate": "datum.__varianceToBudget / datum['__3__']",
+      "as": "__varianceToBudgetPCT"
+    },
+    {
+      "calculate": "datum['__3__'] - datum['__3__']",
+      "as": "__varianceToBudget_R"
+    },
+    {
+      "calculate": "datum.__varianceToBudget_R / datum['__3__']",
+      "as": "__varianceToBudgetPCT_REM"
+    },
+    {
+      "calculate": "datum.__varianceToBudgetPCT > 0 ? 1 : 0",
+      "as": "__cf_colourPCT"
+    },
+    {
+      "calculate": "datum['__2__'] >= datum['__3__']",
+      "as": "__variancePos"
+    },
+    {
+      "calculate": "datum.__variancePos ? 0 : -8",
+      "as": "__textActualOffset"
+    },
+    {
+      "calculate": "datum.__variancePos ? 'YellowGreen' : 'tomato' ",
+      "as": "__varianceColour"
+    },
+    {
+      "calculate": "datum.__variancePos ? 'LightSeaGreen' : 'tomato' ",
+      "as": "__varianceColourText"
+    },
+    {
+      "calculate": "datum.__variancePos ? 'MintCream' : 'mistyRose' ",
+      "as": "__varianceColourShape"
+    },
+    {
+      "calculate": "datum['__1__'] == 1 ? 'black' : 'darkgrey' ",
+      "as": "__textColour"
+    },
+    {
+      "calculate": "!datum.__variancePos ? 'bottom' : 'top' ",
+      "as": "__varianceTextPosition"
+    },
+    {
+      "calculate": "round(datum['__2__'] - datum['__3__']) ",
+      "as": "__deltaTextMark"
+    },
+    {
+      "name": "LABELS_BUDGET",
+      "description": "FORMAT BUDGET LABELS",
+      "calculate": "datum['__3__'] >= 100000000 ? pbiFormat(datum['__3__'],'#,,,.0 bn') : datum['__3__'] >= 5000000 ? pbiFormat(datum['__3__'],'#,,.0 M') : datum['__3__'] >= 10000 ? pbiFormat(datum['__3__'],'#0,.0 K') : datum['__3__'] >= 1000 ? format(datum['__3__'], '.4s') : pbiFormat(datum['__3__'],'#,0') ",
+      "as": "budgetFormat"
+    },
+    {
+      "name": "LABELS_SALES",
+      "description": "FORMAT SALES LABELS STANDARD FORMAT",
+      "calculate": "datum['__2__'] >= 5000000 ? pbiFormat(datum['__2__'],'#,,,.0 bn') : datum['__2__'] >= 500000 ? pbiFormat(datum['__2__'],'#0,,.0 M') : datum['__2__'] >= 50000 ? pbiFormat(datum['__2__'],'#0,.0 K') : datum['__2__'] >= 1000 ? format(datum['__2__'], '.4s') : pbiFormat(datum['__2__'],'#,0') ",
+      "as": "_standardFormat"
+    },
+    {
+      "name": "LABELS_SALES_CURRENCY",
+      "description": "FORMAT SALES LABELS_CURRENCY FORMAT",
+      "calculate": "datum['__2__'] >= 5000000 ? pbiFormat(datum['__2__'],'£#,,,.0 bn') : datum['__2__'] >= 500000 ? pbiFormat(datum['__2__'],'£#0,,.0 M') : datum['__2__'] >= 50000 ? pbiFormat(datum['__2__'],'£#0,.0 K') : datum['__2__'] >= 1000 ? format(datum['__2__'], '£.4s') : pbiFormat(datum['__2__'],'£#,0') ",
+      "as": "_currencyFormat"
+    },
+    {
+      "name": "LABELS_BUDGET_CURRENCY",
+      "description": "FORMAT BUDGET LABELS_CURRENCY FORMAT",
+      "calculate": "datum['__3__'] >= 5000000 ? pbiFormat(datum['__3__'],'£#,,,.0 bn') : datum['__3__'] >= 100000 ? pbiFormat(datum['__3__'],'£#0,,.0 M') : datum['__3__'] >= 10000 ? pbiFormat(datum['__3__'],'£#0,.0 K') : datum['__3__'] >= 1000 ? format(datum['__3__'], '£.4s') : pbiFormat(datum['__3__'],'£#,0') ",
+      "as": "_currencyBudget"
+    },
+    {
+      "name": "LABELS_VARIANCE",
+      "description": "FORMAT VARIANCE LABELS",
+      "calculate": "datum.__deltaTextMark <= -100000000 ? pbiFormat(datum.__deltaTextMark,'#0,,,.0 bn') : datum.__deltaTextMark <= -100000 ? pbiFormat(datum.__deltaTextMark,'#0,,.0 M; -#0,,.0 M') : datum.__deltaTextMark <= 10000 ? pbiFormat(datum.__deltaTextMark,'#0,.0 K;-#0,.0 K') : datum.__deltaTextMark >= 100000000 ? pbiFormat(datum.__deltaTextMark,'+#0,,,.0 bn') : datum.__deltaTextMark >= 100000 ? pbiFormat(datum.__deltaTextMark,'+#0,,.0 M') : datum.__deltaTextMark >= 10000 ? pbiFormat(datum.__deltaTextMark,'+#0,.0 K; -#0,.0 K') : datum.varianceToBudget >= 1000 ? format(datum.__deltaTextMark, '.4s') : pbiFormat(datum.__deltaTextMark,'+#,0; -#,0') ",
+      "as": "varianceForm"
+    }
+  ],
+  "vconcat": [
+    {
+      "name": "PCT_LAYER",
+      "description": "LAYER PCT VARIANCE CHART",
+      "width": 1100,
+      "height": 200,
+      "layer": [
+        {
+          "name": "PERCENT_POINT_YTD",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 1"
+            }
+          ],
+          "mark": {
+            "description": "PCT_POINT_SHAPE",
+            "type": "point",
+            "size": 100,
+            "stroke": "black",
+            "strokeWidth": 1,
+            "tooltip": true,
+            "color": {
+              "expr": "datum.__varianceColour"
+            }
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "__varianceToBudgetPCT",
+              "type": "quantitative",
+              "size": {"value": 50},
+              "scale": {
+                "domain": [-0.5, 0.5]
+              },
+              "axis": {
+                "labels": false,
+                "formatType": "pbiFormat",
+                "format": "#%",
+                "gridColor": {
+                  "condition": {
+                    "test": "datum.value == 0",
+                    "value": "black"
+                  },
+                  "value": "white"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PERCENT BAR_YTD",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 1"
+            }
+          ],
+          "mark": {
+            "description": "PCT_ACTUAL_BAR",
+            "type": "bar",
+            "tooltip": true,
+            "width": {"band": 0.08},
+            "color": {
+              "expr": "datum.__varianceColour"
+            }
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal",
+              "axis": null,
+              "sort": null
+            },
+            "y": {
+              "field": "__varianceToBudgetPCT",
+              "type": "quantitative",
+              "scale": {
+                "domain": [-0.3, 0.3]
+              },
+              "axis": {
+                "title": "△PL%",
+                "titleAlign": "right",
+                "titleAngle": 0,
+                "titlePadding": 15,
+                "labels": false,
+                "formatType": "pbiFormat",
+                "format": "#%",
+                "gridColor": {
+                  "condition": {
+                    "test": "datum.value == 0",
+                    "value": "black"
+                  },
+                  "value": "white"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PERCENT_POINT_REM",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 0"
+            }
+          ],
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "tooltip": true,
+            "color": {"expr": "'grey'"}
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "__varianceToBudgetPCT_REM",
+              "type": "quantitative",
+              "size": {"value": 50},
+              "scale": {
+                "domain": [-0.3, 0.3]
+              }
+            }
+          }
+        },
+        {
+          "name": "PERCENT_LABEL",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 1"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": {
+              "expr": "__labelSize * 1.5"
+            },
+            "fontWeight": "bold",
+            "color": "black",
+            "align": "center",
+            "yOffset": {
+              "expr": "datum.__varianceToBudgetPCT < 0 ? 7 : -5"
+            },
+            "baseline": {
+              "expr": "datum.__varianceToBudgetPCT < 0 ? 'top' : 'bottom'"
+            }
+          },
+          "encoding": {
+            "text": {
+              "field": "__varianceToBudgetPCT",
+              "type": "quantitative",
+              "format": "+#0.0% ; -#0.0%; #0.0%",
+              "formatType": "pbiFormat"
+            },
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "__varianceToBudgetPCT",
+              "type": "quantitative"
+            },
+            "tooltip": [
+              {
+                "title": "Variance",
+                "field": "__4__",
+                "formatType": "pbiFormat",
+                "format": "£#0,0; -£#0,0"
+              }
+            ]
+          }
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "__0__",
+          "type": "nominal",
+          "sort": null,
+          "axis": null
+        },
+        "y": {
+          "field": "__2__",
+          "type": "quantitative",
+          "axis": {
+            "title": "△PL%",
+            "titleAlign": "right",
+            "titleAngle": 0,
+            "titlePadding": 15,
+            "labels": false
+          }
+        },
+        "tooltip": [
+          {
+            "title": "Variance",
+            "field": "__4__",
+            "formatType": "pbiFormat",
+            "format": "£#0,0; -£#0,0"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "test": {
+              "field": "__selected__",
+              "equal": "off"
+            },
+            "value": 0.3
+          },
+          "value": 1
+        }
+      }
+    },
+    {
+      "name": "ENCODING BASE",
+      "description": "ENCODING BASE",
+      "width": "1100",
+      "height": 200,
+      "layer": [
+        {
+          "name": "MARK_ACTUAL_BAR",
+          "description": "MARK_BAR_ACTUAL",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 1 "
+            }
+          ],
+          "mark": {
+            "type": "bar",
+            "style": "colourActual",
+            "stroke": "grey",
+            "strokeWidth": 0.2,
+            "width": {
+              "expr": "_barWidth"
+            },
+            "tooltip": true
+          },
+          "tooltip": [
+            {
+              "title": "Actual",
+              "field": "__2__",
+              "formatType": "pbiFormat",
+              "format": "£#0,0; -£#0,0"
+            }
+          ]
+        },
+        {
+          "name": "MARK_DELTA_BARS",
+          "description": "MARK_DELTA_BARS",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 1 "
+            }
+          ],
+          "mark": {
+            "type": "bar",
+            "tooltip": true,
+            "width": {
+              "expr": "_barWidth / 4"
+            },
+            "xOffset": {
+              "expr": "_barWidth / 2.68"
+            },
+            "yOffset": 0.1,
+            "color": {
+              "expr": "datum.__varianceColour"
+            }
+          },
+          "encoding": {
+            "y2": {"field": "__3__"},
+            "tooltip": [
+              {
+                "title": "Variance",
+                "field": "__4__",
+                "formatType": "pbiFormat",
+                "format": "£#0,0; -£#0,0"
+              }
+            ]
+          }
+        },
+        {
+          "name": "MARK_DELTA_SHAPES",
+          "description": "MARK_DELTA_BARS",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 1 "
+            }
+          ],
+          "mark": {
+            "type": "point",
+            "shape": {
+              "expr": "datum['__4__'] < 0 ? 'triangle-down' : 'triangle-up'"
+            },
+            "size": 250,
+            "tooltip": true,
+            "width": {
+              "expr": "_barWidth / 4"
+            },
+            "xOffset": {"expr": "26.5"},
+            "yOffset": {
+              "expr": "datum['__4__'] < 0 ? 7 : -7"
+            },
+            "color": {
+              "expr": "datum.__varianceColourShape"
+            }
+          },
+          "encoding": {
+            "y": {"field": "__3__"},
+            "tooltip": [
+              {
+                "title": "Variance",
+                "field": "__4__",
+                "formatType": "pbiFormat",
+                "format": "£#0,0; -£#0,0"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TEXT_VARIANCE_LABELS",
+          "description": "VARIANCE TEXT",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 1 "
+            }
+          ],
+          "mark": {
+            "description": "VARIANCE TEXT_BACKGROUND",
+            "type": "text",
+            "fontSize": 15,
+            "fontWeight": "800",
+            "color": "snow",
+            "stroke": "snow",
+            "strokeWidth": "8",
+            "align": "left",
+            "dx": {
+              "expr": "_label_xOffset * 1.3"
+            },
+            "dy": {
+              "expr": "_label_yOffset * -0.8"
+            },
+            "baseline": "bottom"
+          },
+          "encoding": {
+            "text": {
+              "field": "varianceForm",
+              "type": "quantitative",
+              "formatType": "pbiFormat"
+            }
+          }
+        },
+        {
+          "description": "VARIANCE TEXT FOREGROUND",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 1 "
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 15,
+            "fontWeight": "500",
+            "stroke": "black",
+            "strokeWidth": 0.3,
+            "color": {
+              "expr": "datum.__varianceColourText"
+            },
+            "align": "left",
+            "dx": {
+              "expr": "_label_xOffset * 1.3"
+            },
+            "dy": {
+              "expr": "_label_yOffset * -0.8"
+            },
+            "baseline": "bottom"
+          },
+          "encoding": {
+            "text": {
+              "field": "varianceForm",
+              "type": "quantitative",
+              "formatType": "pbiFormat"
+            }
+          }
+        },
+        {
+          "description": "ACTUAL TEXT FOREGROUND",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 1 "
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 15,
+            "fontWeight": "800",
+            "color": "white",
+            "align": "left",
+            "dx": {
+              "expr": "_label_xOffset"
+            },
+            "dy": {
+              "expr": "_label_yOffset"
+            },
+            "baseline": "top"
+          },
+          "encoding": {
+            "text": {
+              "field": "_currencyFormat",
+              "type": "quantitative",
+              "formatType": "pbiFormat"
+            }
+          }
+        },
+        {
+          "name": "MARK_BUDGET_BAR",
+          "description": "BUDGET BAR",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 0 "
+            }
+          ],
+          "mark": {
+            "type": "bar",
+            "style": "budgetColour",
+            "stroke": "grey",
+            "strokeWidth": 0.2,
+            "width": {
+              "expr": "_barWidth "
+            },
+            "tooltip": true
+          },
+          "encoding": {
+            "y": {
+              "field": "__3__",
+              "axis": {
+                "gridColor": "white",
+                "orient": "left",
+                "domain": true,
+                "domainCap": "butt",
+                "domainWidth": 2,
+                "domainOpacity": 0.2,
+                "domainDash": [2, 5],
+                "domainDashOffset": 0,
+                "domainColor": "slategrey",
+                "ticks": true
+              }
+            },
+            "tooltip": [
+              {
+                "title": "Plan",
+                "field": "__3__",
+                "formatType": "pbiFormat",
+                "format": "£#0,0; -£#0,0"
+              }
+            ]
+          }
+        },
+        {
+          "name": "BUDGET_TEXT",
+          "description": "BUDGET TEXT MARKS",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 0 "
+            }
+          ],
+          "mark": {
+            "description": "BUDGET TEXT BACGROUND",
+            "type": "text",
+            "fontSize": 15,
+            "fontWeight": "800",
+            "stroke": "white",
+            "strokeWidth": 6,
+            "align": "left",
+            "dx": {
+              "expr": "_label_xOffset"
+            },
+            "dy": {
+              "expr": "_label_yOffset"
+            },
+            "baseline": "top"
+          },
+          "encoding": {
+            "text": {
+              "field": "_currencyBudget",
+              "type": "quantitative",
+              "formatType": "pbiFormat"
+            },
+            "y": {
+              "field": "__3__",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "name": "BUDGET_TEXT_FOREGROUND",
+          "transform": [
+            {
+              "filter": "datum['__1__'] == 0 "
+            }
+          ],
+          "mark": {
+            "description": "BUDGET TEXT FOREGROUND",
+            "type": "text",
+            "fontSize": 15,
+            "fontWeight": "800",
+            "color": "black",
+            "align": "left",
+            "dx": {
+              "expr": "_label_xOffset"
+            },
+            "dy": {
+              "expr": "_label_yOffset"
+            },
+            "baseline": "top"
+          },
+          "encoding": {
+            "text": {
+              "field": "_currencyBudget",
+              "type": "quantitative",
+              "formatType": "pbiFormat"
+            },
+            "y": {
+              "field": "__3__",
+              "type": "quantitative"
+            }
+          }
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "__0__",
+          "type": "nominal",
+          "sort": null
+        },
+        "y": {
+          "field": "__2__",
+          "type": "quantitative",
+          "axis": {
+            "orient": "left",
+            "title": "AC / △PL",
+            "titleAlign": "right",
+            "titleAngle": 0,
+            "titlePadding": 10,
+            "labels": false
+          }
+        },
+        "tooltip": [
+          {
+            "title": "Actual",
+            "field": "__2__",
+            "formatType": "pbiFormat",
+            "format": "£#0,0"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "test": {
+              "field": "__selected__",
+              "equal": "off"
+            },
+            "value": 0.2
+          },
+          "value": 1
+        }
+      }
+    }
+  ],
+  "resolve": {"scale": {"x": "shared"}}
+}
