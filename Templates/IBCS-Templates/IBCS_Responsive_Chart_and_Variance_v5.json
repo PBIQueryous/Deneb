@@ -1,0 +1,239 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.6.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": false,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "[No Name Provided]",
+      "description": "[No Description Provided]",
+      "author": "[No Author Details Provided]",
+      "uuid": "fa6d3c79-d911-45d6-84c6-efb955f27541",
+      "generated": "2023-07-03T11:54:05.712Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Dates",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "isMonthComplete",
+        "description": "",
+        "type": "bool",
+        "kind": "column"
+      },
+      {
+        "key": "__2__",
+        "name": "Sales",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__3__",
+        "name": "Budget",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "axis": {
+      "title": "",
+      "disable": false,
+      "grid": false,
+      "domainWidth": 2,
+      "domainColor": "silver",
+      "domainOpacity": 50,
+      "labelColor": "grey",
+      "labelFontWeight": "normal",
+      "labelAngle": 0,
+      "labelFontSize": 13.5,
+      "labelPadding": 5
+    },
+    "axisY": {
+      "disable": true,
+      "format": ".2s",
+      "flush": true
+    },
+    "style": {
+      "colourBudget": {
+        "color": "darkgrey"
+      },
+      "colourNotSelected": {
+        "color": "lightGrey"
+      },
+      "colourDefault": {
+        "color": "steelblue"
+      },
+      "budgetColour": {
+        "color": {
+          "expr": "pbiPatternSVG(budgetSVGPattern,'darkgrey','white')"
+        }
+      }
+    }
+  },
+  "data": {"name": "dataset"},
+  "encoding": {
+    "x": {
+      "title": null,
+      "field": "__0__",
+      "type": "nominal",
+      "sort": null
+    },
+    "y": {
+      "field": "__2__",
+      "type": "quantitative"
+    }
+  },
+  "params": [
+    {"name": "bwActual", "value": 0.9},
+    {"name": "bwBudget", "value": 0.4}
+  ],
+  "transform": [
+    {
+      "calculate": "datum['__2__'] - datum['__3__']",
+      "as": "__varianceToBudget"
+    },
+    {
+      "calculate": "datum.__varianceToBudget > 0 ? 'YellowGreen' : 'Tomato'",
+      "as": "__varianceColour"
+    },
+    {
+      "calculate": "datum.__varianceToBudget >= 0",
+      "as": "__variancePos"
+    },
+    {
+      "calculate": "datum.__variancePos == 1 ? 'MintCream' : 'mistyRose'",
+      "as": "__varianceShapeColour"
+    }
+  ],
+  "layer": [
+    {
+      "name": "ACTUAL_MARK",
+      "description": "ActualBar",
+      "mark": {
+        "type": "bar",
+        "color": {
+          "expr": "datum['__1__'] == 1 ? '#404040' : 'whitesmoke' "
+        },
+        "width": {
+          "expr": "bandwidth('x') * bwActual"
+        },
+        "stroke": "grey",
+        "strokeOpacity": 0.2
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 1"
+        }
+      ],
+      "name": "DELTA_MARK",
+      "description": "DeltaBar",
+      "mark": {
+        "type": "bar",
+        "tooltip": true,
+        "width": {
+          "expr": "bandwidth('x') * bwBudget"
+        },
+        "xOffset": {
+          "expr": "(bandwidth('x') * (bwActual - bwBudget))/2"
+        },
+        "color": {
+          "expr": "datum.__varianceColour"
+        }
+      },
+      "encoding": {
+        "y2": {"field": "__3__"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 1"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "shape": {
+          "expr": "datum.__varianceToBudget < 0 ? 'triangle-down' : 'triangle-up'"
+        },
+        "size": {
+          "expr": "bandwidth('x') * bwBudget + 250"
+        },
+        "fill": {
+          "expr": "datum.__varianceShapeColour"
+        },
+        "opacity": 1,
+        "stroke": "grey",
+        "strokeWidth": 0.3,
+        "tooltip": true,
+        "width": {
+          "expr": "bandwidth('x') * bwBudget"
+        },
+        "xOffset": {
+          "expr": "(bandwidth('x') * (bwActual - bwBudget))/2"
+        },
+        "yOffset": {
+          "expr": "datum.__varianceToBudget < 0 ? 6 : -6"
+        }
+      },
+      "encoding": {
+        "y": {"field": "__3__"},
+        "tooltip": [
+          {
+            "title": "Variance",
+            "field": "__varianceToBudget",
+            "formatType": "pbiFormat",
+            "format": "£#0,0; -£#0,0"
+          }
+        ]
+      }
+    },
+    {
+      "description": "ACTUAL TEXT FOREGROUND",
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 1 "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 15,
+        "fontWeight": "800",
+        "color": "white",
+        "align": "center",
+        "dx": {"expr": "0"},
+        "dy": {"expr": "-18"},
+        "baseline": "top"
+      },
+      "encoding": {
+        "text": {
+          "field": "__2__",
+          "type": "quantitative",
+          "format": ".2s"
+        },
+        "y": {"datum": 0}
+      }
+    }
+  ]
+}
