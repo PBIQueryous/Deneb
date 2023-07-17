@@ -1,0 +1,553 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.6.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Line Chart Cumulative",
+      "description": "Line Chart Cumulative",
+      "author": "PBI Queryous",
+      "uuid": "e0927f75-fe71-4ca3-a320-336826405fb5",
+      "generated": "2023-07-17T20:25:58.699Z",
+      "previewImageBase64PNG": "data:image/png;base64,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"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Date",
+        "description": "",
+        "type": "dateTime",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "SumAMT",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "params": [
+      {
+        "name": "_minColour",
+        "value": "#B0B0B0"
+      },
+      {
+        "name": "_maxColour",
+        "value": "#404040"
+      },
+      {
+        "name": "_FontDIN",
+        "value": "wf_standard-font, helvetica, arial, sans-serif"
+      }
+    ],
+    "font": {"expr": "_FontDIN"},
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "bar": {},
+    "line": {
+      "stroke": "dimgrey",
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 150
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+    "text": {
+      "font": {"expr": "_FontDIN"},
+      "fontSize": 12,
+      "fill": "#605E5C"
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#605E5C",
+      "labelFontSize": 12,
+      "titleFont": {"expr": "_FontDIN"},
+      "titleColor": "#252423",
+      "titleFontSize": 16,
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#C8C6C4",
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleFont": {"expr": "_FontDIN"},
+      "titleFontSize": 16,
+      "titleColor": "#252423",
+      "labelFont": {"expr": "_FontDIN"},
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C"
+    },
+    "legend": {
+      "titleFont": {"expr": "_FontDIN"},
+      "titleFontWeight": "bold",
+      "titleColor": "#605E5C",
+      "labelFont": {"expr": "_FontDIN"},
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "data": {"name": "dataset"},
+  "encoding": {
+    "x": {
+      "field": "__0__",
+      "type": "nominal",
+      "axis": null
+    },
+    "y": {
+      "field": "__1__",
+      "type": "quantitative",
+      "axis": null,
+      "scale": {"zero": false}
+    }
+  },
+  "name": "_LAYER1_CIRCLES",
+  "layer": [
+    {
+      "name": "_MARK_LINE_",
+      "description": "__TRANSFORM_LINE_TO_CUMULATIVE",
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "sum",
+              "field": "__1__",
+              "as": "SumCML"
+            }
+          ]
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "color": {
+          "x1": 0.5,
+          "y1": 2,
+          "x2": 3,
+          "y2": 0,
+          "gradient": "linear",
+          "stops": [
+            {
+              "offset": 0,
+              "color": "white"
+            },
+            {
+              "offset": 1,
+              "color": "#404040"
+            }
+          ]
+        },
+        "strokeWidth": 2,
+        "interpolate": "monotone",
+        "point": {
+          "size": 75,
+          "display": true,
+          "color": {
+            "expr": "datum['__1__'] > 500 ? 'RosyBrown' : 'peachPuff'"
+          },
+          "stroke": "white",
+          "strokeWidth": 1.5
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "__0__",
+          "type": "nominal",
+          "axis": null
+        },
+        "y": {
+          "field": "SumCML",
+          "type": "quantitative",
+          "scale": {"zero": false},
+          "axis": null
+        }
+      }
+    },
+    {
+      "name": "_TEXT_LABELS",
+      "description": "_TEXT_DATA_LABELS",
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "sum",
+              "field": "__1__",
+              "as": "SumCML"
+            }
+          ]
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "size": 8,
+        "fontWeight": "bold",
+        "yOffset": -12
+      },
+      "encoding": {
+        "text": {
+          "field": "__1__",
+          "aggregate": "sum",
+          "type": "quantitative",
+          "format": ".3s"
+        },
+        "x": {
+          "field": "__0__",
+          "type": "nominal",
+          "axis": null
+        },
+        "y": {
+          "field": "SumCML",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"zero": false}
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "sum",
+              "field": "__1__",
+              "as": "SumCML"
+            }
+          ]
+        },
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "_window_MAX"
+            }
+          ],
+          "sort": [
+            {
+              "field": "__0__",
+              "order": "ascending"
+            }
+          ]
+        },
+        {
+          "filter": "datum._window_MAX ==1"
+        }
+      ],
+      "name": "_MIN_CIRCLE_MARK",
+      "mark": {
+        "type": "circle",
+        "size": 150,
+        "fill": {"expr": "_minColour"}
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "min",
+          "field": "__0__",
+          "type": "nominal"
+        },
+        "y": {
+          "aggregate": {
+            "argmin": "__0__"
+          },
+          "field": "SumCML",
+          "type": "quantitative",
+          "scale": {"zero": false},
+          "axis": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "sum",
+              "field": "__1__",
+              "as": "SumCML"
+            }
+          ]
+        },
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "_window_MAX"
+            }
+          ],
+          "sort": [
+            {
+              "field": "__0__",
+              "order": "ascending"
+            }
+          ]
+        },
+        {
+          "filter": "datum._window_MAX ==1"
+        }
+      ],
+      "name": "_MIN_TEXT_LABEL_BACKGROUND",
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "center",
+        "dx": 0,
+        "dy": -15,
+        "color": {"expr": "_maxColour"},
+        "stroke": "ivory",
+        "strokeWidth": 5,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "__0__"},
+        "y": {"field": "SumCML"},
+        "text": {
+          "field": "SumCML",
+          "format": ".2s"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "sum",
+              "field": "__1__",
+              "as": "SumCML"
+            }
+          ]
+        },
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "_window_MAX"
+            }
+          ],
+          "sort": [
+            {
+              "field": "__0__",
+              "order": "ascending"
+            }
+          ]
+        },
+        {
+          "filter": "datum._window_MAX ==1"
+        }
+      ],
+      "name": "_MIN_TEXT_LABEL",
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "center",
+        "dx": 0,
+        "dy": -15,
+        "color": {"expr": "_minColour"},
+        "fontWeight": "bolder"
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "min",
+          "field": "__0__"
+        },
+        "y": {
+          "aggregate": {
+            "argmin": "__0__"
+          },
+          "field": "SumCML"
+        },
+        "text": {
+          "aggregate": {
+            "argmin": "__0__"
+          },
+          "field": "SumCML"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "sum",
+              "field": "__1__",
+              "as": "SumCML"
+            }
+          ]
+        },
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "_window_MAX"
+            }
+          ],
+          "sort": [
+            {
+              "field": "__0__",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum._window_MAX ==1"
+        }
+      ],
+      "name": "_MAX_CIRCLE_MARK",
+      "mark": {
+        "type": "circle",
+        "size": 150,
+        "fill": {"expr": "_maxColour"}
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "max",
+          "field": "__0__",
+          "type": "nominal"
+        },
+        "y": {
+          "aggregate": {
+            "argmax": "__0__"
+          },
+          "field": "SumCML",
+          "type": "quantitative",
+          "scale": {"zero": false},
+          "axis": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "sum",
+              "field": "__1__",
+              "as": "SumCML"
+            }
+          ]
+        },
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "_window_MAX"
+            }
+          ],
+          "sort": [
+            {
+              "field": "__0__",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum._window_MAX ==1"
+        }
+      ],
+      "name": "_MAX_TEXT_LABEL_BACKGROUND",
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "center",
+        "dx": 0,
+        "dy": -15,
+        "color": {"expr": "_maxColour"},
+        "stroke": "ivory",
+        "strokeWidth": 5,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "__0__"},
+        "y": {"field": "SumCML"},
+        "text": {
+          "field": "SumCML",
+          "format": ".2s"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "sum",
+              "field": "__1__",
+              "as": "SumCML"
+            }
+          ]
+        },
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "_window_MAX"
+            }
+          ],
+          "sort": [
+            {
+              "field": "__0__",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum._window_MAX ==1"
+        }
+      ],
+      "name": "_MAX_TEXT_LABEL",
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "center",
+        "dx": 0,
+        "dy": -15,
+        "color": {"expr": "_maxColour"},
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "__0__"},
+        "y": {"field": "SumCML"},
+        "text": {
+          "field": "SumCML",
+          "format": ".2s"
+        }
+      }
+    }
+  ]
+}

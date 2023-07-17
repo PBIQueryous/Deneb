@@ -1,0 +1,392 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.6.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Snapshot LineChart",
+      "description": "Line Chart",
+      "author": "PBI Queryous",
+      "uuid": "ed9901a0-3cdd-476b-94da-295eac33038e",
+      "generated": "2023-07-17T20:24:16.762Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Date",
+        "description": "",
+        "type": "dateTime",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "SumAMT",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "params": [
+      {
+        "name": "_minColour",
+        "value": "#B0B0B0"
+      },
+      {
+        "name": "_maxColour",
+        "value": "#404040"
+      },
+      {
+        "name": "_FontDIN",
+        "value": "wf_standard-font, helvetica, arial, sans-serif"
+      }
+    ],
+    "font": {"expr": "_FontDIN"},
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "bar": {},
+    "line": {
+      "stroke": "dimgrey",
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 150
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+    "text": {
+      "font": {"expr": "_FontDIN"},
+      "fontSize": 12,
+      "fill": "#605E5C"
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#605E5C",
+      "labelFontSize": 12,
+      "titleFont": {"expr": "_FontDIN"},
+      "titleColor": "#252423",
+      "titleFontSize": 16,
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#C8C6C4",
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleFont": {"expr": "_FontDIN"},
+      "titleFontSize": 16,
+      "titleColor": "#252423",
+      "labelFont": {"expr": "_FontDIN"},
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C"
+    },
+    "legend": {
+      "titleFont": {"expr": "_FontDIN"},
+      "titleFontWeight": "bold",
+      "titleColor": "#605E5C",
+      "labelFont": {"expr": "_FontDIN"},
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "data": {"name": "dataset"},
+  "encoding": {
+    "x": {
+      "field": "__0__",
+      "type": "nominal",
+      "axis": null
+    },
+    "y": {
+      "field": "__1__",
+      "type": "quantitative",
+      "axis": null,
+      "scale": {"zero": false}
+    }
+  },
+  "name": "_LAYER1_CIRCLES",
+  "layer": [
+    {
+      "name": "_MARK_LINE_",
+      "description": "__LAYER1_ENCODING",
+      "mark": {
+        "type": "line",
+        "color": {
+          "x1": 0.5,
+          "y1": 2,
+          "x2": 3,
+          "y2": 0,
+          "gradient": "linear",
+          "stops": [
+            {
+              "offset": 0,
+              "color": "white"
+            },
+            {
+              "offset": 1,
+              "color": "#404040"
+            }
+          ]
+        },
+        "strokeWidth": 2,
+        "interpolate": "monotone",
+        "point": {
+          "size": 75,
+          "display": true,
+          "color": {
+            "expr": "datum['__1__'] > 500 ? 'RosyBrown' : 'peachPuff'"
+          },
+          "stroke": "white",
+          "strokeWidth": 1.5
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "__0__",
+          "type": "nominal",
+          "axis": null
+        },
+        "y": {
+          "field": "__1__",
+          "type": "quantitative",
+          "scale": {"zero": false},
+          "axis": null
+        }
+      }
+    },
+    {
+      "name": "_TEXT_LABELS",
+      "description": "_TEXT_DATA_LABELS",
+      "mark": {
+        "type": "text",
+        "size": 8,
+        "fontWeight": "bold",
+        "yOffset": -12
+      },
+      "encoding": {
+        "text": {
+          "field": "__1__",
+          "aggregate": "sum",
+          "type": "quantitative",
+          "format": ".3s"
+        },
+        "x": {
+          "field": "__0__",
+          "type": "nominal",
+          "axis": null
+        },
+        "y": {
+          "field": "__1__",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"zero": false}
+        }
+      }
+    },
+    {
+      "name": "_MIN_CIRCLE_MARK",
+      "mark": {
+        "type": "circle",
+        "size": 150,
+        "fill": {"expr": "_minColour"}
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "min",
+          "field": "__0__",
+          "type": "nominal"
+        },
+        "y": {
+          "aggregate": {
+            "argmin": "__0__"
+          },
+          "field": "__1__",
+          "type": "quantitative",
+          "scale": {"zero": false},
+          "axis": null
+        }
+      }
+    },
+    {
+      "name": "_MIN_TEXT_LABEL-BACKGROUND",
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "stroke": "Ivory",
+        "strokeWidth": 5,
+        "align": "center",
+        "dx": 0,
+        "dy": -15,
+        "color": {"expr": "_minColour"},
+        "fontWeight": "bolder"
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "min",
+          "field": "__0__"
+        },
+        "y": {
+          "aggregate": {
+            "argmin": "__0__"
+          },
+          "field": "__1__"
+        },
+        "text": {
+          "aggregate": {
+            "argmin": "__0__"
+          },
+          "field": "__1__"
+        }
+      }
+    },
+    {
+      "name": "_MIN_TEXT_LABEL",
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "center",
+        "dx": 0,
+        "dy": -15,
+        "color": {"expr": "_minColour"},
+        "fontWeight": "bolder"
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "min",
+          "field": "__0__"
+        },
+        "y": {
+          "aggregate": {
+            "argmin": "__0__"
+          },
+          "field": "__1__"
+        },
+        "text": {
+          "aggregate": {
+            "argmin": "__0__"
+          },
+          "field": "__1__"
+        }
+      }
+    },
+    {
+      "name": "_MAX_CIRCLE_MARK",
+      "mark": {
+        "type": "circle",
+        "size": 150,
+        "fill": {"expr": "_maxColour"}
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "max",
+          "field": "__0__",
+          "type": "nominal"
+        },
+        "y": {
+          "aggregate": {
+            "argmax": "__0__"
+          },
+          "field": "__1__",
+          "type": "quantitative",
+          "scale": {"zero": false},
+          "axis": null
+        }
+      }
+    },
+    {
+      "name": "_MAX_TEXT_LABEL_BACKGROUND",
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "stroke": "Ivory",
+        "strokeWidth": 5,
+        "align": "center",
+        "dx": 0,
+        "dy": -15,
+        "color": {"expr": "_maxColour"},
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "max",
+          "field": "__0__"
+        },
+        "y": {
+          "aggregate": {
+            "argmax": "__0__"
+          },
+          "field": "__1__"
+        },
+        "text": {
+          "aggregate": {
+            "argmax": "__0__"
+          },
+          "field": "__1__"
+        }
+      }
+    },
+    {
+      "name": "_MAX_TEXT_LABEL",
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "center",
+        "dx": 0,
+        "dy": -15,
+        "color": {"expr": "_maxColour"},
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "max",
+          "field": "__0__"
+        },
+        "y": {
+          "aggregate": {
+            "argmax": "__0__"
+          },
+          "field": "__1__"
+        },
+        "text": {
+          "aggregate": {
+            "argmax": "__0__"
+          },
+          "field": "__1__"
+        }
+      }
+    }
+  ]
+}

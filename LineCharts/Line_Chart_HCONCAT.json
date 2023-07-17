@@ -1,0 +1,978 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.6.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Line_Charts_HCONCAT",
+      "description": "[No Description Provided]",
+      "author": "PBI Queryous",
+      "uuid": "15fba2e9-568b-481c-87aa-89f71ea8e7c0",
+      "generated": "2023-07-17T20:27:02.537Z",
+      "previewImageBase64PNG": "data:image/png;base64,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"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Date",
+        "description": "",
+        "type": "dateTime",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "SumAMT",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "params": [
+      {
+        "name": "_minColour",
+        "value": "#B0B0B0"
+      },
+      {
+        "name": "_maxColour",
+        "value": "#404040"
+      },
+      {
+        "name": "_FontDIN",
+        "value": "wf_standard-font, helvetica, arial, sans-serif"
+      }
+    ],
+    "font": {"expr": "_FontDIN"},
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "bar": {},
+    "line": {
+      "stroke": "dimgrey",
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 150
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+    "text": {
+      "font": {"expr": "_FontDIN"},
+      "fontSize": 12,
+      "fill": "#605E5C"
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#605E5C",
+      "labelFontSize": 12,
+      "titleFont": {"expr": "_FontDIN"},
+      "titleColor": "#252423",
+      "titleFontSize": 16,
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#C8C6C4",
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleFont": {"expr": "_FontDIN"},
+      "titleFontSize": 16,
+      "titleColor": "#252423",
+      "labelFont": {"expr": "_FontDIN"},
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C"
+    },
+    "legend": {
+      "titleFont": {"expr": "_FontDIN"},
+      "titleFontWeight": "bold",
+      "titleColor": "#605E5C",
+      "labelFont": {"expr": "_FontDIN"},
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "data": {"name": "dataset"},
+  "encoding": {
+    "x": {
+      "field": "__0__",
+      "type": "nominal",
+      "axis": null
+    },
+    "y": {
+      "field": "__1__",
+      "type": "quantitative",
+      "scale": {"zero": false},
+      "axis": null
+    }
+  },
+  "spacing": 65,
+  "hconcat": [
+    {
+      "width": 250,
+      "height": 150,
+      "layer": [
+        {
+          "name": "_MAIN_BARS",
+          "mark": {
+            "type": "bar",
+            "color": {
+              "expr": "'aliceblue'"
+            },
+            "stroke": "dimGrey",
+            "strokeWidth": 0.1
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal",
+              "axis": null
+            },
+            "y": {
+              "field": "__1__",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "windowMinMax"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "__1__",
+                  "order": "ascending"
+                }
+              ]
+            },
+            {
+              "filter": "datum.windowMinMax ==1"
+            }
+          ],
+          "name": "_MIN_BAR",
+          "mark": {
+            "type": "bar",
+            "fill": "firebrick"
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "__1__",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "windowMinMax"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "__1__",
+                  "order": "descending"
+                }
+              ]
+            },
+            {
+              "filter": "datum.windowMinMax ==1"
+            }
+          ],
+          "name": "_MAX_BAR",
+          "mark": {
+            "type": "bar",
+            "fill": "LimeGreen"
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "__1__",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "windowMinMax"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "__1__",
+                  "order": "ascending"
+                }
+              ]
+            },
+            {
+              "filter": "datum.windowMinMax ==1"
+            }
+          ],
+          "name": "_MIN_DATA_LABEL",
+          "mark": {
+            "type": "text",
+            "color": "MediumBlue",
+            "fontWeight": "bold",
+            "dy": -15
+          },
+          "encoding": {
+            "text": {
+              "field": "__1__",
+              "format": ".2s"
+            },
+            "y": {
+              "field": "__1__",
+              "title": "Sales",
+              "type": "quantitative"
+            },
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "description": "_MAX_DATA_LABEL_BACKGROUND",
+          "mark": {
+            "width": 50,
+            "type": "text",
+            "size": 10,
+            "color": "white",
+            "yOffset": -12,
+            "fontWeight": "bold",
+            "stroke": "white",
+            "strokeWidth": 5
+          },
+          "encoding": {
+            "text": {
+              "field": "__1__",
+              "aggregate": "sum",
+              "type": "quantitative",
+              "format": ".2s"
+            },
+            "x": {
+              "aggregate": "max",
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "aggregate": {
+                "argmax": "__0__"
+              },
+              "field": "__1__",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "windowMinMax"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "__1__",
+                  "order": "descending"
+                }
+              ]
+            },
+            {
+              "filter": "datum.windowMinMax ==1"
+            }
+          ],
+          "description": "_MAX_DATA_LABEL",
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "align": "center",
+            "dx": 0,
+            "dy": -15,
+            "color": "MediumBlue",
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "text": {
+              "field": "__1__",
+              "type": "quantitative",
+              "format": ".2s"
+            },
+            "x": {
+              "aggregate": "max",
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "aggregate": {
+                "argmax": "__0__"
+              },
+              "field": "__1__",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 250,
+      "height": 150,
+      "layer": [
+        {
+          "description": "__LAYER1_ENCODING",
+          "mark": {
+            "type": "line",
+            "color": {
+              "x1": 0.5,
+              "y1": 2,
+              "x2": 3,
+              "y2": 0,
+              "gradient": "linear",
+              "stops": [
+                {
+                  "offset": 0,
+                  "color": "white"
+                },
+                {
+                  "offset": 1,
+                  "color": "#404040"
+                }
+              ]
+            },
+            "strokeWidth": 2,
+            "interpolate": "monotone",
+            "point": {
+              "size": 75,
+              "display": true,
+              "color": {
+                "expr": "datum['__1__'] > 500 ? 'RosyBrown' : 'peachPuff'"
+              },
+              "stroke": "white",
+              "strokeWidth": 1.5
+            }
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal",
+              "axis": null
+            },
+            "y": {
+              "field": "__1__",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        },
+        {
+          "description": "_MIN_MARK",
+          "mark": {
+            "type": "circle",
+            "fill": {
+              "expr": "_minColour"
+            },
+            "size": 125
+          },
+          "encoding": {
+            "x": {
+              "aggregate": "min",
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "aggregate": {
+                "argmin": "__0__"
+              },
+              "field": "__1__",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        },
+        {
+          "description": "_MAX_MARK",
+          "mark": {
+            "type": "circle",
+            "fill": {
+              "expr": "_maxColour"
+            },
+            "size": 125
+          },
+          "encoding": {
+            "x": {
+              "aggregate": "max",
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "aggregate": {
+                "argmax": "__0__"
+              },
+              "field": "__1__",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        },
+        {
+          "description": "_DATA_LABEL_BACKGROUND",
+          "mark": {
+            "type": "text",
+            "color": "#474747",
+            "stroke": "white",
+            "strokeWidth": 5,
+            "size": 10,
+            "fontWeight": "bold",
+            "dy": -15
+          },
+          "encoding": {
+            "text": {
+              "field": "__1__",
+              "format": ".2s"
+            },
+            "y": {
+              "field": "__1__",
+              "title": "Sales",
+              "type": "quantitative"
+            },
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "description": "_DATA_LABEL",
+          "mark": {
+            "type": "text",
+            "color": "#474747",
+            "size": 10,
+            "fontWeight": "bold",
+            "dy": -15
+          },
+          "encoding": {
+            "text": {
+              "field": "__1__",
+              "format": ".2s"
+            },
+            "y": {
+              "field": "__1__",
+              "title": "Sales",
+              "type": "quantitative"
+            },
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 250,
+      "height": 150,
+      "layer": [
+        {
+          "name": "_MARK_LINE_",
+          "description": "__TRANSFORM_LINE_TO_CUMULATIVE",
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "sum",
+                  "field": "__1__",
+                  "as": "SumCML"
+                }
+              ]
+            }
+          ],
+          "mark": {
+            "type": "line",
+            "color": {
+              "x1": 0.5,
+              "y1": 2,
+              "x2": 3,
+              "y2": 0,
+              "gradient": "linear",
+              "stops": [
+                {
+                  "offset": 0,
+                  "color": "white"
+                },
+                {
+                  "offset": 1,
+                  "color": "#404040"
+                }
+              ]
+            },
+            "strokeWidth": 2,
+            "interpolate": "monotone",
+            "point": {
+              "size": 75,
+              "display": true,
+              "color": {
+                "expr": "datum['__1__'] > 500 ? 'RosyBrown' : 'peachPuff'"
+              },
+              "stroke": "white",
+              "strokeWidth": 1.5
+            }
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal",
+              "axis": null
+            },
+            "y": {
+              "field": "SumCML",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        },
+        {
+          "name": "_TEXT_LABELS",
+          "description": "_TEXT_DATA_LABELS",
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "sum",
+                  "field": "__1__",
+                  "as": "SumCML"
+                }
+              ]
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "size": 8,
+            "fontWeight": "bold",
+            "yOffset": -12
+          },
+          "encoding": {
+            "text": {
+              "field": "__1__",
+              "aggregate": "sum",
+              "type": "quantitative",
+              "format": ".3s"
+            },
+            "x": {
+              "field": "__0__",
+              "type": "nominal",
+              "axis": null
+            },
+            "y": {
+              "field": "SumCML",
+              "type": "quantitative",
+              "axis": null,
+              "scale": {"zero": false}
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "sum",
+                  "field": "__1__",
+                  "as": "SumCML"
+                }
+              ]
+            },
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "_window_MAX"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "__0__",
+                  "order": "ascending"
+                }
+              ]
+            },
+            {
+              "filter": "datum._window_MAX ==1"
+            }
+          ],
+          "name": "_MIN_CIRCLE_MARK",
+          "mark": {
+            "type": "circle",
+            "size": 200,
+            "fill": {
+              "expr": "_minColour"
+            }
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "SumCML",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "sum",
+                  "field": "__1__",
+                  "as": "SumCML"
+                }
+              ]
+            },
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "_window_MAX"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "__0__",
+                  "order": "descending"
+                }
+              ]
+            },
+            {
+              "filter": "datum._window_MAX ==1"
+            }
+          ],
+          "name": "_MAX_CIRCLE_MARK",
+          "mark": {
+            "type": "circle",
+            "size": 150,
+            "fill": {
+              "expr": "_maxColour"
+            }
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "SumCML",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            }
+          }
+        },
+        {
+          "name": "_MIN_TEXT_LABEL_BACKGROUND",
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "stroke": "white",
+            "strokeWidth": 5,
+            "align": "center",
+            "dx": 0,
+            "dy": -15,
+            "color": {
+              "expr": "_minColour"
+            },
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "SumCML",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            },
+            "text": {
+              "field": "SumCML",
+              "format": ".2s"
+            }
+          },
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "sum",
+                  "field": "__1__",
+                  "as": "SumCML"
+                }
+              ]
+            },
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "_window_MIN"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "__0__",
+                  "order": "ascending"
+                }
+              ]
+            },
+            {
+              "filter": "datum._window_MIN ==1"
+            }
+          ]
+        },
+        {
+          "name": "_MIN_TEXT_LABEL",
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "align": "center",
+            "dx": 0,
+            "dy": -15,
+            "color": {
+              "expr": "_minColour"
+            },
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "SumCML",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            },
+            "text": {
+              "field": "SumCML",
+              "format": ".2s"
+            }
+          },
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "sum",
+                  "field": "__1__",
+                  "as": "SumCML"
+                }
+              ]
+            },
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "_window_MIN"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "__0__",
+                  "order": "ascending"
+                }
+              ]
+            },
+            {
+              "filter": "datum._window_MIN ==1"
+            }
+          ]
+        },
+        {
+          "name": "_MAX_TEXT_LABEL",
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "stroke": "white",
+            "strokeWidth": 5,
+            "align": "center",
+            "dx": 0,
+            "dy": -15,
+            "color": {
+              "expr": "_maxColour"
+            },
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "SumCML",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            },
+            "text": {
+              "field": "SumCML",
+              "format": ".2s"
+            }
+          },
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "sum",
+                  "field": "__1__",
+                  "as": "SumCML"
+                }
+              ]
+            },
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "_window_MAX"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "__0__",
+                  "order": "descending"
+                }
+              ]
+            },
+            {
+              "filter": "datum._window_MAX ==1"
+            }
+          ]
+        },
+        {
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "sum",
+                  "field": "__1__",
+                  "as": "SumCML"
+                }
+              ]
+            },
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "_window_MAX"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "__0__",
+                  "order": "descending"
+                }
+              ]
+            },
+            {
+              "filter": "datum._window_MAX ==1"
+            }
+          ],
+          "name": "_MAX_TEXT_MARK",
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "align": "center",
+            "dx": 0,
+            "dy": -15,
+            "color": {
+              "expr": "_maxColour"
+            },
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "SumCML",
+              "type": "quantitative",
+              "scale": {"zero": false},
+              "axis": null
+            },
+            "text": {
+              "field": "SumCML",
+              "format": ".2s"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
