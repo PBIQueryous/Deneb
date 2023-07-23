@@ -1,0 +1,152 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.6.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "MultiColour_DynamicText",
+      "description": "[No Description Provided]",
+      "author": "PBIQueryous",
+      "uuid": "eaf5bbb3-5bfd-48f1-99e4-7b7b6f686558",
+      "generated": "2023-07-22T18:19:12.297Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Category",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "_Expenses",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "params": [
+      {
+        "description": "_MAIN_FONT_",
+        "name": "_font",
+        "value": "wf_standard-font, sans-serif"
+      }
+    ],
+    "view": {"stroke": "transparent"},
+    "font": {"expr": "_font"},
+    "text": {
+      "font": {"expr": "_font"},
+      "size": 12
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#605E5C",
+      "labelFontSize": 12,
+      "title": null,
+      "titleFont": {"expr": "_font"},
+      "titleColor": "#252423",
+      "titleFontSize": 16,
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#C8C6C4",
+      "gridDash": [2, 3],
+      "gridOpacity": 0.5,
+      "labelFlush": false
+    }
+  },
+  "title": "Chart",
+  "data": {"name": "dataset"},
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "opacity": 1,
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {"field": "__1__"},
+        "color": {
+          "field": "__1__",
+          "scale": {
+            "scheme": "spectral"
+          },
+          "type": "quantitative",
+          "legend": {
+            "autosize": "fit",
+            "type": "gradient",
+            "titleAlign": "center",
+            "titleBaseline": "top",
+            "titleAnchor": "center",
+            "title": "Expenses",
+            "titlePadding": 2,
+            "gradientLength": 775,
+            "gradientOpacity": 0.5,
+            "gradientStrokeColor": "black",
+            "gradientStrokeWidth": 0.5,
+            "gradientThickness": 10,
+            "labelOffset": 5,
+            "format": ".1s",
+            "orient": "top",
+            "offset": 5,
+            "direction": "horizontal",
+            "fillColor": "ivory"
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "opacity": 1,
+        "color": {
+          "expr": "luminance (scale ( 'color', datum['__1__'] ) ) > 0.5 ? 'black' : 'white'"
+        },
+        "tooltip": true,
+        "dx": 5
+      },
+      "encoding": {
+        "x": {"datum": 0},
+        "text": {"field": "__0__"}
+      }
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "__0__",
+      "type": "nominal",
+      "axis": null,
+      "sort": {
+        "field": "__1__",
+        "op": "sum",
+        "order": "descending"
+      }
+    },
+    "x": {
+      "type": "quantitative",
+      "axis": {
+        "title": null,
+        "format": ".2s"
+      }
+    }
+  }
+}
