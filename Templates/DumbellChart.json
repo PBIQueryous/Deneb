@@ -1,0 +1,249 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.6.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": false,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Dumbbell Chart",
+      "description": "[No Description Provided]",
+      "author": "Pha Nguyen",
+      "uuid": "3383b33d-0ee9-422b-a1fb-45563353610d",
+      "generated": "2023-08-29T22:33:16.932Z",
+      "previewImageBase64PNG": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIUAAACVCAYAAAB2DDmnAAAAAXNSR0IArs4c6QAAEdhJREFUeF7tXWlsW9eV/kRS1EJRCynRlihZS+RFsUXHtuzErjOJHceNkyJ/gjZtUCdtkiYt2iCzIkBnfg0Gg0GBYoCZYDJoZ8adetAYSINxgzj1Ei9Na3mRZMmWtViyRJoURUrWRkoyyUeJGpxHyaPEosj7+Mz3RN0L+Iehe+8795yP527fPScjEAjMgReugUUayOCg4Hj4qgY4KDgmHtAABwUHBQcFx0B8DXBPEV9Hq64GB8WqM3n8AS8LiqamJmRlZcFqtaKxsRENDQ24evUqDAYD9u3bB61WG/8LvMaK08CyoBgbG8Po6CgCgQDsdjuKi4thsVjE/69fvx45OTn3Bzw7OwtBEDhQVhAE9Hr9ktIuCwqPx4Ph4WEYjUb09vYiLy9PBMTc3Bz279//JQAIQghhQYAhz7iC1MJFXUoDsq0pOCjSB2AcFOljS9lGwkEhmyrTpyMOivSxpWwj4aCQTZXp01FKQREOh5GRkQGdTpc+GkzDkaQMFOc7evCFcwgZmMPB6jI8sak2DdWZHkNKCSgmJibw6skWhEurgMgsikYH8IvndonnHryoTwMpAUW3y423LjuQVbJG1EBw0InfHrRhTXGx+jTCJUJKQOHz+fDKiau4t6YckZkILD4Pjjz/BPcUKgVgSkBBY/+04xYuO7zIyACerC7FwboNKlUJFytloLgzf2eSASBPp4M5xmUMN4nyGkgpKBaGm6fVclAob/uYEiTEp6ivr8f58+dFXkV3d/eSfIp4F2LDoRACkYgoCAeFihEBLL/QXOBTTE1NoaWlReRQlJWVLcmnIFBMT0/BYFj66vxuOIzgPCgMWi1M/ABLcWQkxaew2WwYHBwUweBwOCTxKbinUBwDCQuQsjUFB0XCNlG8IgeF4iZQnwAcFOqzieIScVAobgL1CcBBoT6bKC4RB4XiJlCfABwU6rOJ4hJxUChuAvUJwEGhPpsoLhEHheImUJ8AHBTqs4niEnFQKG4C9QnAQaE+myguUUJ8inXr1uHSpUuoqKhAX18f51MobraHK0BC8SmIR9HZ2Ql6zJObmxuTTyGEQjFDEQwLAgKzs+JoRDpeZubDHRnvPa4G6GHWUiWh+BQEhM8//1yMSeFyuWLyKTjJJq4dVFVBEsmGZQScjseiLXXX5QtNddtHEek4KBRRu7o/ykGhbvsoIh0HhSJqV/dHUwqKEZ9PjKhXbDRKfgx07949jI9PQKfTiiEceSxP+QGWElDMzMyg7foJzEz2YnY2grySbdhqe5Z5NASIfzjXhMZxAVka4KWqErz++BYeBIVZk8s3SAkovB43hrr/BbXVJlGa7r4pVNS/IwZqZSktvf346zY3si1lYrOsQTt+dagBhYWFLN3wunE0kBJQOO1dmHQeQVWlWRSnzz6Cko1/jtIyK5OBmm878G6zE/o1pWI73aAdH359uziN8CKfBlICisnJSdy88q+oKAlhbnYOHl8RbLt/hOzsbKaRUEScvzxzBV1hHTA3hxdKcvHevp3I5EfmTHqMVzkloCAherxe3B28RrZEWUUDahinjoWBtHs88E74kKnVoM5qxRqDId4Y+d8ZNZAyUMj1bJDiXCyUfJ0ORdxLMJo8fnUOivg6WnU1EuJTmEwmkU9RW1sLp9OpKJ/CGwohNB/SgHuKh4PXhPgU9Gm6Pu/v78fatWsV5VNwUMgHhKT4FJQJiOJSUNxLCmASK9/HvenpmCSbLwUt0WhgkrgWGBIECLRaBWDUalHIg59IRkmsXduKW1OozVN02B24OTSGwpxc7K4uQ35+vmQjqaUhB0USluh2OPFXX3RAMJdB8I3h+eIsvHdwTxI9qqMpB0USdvjtlTZ8cDcCXV7UO1hGXHj/2e0oKChIolflm3JQJGGDs+238NPrA8i1rgMiEdSOOfHzrz++4qcQDookQOH3+/Gzxuu45ReQOzeDN3duwpM1lUn0qI6mHBRJ2oFOWOluRwOgwmSCMQ12QxwUMoBioQvaZnNQLFJoqij+atuSLr6L4aD4yi+MgwLigRz3FNxTQC5PMT4+jq6hUVgMOahca1GUI7Li1hQdAwPwjfQgggxUVthQYY6yuZQqcoDizqAXf/PFDQxrcjAnBPFGTTFe3bNNqSGlJjMQjU4OPsXIyAh62v4dZYUCZiKzGL1Xjm173kCsN5Gp0KorGERk/i5G6vRxtLEV/z2hhW6eMFQzMYB/2rdNsfOOFeUp+m61YObuxygvj54Y9jkmUbLxxygtjXI2lShygOLY5Wt43xNCZmGUa7pp1IF//saTzHRFucafECgoJsXVq1fFtA7Ek6Rb03379n3pzUUqFppEAPY7j6B6ngB8szeIKtsPsWZNNGGdEkUOUJAHfO8P19EfiMCYMYu3bFX4Rv0mJYYjfjMhUHg8HnzyySd47LHHQIQbSvFAMStycnLuC06geNjxKei719uOQyfYEQwDJusePFr3tGLKow8PBIOYTXL6oH56JyZEWgI9bnrEYgHlRHnYRRKfYkGonp4eDA8PiytiOr1Tmk8xPDKCTL0eawsLFedTuEMhRPMdAUU6nZj1SEpxhUL3m5l1OuRK7Ifl25xPwaIthrpyTB/0ucW7mGK9PiWeItYwE5o+EtFRKtYUJIfaTjQ5KJZBBwdFciea3FMkkYKSe4pE/HZydfj0kZz+wKcPPn08oAEOCg4KDgoWz8oXmnyh+QBeOCg4KDgo5jXA1xR8TcHXFHxNEV8D3FNwT8E9Rfzfyf/XWGkLTfuAGy3uu8jN1GF3tRVFRUUsw71fd9V6itHRUTQ2NqKhoUEk28Qi2RCfIteQt6Ry5cr3Iccxt8c7hJ+cb8NkvgUzgWk8ZZjD3z67W1I8Trn4FM5gUKQkUCnR6x/61TlxKZLiU9y4cQN2u10MTUixL2ORbJaLT7GYL2BQOD7F6bZO/Nx5DzpTlP5mGHLig6c3wyyBBLxq+RQECCLaUNASAkQskk1YEGIGLVl8C0hEFLNeL8ldy+EpLt/qw180OZBND4MBlHn78f5zuyRNIat2+kjEevHWFDe9XoyOTIIyFK0pK8ZGiXO4HKCgcM4/++M1dPoF6CMCXrGtx/N1jyQyTL7QZNHScqAgsu9/HGuCbywHGXNzsFgj+P43G8S1CWuRAxT0TfJcJJdOq0W5yYQCiQ+DuaeQuCXt63PhVx86YC6uEHsYvtuPd9/aLImFLRco3MEgZuYXdoWZmRwUi2ybEj5Ff78L//OhAyUl0dgNIyP9ePvNR5kDtlNbDgpW38pePyWgCIVCOH68Db19QWg0EWzZXIBDz9VLei/JQcFuZNYWKQEFCRUMBsV3DbQ3pphQOolzOAcFq4nZ66cMFOyiLd2Cg0IuTcbuh4MCAF9ofhkgHBQcFA+4DA4KDgoOigUNyHVO0dTTjoDPAb3eiIoKG6ymaJ40lhKJRHD5xjkIPjeyDAWoqX0aaxTMi7biPIVcSWDkAMWA6zZcnb9ElTUXY2MBBHR12P7EYWg0FEAx8eLsu4Zx1zHUVpkxfHcSo8Ij2L77NeZ+Ev/i8jVXJCgmfT7x1bnFaJScGUgOUHS1nUG+phGF+dFcaL3OOVRv/RFzGOauthOw5LYhW68T++no18C25x11By2hW9Hz58/DarWiu7tbUtASOVBMh2AfnWqDZyCESCSIx3dV4uldGyV1LQco7D1NmB78CNVVZorCjE67DnU7f8AclmjA3owJ10eoXmeCfyoE15gF2/e8KfksR5JCFjVKyFO0traipaVFDFRC0Wxi8SmmpiaRm7s0ySZZQam93eHGr4/ZUWKpEbvzT/bi7Vdtkq68veHw/buPfK0W9I+1UKyO7u4T0M0MIhjOhPWRZ7HOyh6BJhwOo7XjFCJTbkCXh6pNz2NtoTQmWKJjoCkuVqywhEBBH3K73SIYKBmMFD5FosIuV6+trQeffDYCszmaz3R8wo63X9+MkpIS5u7l8BT0Ubol9fn9SYdhprUSZXomY1mys1dHfApmqy3RYGxsDP95pBVarQUzMwLMRQEcPrxLUnQ8OUGRbHQ8GuqqDEUgByioj8HBIXR1e6DVamCrLxdjcEkpHBSxtZbw9BFP8fGYV/Hap/rvrbdvYnKkFxpdFqzl21G9dq0kETjJZhm1rSRQDHndcLR/gCprFvyTIYwFy7Hja9JW+xwUaQKKns6LyL53CubiKB2w1xFE1WPvolDCKSIHRZqAwn2nEyP9/4Xa6uiupf12BI/u+jHz+cLC7kNNC03ind4aHkNZfh6slmJJp6Krck1BhJ+2G58C9xwIzmhQXvsMaqu2rvg1RYfTjb9r7MJEZi7mAtN4Z1MpXmrYwjyuVQkK8dwlGMS43y+yuUsLCtKCuPtvF67ieNgIzfybmi1+N/7+mQYx+zRLWdWgSDc29y//0IRf+zKgM0YD2u/wD+AfD32N+RyHgyJJPoUc+T7kOrxyezz46cUOuIQMFGki+MnWKuyrW8/iJMS6HBRpBApa8FLg91AgIF6mVZvNyJFwp7NqQbH4F54MR1NNnoJAQVvkhWLR6zkoWPxkk92OwTvjyMzSYWvdOlglnFF81e1LzQwk1/RBoOjwehEYH4A+z4T1petgyMxkUUvi0wftfS9duoSKigpQQhgpSWCYJXuIDSh/yS+O3kAGTJgJC6iuAl77zm5Je3o1eQrPQC8Gbh2FOS8C35QAveUgNtcfYNZkwtNHZ2cn6N6ftjdK8SmYRxejwZWr3bhwKYj8/GhGocC0A4dfrpV0BX/x1m14XZMw5GXBtrEUZRJf0w8Iwn1pTZTvg5HSR407r/0OlaYeZM0zuLqdRtTYXllyS5o0n+L27ds4c+YM9u/fD5fLpRifQi5QXGvtwWcniZdRPg+KXnzvtW3MN659fU4c+U0XDEYrpqfHsKFWh1df3iNJTDmuztubfwdzZisKCqIZm7ru5MO2mz3xXsKeIt5IV9KFGD1f/PTETbg9M9BkhPDk3ho07KiON8QH/n7ufBuarmuQnZ0v/m1WcOKN17YyczTlWlMMejxwdH+IHIwiBAOKKw6htpY9leWqBAUZgWj1lNCNtm5SORlNzT04ddoLc3EV9YhIpB+HX2mQdIcih6egheZt2pIGg9DSltRk4rsP5p96kg38fj9One7C0FAYGo2AA89swoYNZZJ6lQsUfEsqSf3yN/L5fOLOxWg0Su6cg0Ky6tK3IQdF+tpW8sg4KCSrLn0bnmnpwvCgDwWFedi1dR0s+dEdDUvhx9ws2lJ53RvtffjNx30oKiqHf3IE9XV6fPulJ5il5qBgVpl6G3x2shkdPXnQ66NvUjMid/DW648zvyUVwmEcP3cdd4f8MJnzcfDPNsIsYfG7as8p1ASRS5du4ewFOmGtQCQyA71uAIe/u4sZFH9q7MLpC6MoMpVj0ncX62tm8J1v7mYeKgcFs8rkbzA9PY3f/74D3qEgsvSzOHRoC8rL2Z9Cfvy/VzDgtdy/2NOgDz/4/l7OvJLfZKnrkcJDU2HlVC5IePFiNy78cQImU5l4F1NhDeDlb3FPkToLqvBLgiDg7Lmb8HinUFiYg4MH6sQg+6yFafqg+BAnT55c8XwKViWttPr0el2r1cbM5xFvPEygoFfflBAmFp+C3lPo9Vnxvsn/rgINJM2nWBgDLYiIgbVUfAoVjJOLIJMGmDxFst+kaDg0Be3ZI42IQmA8duwYDhw4IALz8uXL2LlzJ0pLS5lFI49Hqa/I1T711FOSrrsXy0PBXLKysmCz2ZhlOXr0KHbs2CHGKqer/Pb2drz44ovM/VCDO3fugDI5UdShTZvYo+qI5ySBQCCauOohF1IgsbcoNjcxuGjOYy0LucwqKytRX1+P5uZm1NTUSErz1NvbK7ajqZAKxfNiLYvlKS8vF6dWMgZrOXv2LGjnsXHjRpHjQbeue/fulXTrSlmcTp8+Lf7wSEdSSspAQesRovXRr4HykEkxAgVho7mQQi1RvCYiEb/wwguSQEF9kDzkKehXKuXF+WJ5CJxEcCZPESthWywD0ZRMhX44s7Oz4njIY2zYsIHZpivKUzCPjjdQTAMp8xSKjZB/mFkDHBTMKkv/BhwU6W9j5hFyUDCrLP0bcFCkv42ZR8hBwayy9G/wf5yQRCt+VdgmAAAAAElFTkSuQmCC"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Generation",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      }
+    ]
+  },
+  "config": {
+    "autosize": {
+      "type": "fit",
+      "contains": "padding"
+    },
+    "background": "#F7F7F7",
+    "padding": {
+      "top": 20,
+      "bottom": 20,
+      "left": 20,
+      "right": 20
+    },
+    "view": {"stroke": null},
+    "font": "Tahoma",
+    "axis": {
+      "ticks": false,
+      "labelFontSize": 13,
+      "labelColor": "black",
+      "title": null
+    },
+    "axisX": {
+      "domain": false,
+      "gridOpacity": 0.5,
+      "tickCount": 8,
+      "labelPadding": 5,
+      "labelAngle": 0,
+      "labelFlush": false
+    },
+    "axisY": {
+      "domainColor": "#433828",
+      "domainOpacity": 0.3,
+      "labelPadding": 15
+    },
+    "legend": {
+      "orient": "none",
+      "direction": "horizontal",
+      "symbolSize": 150,
+      "symbolStrokeColor": "transparent",
+      "labelFontSize": 12,
+      "labelColor": "#433828",
+      "titleOrient": "left",
+      "titlePadding": 10,
+      "titleFontSize": 13,
+      "titleFontWeight": "normal"
+    },
+    "rect": {
+      "align": "left",
+      "width": 22,
+      "height": 5,
+      "color": "black"
+    },
+    "line": {
+      "size": 1.5,
+      "color": "#9EDCDD"
+    }
+  },
+  "data": {
+    "values": [
+      {
+        "Market": "A",
+        "Product": "AA",
+        "Units": 147.8
+      },
+      {
+        "Market": "A",
+        "Product": "AB",
+        "Units": 108.2
+      },
+      {
+        "Market": "A",
+        "Product": "AC",
+        "Units": 53.9
+      },
+      {
+        "Market": "A1",
+        "Product": "AA",
+        "Units": 95.2
+      },
+      {
+        "Market": "A1",
+        "Product": "AB",
+        "Units": 41.7
+      },
+      {
+        "Market": "A1",
+        "Product": "AC",
+        "Units": 16.8
+      },
+      {
+        "Market": "E",
+        "Product": "AA",
+        "Units": 27.8
+      },
+      {
+        "Market": "E",
+        "Product": "AB",
+        "Units": 19.1
+      },
+      {
+        "Market": "E",
+        "Product": "AC",
+        "Units": 4.6
+      },
+      {
+        "Market": "A2",
+        "Product": "AA",
+        "Units": 108.5
+      },
+      {
+        "Market": "A2",
+        "Product": "AB",
+        "Units": 82.7
+      },
+      {
+        "Market": "A2",
+        "Product": "AC",
+        "Units": 38.5
+      },
+      {
+        "Market": "NA",
+        "Product": "AA",
+        "Units": 83.8
+      },
+      {
+        "Market": "NA",
+        "Product": "AB",
+        "Units": 41.9
+      },
+      {
+        "Market": "NA",
+        "Product": "AC",
+        "Units": 6.9
+      },
+      {
+        "Market": "O",
+        "Product": "AA",
+        "Units": 59.1
+      },
+      {
+        "Market": "O",
+        "Product": "AB",
+        "Units": 31.8
+      },
+      {
+        "Market": "O",
+        "Product": "AC",
+        "Units": 19.2
+      }
+    ]
+  },
+  "width": 400,
+  "height": 450,
+  "encoding": {
+    "y": {
+      "field": "Units",
+      "type": "quantitative"
+    },
+    "x": {
+      "field": "Market",
+      "type": "nominal",
+      "sort": {
+        "field": "Units",
+        "order": "descending"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "opacity": 0.35,
+        "cornerRadius": 15,
+        "size": 10,
+        "tooltip": false
+      },
+      "encoding": {
+        "detail": {
+          "field": "Market",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "strokeWidth": 0.85,
+        "stroke": "black",
+        "strokeOpacity": 0.95,
+        "tooltip": true
+      },
+      "encoding": {
+        "color": {
+          "field": "Product",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              "AA",
+              "AB",
+              "AC"
+            ],
+            "range": [
+              "#03a3c8",
+              "#f2cf5b",
+              "#6b6ecf"
+            ]
+          },
+          "legend": null
+        },
+        "size": {"value": 150},
+        "opacity": {"value": 0.75}
+      }
+    }
+  ]
+}
