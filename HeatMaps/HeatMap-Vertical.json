@@ -1,0 +1,242 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.6.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "HeatMap - Vertical",
+      "description": "[No Description Provided]",
+      "author": "PBI Queryous",
+      "uuid": "1734db51-0f07-4658-b834-5084ce90127d",
+      "generated": "2023-10-01T17:58:19.331Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "DayNameShort",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "MonthShort",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__2__",
+        "name": "Streams",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "bar": {},
+    "line": {
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 75
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+    "text": {
+      "font": "Segoe UI",
+      "fontSize": 12,
+      "fill": "#D2D0CE"
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#D2D0CE",
+      "labelFontSize": 12,
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleColor": "#FFFFFF",
+      "titleFontSize": 16,
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#605E5C",
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleFontSize": 16,
+      "titleColor": "#FFFFFF",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#D2D0CE"
+    },
+    "legend": {
+      "titleFont": "Segoe UI",
+      "titleFontWeight": "bold",
+      "titleColor": "#D2D0CE",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#D2D0CE",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "data": {"name": "dataset"},
+  "spacing": 5,
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "name": "ColBar",
+          "height": 50,
+          "mark": {
+            "type": "bar",
+            "width": {"band": 0.95},
+            "tooltip": true,
+            "color": "#1DB954"
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "sort": null,
+              "axis": null
+            },
+            "y": {
+              "field": "__2__",
+              "type": "quantitative",
+              "aggregate": "sum",
+              "scale": {
+                "reverse": false
+              },
+              "axis": {
+                "labels": false,
+                "title": null
+              }
+            }
+          },
+          "opacity": {
+            "condition": {
+              "test": {
+                "field": "_selected_",
+                "equal": "off"
+              },
+              "value": 0.3
+            },
+            "value": 1
+          }
+        }
+      ]
+    },
+    {
+      "spacing": 5,
+      "hconcat": [
+        {
+          "name": "MainMatrix",
+          "mark": {
+            "type": "rect",
+            "tooltip": {
+              "content": "data"
+            }
+          },
+          "encoding": {
+            "x": {
+              "field": "__0__",
+              "type": "nominal",
+              "sort": null,
+              "axis": {"title": null}
+            },
+            "y": {
+              "field": "__1__",
+              "axis": {"title": null},
+              "sort": null
+            },
+            "fill": {
+              "field": "__2__",
+              "type": "quantitative",
+              "legend": null
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "field": "_selected_",
+                  "equal": "off"
+                },
+                "value": 0.3
+              },
+              "value": 1
+            }
+          }
+        },
+        {
+          "name": "RowBar",
+          "width": 70,
+          "mark": {
+            "type": "bar",
+            "height": {"band": 0.95},
+            "tooltip": true,
+            "color": "#1DB954"
+          },
+          "encoding": {
+            "y": {
+              "field": "__1__",
+              "axis": null,
+              "sort": null
+            },
+            "x": {
+              "field": "__2__",
+              "type": "quantitative",
+              "aggregate": "sum",
+              "axis": {
+                "labels": false,
+                "title": null
+              }
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "field": "_selected_",
+                  "equal": "off"
+                },
+                "value": 0.3
+              },
+              "value": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
