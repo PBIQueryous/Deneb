@@ -1,0 +1,58 @@
+{
+  "data": {"name": "dataset"},
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "radius": 105,
+        "tooltip": true,
+        "color": "#e13b42"
+      },
+      "encoding": {
+        "theta": {
+          "field": "sel%",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "arc",
+        "outerRadius": 95,
+        "innerRadius": 93.5,
+        "color": "#000000"
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "datum['sel%']/100",
+          "as": "_label"
+        },
+        {
+          "calculate": "datum['sel%']/1.1",
+          "as": "_offset"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "radius": 145,
+        "size": 25,
+        "fontWeight": 600,
+        "color": "#000000"
+      },
+      "encoding": {
+        "text": {
+          "field": "_label",
+          "aggregate": "sum",
+          "format": ",.1%"
+        },
+        "theta": {
+          "field": "_offset",
+          "type": "quantitative",
+          "scale": {"domain": [0, 100]}
+        }
+      }
+    }
+  ]
+}
