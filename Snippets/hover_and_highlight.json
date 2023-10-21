@@ -1,5 +1,24 @@
 {
-  "data": {"name": "dataset"},
+  "data": {"values": [
+      {
+        "Month": 1,
+        "Hour": 100,
+        "Loss": 6000,
+        "Value": 0
+      },
+      {
+        "Month": 2,
+        "Hour": 150,
+        "Loss": 7500,
+        "Value": 0
+      },
+      {
+        "Month": 3,
+        "Hour": 160,
+        "Loss": 8500,
+        "Value": 0
+      }
+    ]},
   "mark": {
     "type": "bar",
     "tooltip": true,
