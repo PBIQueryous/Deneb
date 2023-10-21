@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+  "data": {
+    "values": [
+      {"Project Name":"Project A", "Project Estimate": "12000000",  "Funded": "12000000","Budget":"12000000", "Comment":"This is some old text"},
+{"Project Name":"Project B", "Project Estimate": "12000000",  "Funded": "9000000","Budget":"9000000", "Comment":"This is some common text"},
+{"Project Name":"Project C", "Project Estimate": "6000000",  "Funded": "6000000","Budget":"6000000", "Comment":"This is some new text"}
+    ]
+  },
+  "transform": [
+      
+      {"fold": ["Project Estimate","Budget","Funded","Comment"]
+      }
+  ],
+  "config": {
+    "concat": {"spacing": 0},
+    "facet": {"spacing": 10}
+    },
+  "facet": {
+    "row": {
+      "field": "Project Name",
+      "header": {
+        "labelAlign": "left",
+        "labelAngle": 0,
+        "labelPadding": 10
+      },
+      "title": null
+    }
+        },
+  "spec": {
+  "vconcat":[
+    
+    {
+    "mark": {
+      "type": "text",
+      
+    },
+    "transform": [
+      {"filter": {"not": {"field": "key" , "equal": "Comment"}}}
+      
+      ],
+    "width": 220,
+    "encoding": {
+      
+      "x": {"field": "key", "type": "nominal",
+          "axis": {
+            "title": null,
+            "orient": "top",
+            "ticks": false,
+            "labelAngle": 0
+            }
+        },
+      "text": {"field": "value", "type": "quantitative", "format": "0.2s"}
+    }
+    },
+    {"mark": {
+      "type": "text",
+      "align": "left",
+      "dir": "rtl"
+      },
+    "transform": [
+        {"filter": {"field": "key" , "equal": "Comment"}}
+      
+      ],
+    "encoding": {
+
+      "text": {
+        "field": "value", "type": "nominal"},
+      "x": {"field": "key", "type": "nominal", "axis":null}
+    }
+    }
+    
+  ]
+}
+}
