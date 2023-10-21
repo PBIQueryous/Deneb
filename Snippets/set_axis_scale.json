@@ -1,0 +1,8 @@
+{
+  "data": {"values": [{"x": 50, "c": 1}, {"x": 250, "c": 2}]},
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "x", "type": "quantitative", "scale": {"domain": [0, 500]}},
+    "color": {"field": "c", "type": "ordinal"}
+  }
+}
