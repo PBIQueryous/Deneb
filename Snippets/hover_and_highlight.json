@@ -1,0 +1,42 @@
+{
+  "data": {"name": "dataset"},
+  "mark": {
+    "type": "bar",
+    "tooltip": true,
+    "size": 25,
+
+    "stroke": "#f65038",
+    "fill": {
+      "expr": "pbiPatternSVG('diagonal-stripe-1', 'lightgray', 'white')"
+    }
+  },
+  "encoding": {
+    "fillOpacity": {
+      "value": {
+        "expr": "datum['__selected__']=='off'?0.2:1"
+      }
+    },
+    "strokeWidth": {
+      "value": {
+        "expr": "datum['__selected__']=='off'?0.2:2"
+      }
+    },
+    "x": {
+      "field": "Month",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "labelColor": "black",
+        "labelFont": "Segoe UI Semibold"
+      }
+    },
+    "y": {
+      "field": "Loss",
+      "type": "quantitative",
+      "scale": {"domain": [0, 20000]},
+      "title": null,
+      "axis": null
+    }
+  }
+}
