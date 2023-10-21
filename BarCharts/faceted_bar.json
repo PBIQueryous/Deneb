@@ -1,0 +1,704 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {
+        "Percent": 0.001,
+        "Team": "ALL",
+        "type": "total",
+        "ID": "1",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "AH"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "ALL",
+        "type": "total",
+        "ID": "1",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "FLV"
+      },
+      {
+        "Percent": 0.247,
+        "Team": "ALL",
+        "type": "total",
+        "ID": "1",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "KFZ"
+      },
+      {
+        "Percent": 0.056,
+        "Team": "ALL",
+        "type": "total",
+        "ID": "1",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "KV"
+      },
+      {
+        "Percent": 0.03,
+        "Team": "ALL",
+        "type": "total",
+        "ID": "1",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "LV"
+      },
+      {
+        "Percent": 0.044,
+        "Team": "ALL",
+        "type": "total",
+        "ID": "1",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "RS"
+      },
+      {
+        "Percent": 0.17,
+        "Team": "ALL",
+        "type": "total",
+        "ID": "1",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "SV"
+      },
+      {
+        "Percent": 0.064,
+        "Team": "ALL",
+        "type": "total",
+        "ID": "1",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "UV"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "ALL",
+        "type": "part",
+        "ID": "1",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "AH"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "ALL",
+        "type": "part",
+        "ID": "1",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "FLV"
+      },
+      {
+        "Percent": 0.067,
+        "Team": "ALL",
+        "type": "part",
+        "ID": "1",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "KFZ"
+      },
+      {
+        "Percent": 0.042,
+        "Team": "ALL",
+        "type": "part",
+        "ID": "1",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "KV"
+      },
+      {
+        "Percent": 0.015,
+        "Team": "ALL",
+        "type": "part",
+        "ID": "1",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "LV"
+      },
+      {
+        "Percent": 0.013,
+        "Team": "ALL",
+        "type": "part",
+        "ID": "1",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "RS"
+      },
+      {
+        "Percent": 0.077,
+        "Team": "ALL",
+        "type": "part",
+        "ID": "1",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "SV"
+      },
+      {
+        "Percent": 0.036,
+        "Team": "ALL",
+        "type": "part",
+        "ID": "1",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "UV"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "Team A",
+        "type": "total",
+        "ID": "2",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "AH"
+      },
+      {
+        "Percent": 0.002,
+        "Team": "Team A",
+        "type": "total",
+        "ID": "2",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "FLV"
+      },
+      {
+        "Percent": 0.306,
+        "Team": "Team A",
+        "type": "total",
+        "ID": "2",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "KFZ"
+      },
+      {
+        "Percent": 0.081,
+        "Team": "Team A",
+        "type": "total",
+        "ID": "2",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "KV"
+      },
+      {
+        "Percent": 0.048,
+        "Team": "Team A",
+        "type": "total",
+        "ID": "2",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "LV"
+      },
+      {
+        "Percent": 0.057,
+        "Team": "Team A",
+        "type": "total",
+        "ID": "2",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "RS"
+      },
+      {
+        "Percent": 0.215,
+        "Team": "Team A",
+        "type": "total",
+        "ID": "2",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "SV"
+      },
+      {
+        "Percent": 0.093,
+        "Team": "Team A",
+        "type": "total",
+        "ID": "2",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "UV"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "Team A",
+        "type": "part",
+        "ID": "2",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "AH"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "Team A",
+        "type": "part",
+        "ID": "2",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "FLV"
+      },
+      {
+        "Percent": 0.055,
+        "Team": "Team A",
+        "type": "part",
+        "ID": "2",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "KFZ"
+      },
+      {
+        "Percent": 0.028,
+        "Team": "Team A",
+        "type": "part",
+        "ID": "2",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "KV"
+      },
+      {
+        "Percent": 0.01,
+        "Team": "Team A",
+        "type": "part",
+        "ID": "2",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "LV"
+      },
+      {
+        "Percent": 0.012,
+        "Team": "Team A",
+        "type": "part",
+        "ID": "2",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "RS"
+      },
+      {
+        "Percent": 0.056,
+        "Team": "Team A",
+        "type": "part",
+        "ID": "2",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "SV"
+      },
+      {
+        "Percent": 0.026,
+        "Team": "Team A",
+        "type": "part",
+        "ID": "2",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "UV"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "Team B",
+        "type": "total",
+        "ID": "3",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "AH"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "Team B",
+        "type": "total",
+        "ID": "3",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "FLV"
+      },
+      {
+        "Percent": 0.295,
+        "Team": "Team B",
+        "type": "total",
+        "ID": "3",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "KFZ"
+      },
+      {
+        "Percent": 0.055,
+        "Team": "Team B",
+        "type": "total",
+        "ID": "3",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "KV"
+      },
+      {
+        "Percent": 0.025,
+        "Team": "Team B",
+        "type": "total",
+        "ID": "3",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "LV"
+      },
+      {
+        "Percent": 0.051,
+        "Team": "Team B",
+        "type": "total",
+        "ID": "3",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "RS"
+      },
+      {
+        "Percent": 0.2,
+        "Team": "Team B",
+        "type": "total",
+        "ID": "3",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "SV"
+      },
+      {
+        "Percent": 0.063,
+        "Team": "Team B",
+        "type": "total",
+        "ID": "3",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "UV"
+      },
+      {
+        "Percent": 0,
+        "Team": "Team B",
+        "type": "part",
+        "ID": "3",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "AH"
+      },
+      {
+        "Percent": 0,
+        "Team": "Team B",
+        "type": "part",
+        "ID": "3",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "FLV"
+      },
+      {
+        "Percent": 0.083,
+        "Team": "Team B",
+        "type": "part",
+        "ID": "3",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "KFZ"
+      },
+      {
+        "Percent": 0.042,
+        "Team": "Team B",
+        "type": "part",
+        "ID": "3",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "KV"
+      },
+      {
+        "Percent": 0.009,
+        "Team": "Team B",
+        "type": "part",
+        "ID": "3",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "LV"
+      },
+      {
+        "Percent": 0.014,
+        "Team": "Team B",
+        "type": "part",
+        "ID": "3",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "RS"
+      },
+      {
+        "Percent": 0.082,
+        "Team": "Team B",
+        "type": "part",
+        "ID": "3",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "SV"
+      },
+      {
+        "Percent": 0.023,
+        "Team": "Team B",
+        "type": "part",
+        "ID": "3",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "UV"
+      },
+      {
+        "Percent": 0,
+        "Team": "Team C",
+        "type": "total",
+        "ID": "4",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "AH"
+      },
+      {
+        "Percent": 0,
+        "Team": "Team C",
+        "type": "total",
+        "ID": "4",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "FLV"
+      },
+      {
+        "Percent": 0.004,
+        "Team": "Team C",
+        "type": "total",
+        "ID": "4",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "KFZ"
+      },
+      {
+        "Percent": 0.006,
+        "Team": "Team C",
+        "type": "total",
+        "ID": "4",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "KV"
+      },
+      {
+        "Percent": 0.002,
+        "Team": "Team C",
+        "type": "total",
+        "ID": "4",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "LV"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "Team C",
+        "type": "total",
+        "ID": "4",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "RS"
+      },
+      {
+        "Percent": 0.003,
+        "Team": "Team C",
+        "type": "total",
+        "ID": "4",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "SV"
+      },
+      {
+        "Percent": 0.003,
+        "Team": "Team C",
+        "type": "total",
+        "ID": "4",
+        "SortOrder": "1",
+        "color": "#005CA9",
+        "Category": "UV"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "Team C",
+        "type": "part",
+        "ID": "4",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "AH"
+      },
+      {
+        "Percent": 0.001,
+        "Team": "Team C",
+        "type": "part",
+        "ID": "4",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "FLV"
+      },
+      {
+        "Percent": 0.054,
+        "Team": "Team C",
+        "type": "part",
+        "ID": "4",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "KFZ"
+      },
+      {
+        "Percent": 0.068,
+        "Team": "Team C",
+        "type": "part",
+        "ID": "4",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "KV"
+      },
+      {
+        "Percent": 0.041,
+        "Team": "Team C",
+        "type": "part",
+        "ID": "4",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "LV"
+      },
+      {
+        "Percent": 0.012,
+        "Team": "Team C",
+        "type": "part",
+        "ID": "4",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "RS"
+      },
+      {
+        "Percent": 0.107,
+        "Team": "Team C",
+        "type": "part",
+        "ID": "4",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "SV"
+      },
+      {
+        "Percent": 0.086,
+        "Team": "Team C",
+        "type": "part",
+        "ID": "4",
+        "SortOrder": "2",
+        "color": "#86C2EB",
+        "Category": "UV"
+      }
+    ]
+  },
+  "transform": [
+    {"calculate": "1 * 0", "as": "Zero"},
+    {"calculate": "1 * 1", "as": "One"},
+    {
+      "stack": "Percent",
+      "as": ["v1", "v2"],
+      "groupby": ["Category", "Team"],
+      "sort": [{"field": "SortOrder", "order": "descending"}]
+    },
+    {"calculate": "datum.v2-datum.v1", "as": "var"},
+    {"calculate": "datum.var<0.065?datum.v1+0.09:datum.v2", "as": "v2_pos"}
+  ],
+  "facet": {"field": "Category", "type": "ordinal"},
+  "spec": {
+    "height": 140,
+    "view": {"strokeWidth": 0},
+    "encoding": {"y": {"field": "Team", "type": "ordinal", "axis": null}},
+    "layer": [
+      {
+        "name": "BackgroundBAR",
+        "mark": {
+          "type": "bar",
+          "color": "#DEE2E6",
+          "height": 5,
+          "cornerRadiusEnd": 4,
+          "yOffset": 10
+        },
+        "encoding": {
+          "x": {
+            "field": "One",
+            "type": "quantitative",
+            "axis": {
+              "title": null,
+              "offset": 10,
+              "tickCount": 5,
+              "format": "0.0%"
+            },
+            "stack": false
+          }
+        }
+      },
+      {
+        "name": "BAR",
+        "mark": {"type": "bar", "height": 5, "yOffset": 10},
+        "encoding": {
+          "x": {"field": "v1", "type": "quantitative", "axis": null},
+          "x2": {"field": "v2"},
+          "color": {
+            "field": "type",
+            "type": "nominal",
+            "legend": {"orient": "bottom", "title": null}
+          }
+        }
+      },
+      {
+        "name": "text",
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "color": "#005CA9",
+          "font": "Segoe UI",
+          "fontSize": 10,
+          "fontStyle": "normal",
+          "fontWeight": "bold"
+        },
+        "encoding": {
+          "x": {"field": "Zero", "type": "quantitative"},
+          "text": {"field": "Team", "type": "nominal"}
+        }
+      },
+      {
+        "name": "DATA_LABEL",
+        "transform": [{"filter": "datum.type =='part'"}],
+        "mark": {
+          "type": "text",
+          "color": "#005CA9",
+          "align": "left",
+          "fontSize": 8,
+          "font": "Segoe UI",
+          "fontStyle": "normal",
+          "fontWeight": "bold",
+          "xOffset": 0,
+          "yOffset": 20
+        },
+        "encoding": {
+          "x": {"field": "v2", "type": "quantitative"},
+          "color": {
+            "field": "type",
+            "type": "nominal",
+            "legend": {"orient": "bottom"}
+          },
+          "text": {"field": "Percent", "format": "0.0%"}
+        }
+      },
+      {
+        "name": "DATA_LABEL2",
+        "transform": [{"filter": "datum.type =='total'"}],
+        "mark": {
+          "type": "text",
+          "color": "#005CA9",
+          "align": "left",
+          "fontSize": 8,
+          "font": "Segoe UI",
+          "fontStyle": "normal",
+          "fontWeight": "bold",
+          "xOffset": 0,
+          "yOffset": 20
+        },
+        "encoding": {
+          "x": {"field": "v2_pos", "type": "quantitative"},
+          "color": {
+            "field": "type",
+            "type": "nominal",
+            "legend": {"orient": "bottom"}
+          },
+          "text": {"field": "Percent", "format": "0.0%"}
+        }
+      }
+    ]
+  },
+  "columns": 2
+}
