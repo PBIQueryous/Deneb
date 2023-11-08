@@ -1,0 +1,440 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.6.0.2",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.16.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "IBCS_Column_Chart",
+      "description": "IBCS-Inspired-Column-Chart",
+      "author": "PBI-Queryous",
+      "uuid": "93559221-7414-4e11-ab66-de70f332c489",
+      "generated": "2023-11-08T08:19:22.809Z",
+      "previewImageBase64PNG": "data:image/png;base64,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"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Date",
+        "description": "Must be date field (dd/MM/YY)",
+        "type": "dateTime",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "AC",
+        "description": "Actual",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__2__",
+        "name": "PL",
+        "description": "Plan",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__3__",
+        "name": "PY",
+        "description": "Previous Year / Budget / any other comparative measure",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "bar": {},
+    "line": {
+      "stroke": "dimgrey",
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 150
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+    "text": {
+      "font": "Segoe UI",
+      "fontSize": 12,
+      "fill": "#605E5C"
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#605E5C",
+      "labelFontSize": 12,
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleColor": "#252423",
+      "titleFontSize": 16,
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#C8C6C4",
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleFontSize": 16,
+      "titleColor": "#252423",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C"
+    },
+    "legend": {
+      "titleFont": "Segoe UI",
+      "titleFontWeight": "bold",
+      "titleColor": "#605E5C",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "data": {"name": "dataset"},
+  "params": [
+    {"name": "bwActual", "value": 0.8},
+    {"name": "bwBudget", "value": 0.8},
+    {"name": "bwPlan", "value": 0.8},
+    {"name": "bwDelta", "value": 0.15},
+    {
+      "name": "_strokeColour",
+      "value": "black"
+    },
+    {
+      "name": "_actualColour",
+      "value": "#404040"
+    },
+    {
+      "name": "_forecastColour",
+      "value": "#f0eee9"
+    },
+    {
+      "name": "_forecastPlanColour",
+      "value": "url(#diagonal-stripe-1-30)"
+    },
+    {
+      "name": "_planColour",
+      "value": "white"
+    },
+    {
+      "name": "textMultiplier",
+      "value": 4.5
+    },
+    {
+      "name": "labelMultiplier",
+      "value": 4
+    },
+    {
+      "name": "_deltaOffsetNEG",
+      "value": 1.1
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "now()",
+      "as": "_now"
+    },
+    {
+      "calculate": "datetime( now())",
+      "as": "_datetime"
+    },
+    {
+      "calculate": "year(utcFormat(datetime( now()), '%d-%b-%y'))",
+      "as": "_currentYearUtc"
+    },
+    {
+      "calculate": "utcFormat(datetime( now()), '%d-%b-%y')",
+      "as": "_utcFormat"
+    },
+    {
+      "name": "_DATE_TODAY",
+      "calculate": "datetime( now()) ",
+      "as": "_dateToday"
+    },
+    {
+      "name": "_DATE_TEST",
+      "calculate": "datum._dateToday > datum['__0__'] ? 0 : 1 ",
+      "as": "_dateTest"
+    },
+    {
+      "calculate": "datum['__1__'] - datum['__2__']",
+      "as": "__varianceToPlan"
+    },
+    {
+      "calculate": "datum.__varianceToPlan > 0 ? -1: 1",
+      "as": "__deltaOffsetMultiplier"
+    },
+    {
+      "calculate": "datum.__varianceToPlan > 0 ? 1.4 : 1.99",
+      "as": "__deltaOffsetDivider"
+    },
+    {
+      "calculate": "(( datum['__1__'] - datum['__2__'] ) / datum['__2__'])",
+      "as": "__variancePCT"
+    },
+    {
+      "calculate": "(bwDelta-(bwDelta*2))",
+      "as": "_deltaWidth"
+    },
+    {
+      "calcaulte": "(bwPlan - bwDelta)",
+      "as": "_offsetPlanDelta"
+    },
+    {
+      "calcuate": "datum.__variancePCT > 0 ? -2 : 1",
+      "as": "_deltaOffset"
+    },
+    {
+      "calculate": "datum['__1__'] > datum['__2__'] ? '#c3f550' : 'tomato'",
+      "as": "_deltaColourFormat"
+    },
+    {
+      "calculate": "datum['__1__'] > datum['__2__'] ? _strokeColour : 'black'",
+      "as": "_deltaStrokeFormat"
+    },
+    {
+      "calculate": "(bwPlan) * -0.169",
+      "as": "_globalOffset"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "__0__",
+      "type": "nominal",
+      "axis": {
+        "title": null,
+        "domain": true,
+        "labels": true,
+        "formatType": "pbiFormat",
+        "format": "MMM-yy",
+        "labelAngle": 0,
+        "labelAlign": "center",
+        "labelPadding": 5,
+        "labelOffset": 0,
+        "labelFontSize": {
+          "expr": " (bandwidth('x') / textMultiplier ) * bwActual+3"
+        }
+      }
+    },
+    "y": {
+      "field": "__1__",
+      "type": "quantitative",
+      "axis": null,
+      "scale": {"zero": false}
+    }
+  },
+  "description": "_LAYER_",
+  "layer": [
+    {
+      "description": "PLAN_BAR",
+      "mark": {
+        "type": "bar",
+        "xOffset": {
+          "expr": "(bandwidth('x')) * datum._globalOffset"
+        },
+        "width": {
+          "expr": "(bandwidth('x')) * (bwPlan )"
+        },
+        "fill": {
+          "expr": "datum._dateToday > datum['__0__'] ? _planColour : _forecastPlanColour"
+        },
+        "stroke": {
+          "expr": "_strokeColour"
+        },
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "y": {"field": "__2__"}
+      }
+    },
+    {
+      "name": "DELTA_MARK",
+      "description": "DeltaBar",
+      "mark": {
+        "type": "bar",
+        "tooltip": true,
+        "width": {
+          "expr": "(bandwidth('x')) * (bwDelta)-(bwDelta*2)"
+        },
+        "xOffset": {
+          "expr": " (bandwidth('x') * ((bwPlan - bwDelta) * datum.__deltaOffsetMultiplier) / datum.__deltaOffsetDivider)"
+        },
+        "color": {
+          "expr": "datum._dateToday > datum['__0__'] ? datum._deltaColourFormat : pbiPatternSVG('diagonal-stripe-3-10', datum._deltaColourFormat, 'grey')"
+        },
+        "stroke": {
+          "expr": "datum._deltaStrokeFormat"
+        },
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "y2": {"field": "__2__"}
+      }
+    },
+    {
+      "description": "ACTUAL_BAR",
+      "mark": {
+        "type": "bar",
+        "width": {
+          "expr": "(bandwidth('x')) * (bwActual )"
+        },
+        "color": {
+          "expr": "datum._dateTest == 0 ? _actualColour : _forecastColour"
+        },
+        "stroke": {
+          "expr": "_strokeColour"
+        },
+        "strokeWidth": 0.6
+      }
+    },
+    {
+      "description": "TRIANGLE_RIGHT",
+      "mark": {
+        "type": "point",
+        "xOffset": {
+          "expr": "(bandwidth('x') * -(bwActual / 2.8))"
+        },
+        "shape": "triangle-right",
+        "fill": "lightgrey",
+        "align": "left",
+        "size": {
+          "expr": " (bandwidth('x') * bwActual * 5 )"
+        },
+        "stroke": "black",
+        "strokeWidth": 1,
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "__0__",
+          "axis": {"label": null}
+        },
+        "y": {
+          "field": "__3__",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "axis": null
+        }
+      }
+    },
+    {
+      "description": "ACTUAL_DATA_LABELS",
+      "mark": {
+        "type": "text",
+        "color": {
+          "expr": "datum._dateTest == 0 ? 'white' : 'black'"
+        },
+        "fontSize": {
+          "expr": " ( bandwidth('x')/ labelMultiplier ) * bwActual"
+        },
+        "yOffset": 3,
+        "xOffset": -4,
+        "baseline": "top",
+        "align": "left",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "__1__",
+          "type": "quantitative",
+          "format": ".2s"
+        }
+      }
+    },
+    {
+      "description": "VARIANCE_DATA_LABEL_BACKGROUND",
+      "mark": {
+        "type": "text",
+        "color": "white",
+        "fontSize": {
+          "expr": " (( 0.9 + (bandwidth('x')/ labelMultiplier ) * bwActual))"
+        },
+        "yOffset": 0.5,
+        "xOffset": {
+          "expr": "(bandwidth('x')) * datum._globalOffset"
+        },
+        "baseline": "bottom",
+        "align": "center",
+        "fontWeight": "1000"
+      },
+      "encoding": {
+        "text": {
+          "field": "__variancePCT",
+          "type": "quantitative",
+          "format": "+0%;-0%;",
+          "formatType": "pbiFormat"
+        },
+        "y": {
+          "field": "__1__",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "description": "VARIANCE_DATA_LABELS",
+      "mark": {
+        "type": "text",
+        "color": {
+          "expr": "datum['__1__'] > datum['__2__'] ? 'green' : 'darkred'"
+        },
+        "fontSize": {
+          "expr": " ( bandwidth('x')/ labelMultiplier ) * bwActual"
+        },
+        "yOffset": 0,
+        "xOffset": {
+          "expr": "(bandwidth('x')) * datum._globalOffset"
+        },
+        "baseline": "bottom",
+        "align": "center",
+        "fontWeight": "bold",
+        "size": 8
+      },
+      "encoding": {
+        "text": {
+          "field": "__variancePCT",
+          "type": "quantitative",
+          "format": "+0%;-0%;",
+          "formatType": "pbiFormat"
+        },
+        "y": {
+          "field": "__1__",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}
