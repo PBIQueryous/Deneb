@@ -1,0 +1,958 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.6.0.2",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.16.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": false,
+      "highlight": false,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "the_world_in_2100",
+      "description": "Report inspired by Miranda Smith at Visual Capitalist",
+      "author": "PBI Queryous",
+      "uuid": "94598f07-b96a-41bd-ab95-e758b97cb798",
+      "generated": "2023-11-12T12:47:29.205Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Date",
+        "description": "Date dd/mm/yyyy",
+        "type": "dateTime",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Year",
+        "description": "Year integer",
+        "type": "numeric",
+        "kind": "column"
+      },
+      {
+        "key": "__2__",
+        "name": "UN_Historical",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__3__",
+        "name": "UN",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__4__",
+        "name": "IIASA",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__5__",
+        "name": "IHME",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__6__",
+        "name": "Higher",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__7__",
+        "name": "Lower",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__8__",
+        "name": "Wiki",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "params": [
+      {
+        "name": "_colourUN",
+        "value": "#569cd7"
+      },
+      {
+        "name": "_colourHigher",
+        "value": "#62B4CE"
+      },
+      {
+        "name": "_colourLower",
+        "value": "#366791"
+      },
+      {
+        "name": "_colourIIASA",
+        "value": "#fe666b"
+      },
+      {
+        "name": "_colourIHME",
+        "value": "#efb92d"
+      },
+      {
+        "name": "_colourWiki",
+        "value": "purple"
+      }
+    ],
+    "background": "#faf7e6",
+    "view": {"stroke": "transparent"},
+    "line": {
+      "strokeWidth": 1.5,
+      "interpolate": "monotone"
+    },
+    "area": {
+      "strokeWidth": 1.5,
+      "interpolate": "monotone"
+    },
+    "font": "DIN",
+    "style": {
+      "person": {
+        "shape": "m -0.97916486,0.97980576 4.8839e-4,-0.41747069 c 4.2682e-4,-0.36480847 0.39320648,-0.42104751 0.62106371,-0.42104751 l 0.68356092,1.25e-6 c 0.22785724,0 0.64450262,0.0687798 0.64449998,0.41695964 l -3.02e-6,0.42104746 z m 1.52352285,-1.38398524 c 0,0.2988249 -0.24224552,0.54107033 -0.54107037,0.5410703 -0.29882484,0 -0.54107037,-0.24224543 -0.54107037,-0.5410703 0,-0.2988249 0.24224553,-0.54107034 0.54107037,-0.54107034 0.29882485,0 0.54107037,0.24224542 0.54107037,0.54107034 z",
+        "size": 150,
+        "filled": true,
+        "stroke": "#faf7e6",
+        "strokeWidth": 1,
+        "opacity": 1
+      },
+      "mySVGicon": {
+        "shape": "m58.29078,36.02816c-1.76856,-3.21301 -3.93228,-5.81428 -6.10263,-7.63397c-2.53247,1.86519 -5.61687,3.00095 -8.97947,3.00095c-3.3692,0 -6.45805,-1.13798 -8.98605,-3.00095c-2.17035,1.81969 -4.33627,4.42095 -6.10918,7.63397c-4.11553,7.45969 -4.56814,15.11143 -1.01347,17.09542c1.59193,0.89373 3.26104,0.22759 4.98543,-1.44333c-0.30248,1.69421 -0.47912,3.53052 -0.47912,5.45125c0,8.5333 3.2964,15.44562 7.35885,15.44562c2.44858,0 3.66069,-2.51693 4.24355,-6.37055c0.5807,3.85362 1.79281,6.37055 4.23251,6.37055c4.06913,0 7.36556,-6.91233 7.36556,-15.44562c0,-1.92073 -0.1767,-3.75703 -0.48576,-5.45125c1.72876,1.67093 3.39568,2.33706 4.99203,1.44333c3.55248,-1.98399 3.09319,-9.63573 -1.02223,-17.09542l0,0zm-15.08645,-7.54404c6.83555,0 12.37954,-5.57559 12.37954,-12.45349s-5.54399,-12.45351 -12.37954,-12.45351c-6.83788,0 -12.38625,5.5767 -12.38625,12.45351s5.54837,12.45349 12.38625,12.45349z",
+        "size": 0.3,
+        "filled": true,
+        "ocapcity": 1,
+        "stroke": "#faf7e6",
+        "strokeWidth": 0.3
+      },
+      "fixedSVGicon": {
+        "shape": "m -1.76856,-3.21301 -3.93228,-5.81428 -6.10263,-7.63397c-2.53247,1.86519 -5.61687,3.00095 -8.97947,3.00095c-3.3692,0 -6.45805,-1.13798 -8.98605,-3.00095c-2.17035,1.81969 -4.33627,4.42095 -6.10918,7.63397c-4.11553,7.45969 -4.56814,15.11143 -1.01347,17.09542c1.59193,0.89373 3.26104,0.22759 4.98543,-1.44333c-0.30248,1.69421 -0.47912,3.53052 -0.47912,5.45125c0,8.5333 3.2964,15.44562 7.35885,15.44562c2.44858,0 3.66069,-2.51693 4.24355,-6.37055c0.5807,3.85362 1.79281,6.37055 4.23251,6.37055c4.06913,0 7.36556,-6.91233 7.36556,-15.44562c0,-1.92073 -0.1767,-3.75703 -0.48576,-5.45125c1.72876,1.67093 3.39568,2.33706 4.99203,1.44333c3.55248,-1.98399 3.09319,-9.63573 -1.02223,-17.09542l0,0zm-15.08645,-7.54404c6.83555,0 12.37954,-5.57559 12.37954,-12.45349s-5.54399,-12.45351 -12.37954,-12.45351c-6.83788,0 -12.38625,5.5767 -12.38625,12.45351s5.54837,12.45349 12.38625,12.45349z",
+        "size": 0.3,
+        "filled": true,
+        "ocapcity": 1,
+        "stroke": "#faf7e6",
+        "strokeWidth": 0.3
+      },
+      "_lineWiki": {
+        "expr": "_colourWiki"
+      },
+      "_lineUN": {"expr": "_colourUN"},
+      "_lineHigher": {
+        "color": {
+          "expr": "_colourHigher"
+        },
+        "strokeDash": [1, 2]
+      },
+      "_lineLower": {
+        "color": {
+          "expr": "_colourLower"
+        },
+        "strokeDash": [1, 3]
+      },
+      "_lineIHME": {
+        "expr": "_colourIHME"
+      },
+      "_lineIIASA": {
+        "expr": "_colourIIASA"
+      },
+      "_labelIIASA": {
+        "font": "DIN",
+        "fontWeight": "bolder",
+        "fontStyle": "italic",
+        "align": "left",
+        "baseline": "center",
+        "filled": true,
+        "size": 12,
+        "color": {
+          "expr": "_colourIIASA"
+        },
+        "stroke": "#transparent",
+        "strokeWidth": 0.01
+      },
+      "_labelIHME": {
+        "font": "DIN",
+        "fontWeight": "bolder",
+        "fontStyle": "italic",
+        "align": "left",
+        "baseline": "top",
+        "filled": true,
+        "size": 12,
+        "color": {
+          "expr": "_colourIHME"
+        },
+        "stroke": "#transparent",
+        "strokeWidth": 0.01
+      },
+      "_labelWiki": {
+        "font": "DIN",
+        "fontWeight": "bolder",
+        "align": "left",
+        "baseline": "bottom",
+        "filled": true,
+        "size": 10,
+        "color": {
+          "expr": "_colourWiki"
+        },
+        "stroke": "transparent",
+        "strokeWidth": 0.01
+      },
+      "_labelUN": {
+        "font": "DIN",
+        "fontWeight": "bolder",
+        "align": "left",
+        "baseline": "bottom",
+        "filled": true,
+        "size": 10,
+        "color": {"expr": "_colourUN"},
+        "stroke": "transparent",
+        "strokeWidth": 0.01
+      },
+      "_labelLower": {
+        "font": "DIN",
+        "fontWeight": "bolder",
+        "align": "left",
+        "baseline": "bottom",
+        "filled": true,
+        "size": 10,
+        "color": {
+          "expr": "_colourLower"
+        },
+        "stroke": "transparent",
+        "strokeWidth": 0.01
+      },
+      "_labelHigher": {
+        "font": "DIN",
+        "fontWeight": "bolder",
+        "align": "left",
+        "baseline": "bottom",
+        "filled": true,
+        "size": 10,
+        "color": {
+          "expr": "_colourHigher"
+        },
+        "stroke": "transparent",
+        "strokeWidth": 0.01
+      },
+      "_endPointTriangle": {
+        "shape": "triangle-left",
+        "filled": true,
+        "size": 20
+      },
+      "_arrowDown": {
+        "shape": "arrow",
+        "angle": 180,
+        "filled": true,
+        "size": 50,
+        "color": {
+          "expr": "_colourLower"
+        },
+        "stroke": "#366791",
+        "strokeWidth": 2
+      },
+      "_arrowUp": {
+        "shape": "arrow",
+        "angle": 360,
+        "filled": true,
+        "size": 50,
+        "color": {
+          "expr": "_colourHigher"
+        },
+        "stroke": "#62B4CE",
+        "strokeWidth": 2
+      }
+    }
+  },
+  "data": {"name": "dataset"},
+  "params": [
+    {
+      "name": "_historicColour",
+      "value": "#569cd7"
+    },
+    {
+      "name": "_endPointOffset",
+      "value": 6
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "__0__",
+      "type": "temporal",
+      "axis": {
+        "title": null,
+        "grid": true,
+        "gridOpacity": 0.25,
+        "labelAngle": 0,
+        "labelFontSize": 13,
+        "labelPadding": 8,
+        "labelFlush": false,
+        "labelFontWeight": "bold",
+        "labelColor": "grey",
+        "labelFont": "DIN",
+        "ticks": false,
+        "tickBand": "center",
+        "tickCount": 8,
+        "domain": true,
+        "domainColor": "black",
+        "domainWidth": 1,
+        "tickMinStep": 50
+      }
+    },
+    "y": {
+      "axis": {
+        "title": null,
+        "domain": false,
+        "ticks": false,
+        "labelFont": "DIN",
+        "labelFontSize": 11,
+        "labelFlush": false,
+        "labelFontWeight": "bold",
+        "labelColor": "grey",
+        "labelPadding": 12,
+        "grid": true,
+        "gridOpacity": 0.25,
+        "format": "0,,,.B",
+        "formatType": "pbiFormat",
+        "values": [
+          0,
+          5000000000,
+          10000000000
+        ]
+      }
+    }
+  },
+  "title": {
+    "font": "arial black",
+    "fontWeight": "1000",
+    "text": ["The World", "in 2100"],
+    "subtitle": [
+      "Although the UN's projections are",
+      " the most widely used, alternative models ",
+      "are predicting both a lower and earlier peak."
+    ],
+    "fontSize": 50,
+    "subtitleFontSize": 15,
+    "subtitleColor": "dimgrey",
+    "zindex": 1,
+    "anchor": "start",
+    "offset": -150
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum['__8__'])"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "stroke": {
+          "expr": "_colourWiki"
+        },
+        "strokeDash": [3, 3],
+        "opacity": 0.2
+      },
+      "encoding": {
+        "y": {
+          "field": "__8__",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum['__2__'])"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "stroke": {"expr": "_colourUN"}
+      },
+      "encoding": {
+        "y": {
+          "field": "__2__",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum['__4__'])"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "stroke": {
+          "expr": "_colourIIASA"
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "__4__",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum['__5__'])"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "stroke": {
+          "expr": "_colourIHME"
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "__5__",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 2064"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "style": "person",
+        "color": "#efb92d"
+      },
+      "encoding": {
+        "y": {
+          "field": "__5__",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 2070"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "style": "person",
+        "color": "#fe666b",
+        "yOffset": 0
+      },
+      "encoding": {
+        "y": {
+          "field": "__4__",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 2086"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "style": "person",
+        "color": {
+          "expr": "_historicColour"
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "__2__",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] <= 2022"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "fill": {
+          "expr": "_historicColour"
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "__2__",
+          "type": "quantitative",
+          "axis": {"tickCount": 3}
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum['__2__']) && datum['__1__'] <= 2022 "
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "stroke": "white",
+        "strokeWidth": 1,
+        "yOffset": {
+          "expr": "year(datum['__0__']) <= 1950 ? 1.5 : 3"
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "__2__",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum['__6__'])"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "style": "_lineHigher"
+      },
+      "encoding": {
+        "y": {
+          "field": "__6__",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum['__7__'])"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "style": "_lineLower"
+      },
+      "encoding": {
+        "y": {
+          "field": "__7__",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 2022  "
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "ivory",
+        "strokeWidth": 2,
+        "strokeDash": [2, 2]
+      },
+      "encoding": {
+        "x": {"field": "__0__"},
+        "y": {"datum": 15000000000}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 2022  "
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "black",
+        "strokeDash": [2, 2]
+      },
+      "encoding": {
+        "x": {"field": "__0__"},
+        "y": {"datum": 15000000000}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 2022  "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontWeight": "bolder",
+        "fontStyle": "italic",
+        "align": "right",
+        "baseline": "top",
+        "filled": true,
+        "size": 12,
+        "color": "white",
+        "stroke": "transparent",
+        "strokeWidth": 0.01,
+        "xOffset": -5,
+        "yOffset": 0,
+        "text": ["UN Historical ◂"]
+      },
+      "encoding": {
+        "x": {"field": "__0__"},
+        "y": {"datum": 1000000000}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 2022  "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontWeight": "bolder",
+        "fontStyle": "regular",
+        "align": "center",
+        "baseline": "bottom",
+        "filled": true,
+        "size": 12,
+        "color": "grey",
+        "stroke": "transparent",
+        "strokeWidth": 0.01,
+        "xOffset": -18,
+        "yOffset": 6,
+        "text": ["15B"]
+      },
+      "encoding": {
+        "x": {"field": "__0__"},
+        "y": {"datum": 15000000000}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 2022  "
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontWeight": "bolder",
+        "fontStyle": "italic",
+        "align": "left",
+        "baseline": "top",
+        "filled": true,
+        "size": 12,
+        "color": "black",
+        "stroke": "transparent",
+        "strokeWidth": 0.01,
+        "xOffset": 1,
+        "yOffset": 0,
+        "text": ["▸ Projected"]
+      },
+      "encoding": {
+        "x": {"field": "__0__"},
+        "y": {"datum": 1000000000}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum['__1__'] == 2100"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "aggregate": "max",
+          "field": "__0__",
+          "type": "temporal"
+        },
+        "y": {
+          "aggregate": {
+            "argmax": "__0__"
+          },
+          "type": "quantitative"
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "point",
+            "style": "_endPointTriangle",
+            "color": {
+              "expr": "_colourUN"
+            },
+            "size": 20,
+            "xOffset": {
+              "expr": "_endPointOffset"
+            }
+          },
+          "encoding": {
+            "y": {
+              "field": "__3__",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "point",
+            "style": "_endPointTriangle",
+            "color": {
+              "expr": "_colourIHME"
+            },
+            "xOffset": {
+              "expr": "_endPointOffset"
+            }
+          },
+          "encoding": {
+            "y": {"field": "__5__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "point",
+            "style": "_endPointTriangle",
+            "color": {
+              "expr": "_colourIIASA"
+            },
+            "xOffset": {
+              "expr": "_endPointOffset"
+            }
+          },
+          "encoding": {
+            "y": {"field": "__4__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "point",
+            "style": "_arrowDown",
+            "xOffset": {
+              "expr": "_endPointOffset"
+            }
+          },
+          "encoding": {
+            "y": {"field": "__7__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "point",
+            "style": "_arrowUp",
+            "xOffset": {
+              "expr": "_endPointOffset"
+            }
+          },
+          "encoding": {
+            "y": {"field": "__6__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "style": "_labelHigher",
+            "fontWeight": "normal",
+            "color": "grey",
+            "xOffset": {
+              "expr": "_endPointOffset * 2.4"
+            },
+            "dy": 25,
+            "text": [
+              "Fertility remains 0.5",
+              "children higher than in ",
+              "the median scenario"
+            ]
+          },
+          "encoding": {
+            "y": {"field": "__6__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "style": "_labelHigher",
+            "xOffset": {
+              "expr": "_endPointOffset * 2.4"
+            },
+            "text": [
+              "UN HIGH FERTILITY",
+              "SCENARIO"
+            ]
+          },
+          "encoding": {
+            "y": {"field": "__6__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "style": "_labelLower",
+            "xOffset": {
+              "expr": "_endPointOffset * 2.4"
+            },
+            "text": [
+              "UN LOW FERTILITY",
+              "SCENARIO"
+            ]
+          },
+          "encoding": {
+            "y": {"field": "__7__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "style": "_labelLower",
+            "fontWeight": "normal",
+            "color": "grey",
+            "xOffset": {
+              "expr": "_endPointOffset * 2.4"
+            },
+            "dy": 25,
+            "text": [
+              "Fertility remains 0.5",
+              "children lower than in ",
+              "the median scenario"
+            ]
+          },
+          "encoding": {
+            "y": {"field": "__7__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "style": "_labelUN",
+            "xOffset": {
+              "expr": "_endPointOffset * 2.4"
+            },
+            "text": [
+              "UN PROBABILISTIC",
+              "MEDIAN"
+            ]
+          },
+          "encoding": {
+            "y": {"field": "__3__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "style": "_labelIIASA",
+            "xOffset": {
+              "expr": "_endPointOffset * 2.4"
+            },
+            "yOffset": 2,
+            "text": ["IIASA*"]
+          },
+          "encoding": {
+            "y": {"field": "__4__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "style": "_labelIHME",
+            "xOffset": {
+              "expr": "_endPointOffset * 2.4"
+            },
+            "yOffset": -3,
+            "text": ["IHME**"]
+          },
+          "encoding": {
+            "y": {"field": "__5__"}
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "white",
+            "strokeWidth": 0.5,
+            "yOffset": -0.5
+          },
+          "encoding": {
+            "x": {},
+            "y": {"datum": 0}
+          }
+        }
+      ]
+    },
+    {
+      "encoding": {
+        "x": {
+          "aggregate": "max",
+          "field": "__0__",
+          "type": "temporal"
+        },
+        "y": {
+          "aggregate": {
+            "argmax": "__0__"
+          },
+          "field": "__8__",
+          "type": "quantitative"
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "point",
+            "style": "_endPointTriangle",
+            "color": {
+              "expr": "_colourWiki"
+            },
+            "size": 20,
+            "xOffset": {
+              "expr": "_endPointOffset"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "style": "_labelWiki",
+            "xOffset": {
+              "expr": "_endPointOffset * 2.4"
+            },
+            "yOffset": 5,
+            "text": ["WIKI PROJECTION"]
+          },
+          "encoding": {
+            "y": {"field": "__8__"}
+          }
+        }
+      ]
+    }
+  ]
+}
