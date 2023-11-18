@@ -1,0 +1,70 @@
+{
+  "data": {"name": "dataset"},
+  "transform": [
+    {
+      "calculate": "datum['Index'] <= datum['_percToShow'] * 100 ? 1 : 0",
+      "as": "_color"
+    }
+  ],
+  "layer": [
+    {
+      "description": "Outer donut for showing the KPI % measure",
+      "mark": {
+        "type": "arc",
+        "radius": 98,
+        "radius2": 80,
+        "padAngle": 0.016,
+        "opacity": {
+          "expr": "datum['_color'] == 1 ? 1 : 0.5"
+        }
+      },
+      "encoding": {
+        "theta": {
+          "field": "Size",
+          "type": "quantitative"
+        },
+        "color": {
+          "value": {
+            "expr": "datum['_color'] == 1 ? '#F0F4C3' : '#78909C'"
+          }
+        }
+      }
+    },
+    {
+      "description": "Inner circle line",
+      "mark": {
+        "type": "arc",
+        "radius": 75,
+        "radius2": 72,
+        "color": "#78909C",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "theta": {
+          "aggregate": "sum",
+          "field": "Size",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "description": "KPI text inside the donut",
+      "mark": {
+        "type": "text",
+        "font": "DIN",
+        "fontSize": 40,
+        "fontWeight": "bold",
+        "color": "#F0F4C3"
+      },
+      "encoding": {
+        "text": {
+          "aggregate": "average",
+          "field": "_percToShow",
+          "type": "quantitative",
+          "format": "0.0%",
+          "formatType": "pbiFormat"
+        }
+      }
+    }
+  ]
+}
