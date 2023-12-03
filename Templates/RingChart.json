@@ -1,0 +1,207 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.6.0.2",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.16.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": false,
+      "highlight": false,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Ring Chart",
+      "description": "[No Description Provided]",
+      "author": "Kerry Kolosko",
+      "uuid": "5171d856-9955-41c1-b49a-92df27ae2120",
+      "generated": "2023-12-03T05:18:09.284Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "X",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Y-Sort",
+        "description": "Sort the Y-Axis by",
+        "type": "numeric",
+        "kind": "column"
+      },
+      {
+        "key": "__2__",
+        "name": "Y",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__3__",
+        "name": "Ring Value",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__4__",
+        "name": "Gradient Value",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {},
+  "data": {"name": "dataset"},
+  "layer": [
+    {
+      "mark": {"type": "rect"},
+      "encoding": {
+        "y": {
+          "field": "__2__",
+          "type": "ordinal",
+          "sort": {
+            "op": "max",
+            "field": "__1__",
+            "order": "ascending"
+          },
+          "title": "",
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "labels": true,
+            "labelFontSize": 14,
+            "labelAngle": 0,
+            "labelPadding": 10,
+            "labelColor": "black",
+            "titleY": 170,
+            "titleAlign": "left"
+          }
+        },
+        "x": {
+          "field": "__0__",
+          "type": "nominal",
+          "title": "",
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "labels": true,
+            "labelFontSize": 14,
+            "labelAngle": 0,
+            "labelPadding": 10,
+            "labelColor": "black",
+            "titleY": 170,
+            "titleAlign": "left"
+          }
+        },
+        "color": {
+          "field": "__4__",
+          "type": "quantitative",
+          "title": "Marriages",
+          "scale": {
+            "range": [
+              "transparent",
+              "#de9ed6"
+            ]
+          },
+          "legend": {
+            "direction": "vertical",
+            "gradientLength": 120,
+            "title": "State % by Month"
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "strokeWidth": 3,
+        "fill": null
+      },
+      "encoding": {
+        "y": {
+          "field": "__2__",
+          "type": "ordinal",
+          "sort": {
+            "op": "max",
+            "field": "__1__",
+            "order": "ascending"
+          }
+        },
+        "x": {
+          "field": "__0__",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "__3__",
+          "type": "quantitative",
+          "title": "Marriages",
+          "scale": {
+            "range": [0, 1500],
+            "title": "Marriages"
+          }
+        },
+        "stroke": {
+          "condition": {
+            "test": "datum['__0__ Value'] > 0.4",
+            "value": "black"
+          },
+          "value": "black"
+        }
+      }
+    },
+    {
+      "mark": "text",
+      "encoding": {
+        "text": {
+          "field": "__3__",
+          "type": "quantitative",
+          "format": ".2s"
+        },
+        "y": {
+          "field": "__2__",
+          "type": "ordinal",
+          "sort": {
+            "op": "max",
+            "field": "__1__",
+            "order": "ascending"
+          }
+        },
+        "x": {
+          "field": "__0__",
+          "type": "nominal"
+        },
+        "color": {
+          "condition": {
+            "test": "datum['__3__'] < 800",
+            "value": "transparent"
+          },
+          "value": "black",
+          "legend": null
+        },
+        "size": {
+          "field": "__3__",
+          "type": "quantitative",
+          "scale": {"range": [6, 12]},
+          "legend": null
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "independent",
+      "size": "independent",
+      "x": "shared",
+      "y": "shared"
+    }
+  }
+}
