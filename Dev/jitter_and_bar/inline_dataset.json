@@ -1,0 +1,64 @@
+"data": {
+    "values": [
+        {
+            "Product": "Product_1",
+            "revenue": 9086,
+            "unit_cost": 10,
+            "items_sold": 908
+        },
+        {
+            "Product": "Product_10",
+            "revenue": 3420,
+            "unit_cost": 36,
+            "items_sold": 95
+        },
+        {
+            "Product": "Product_2",
+            "revenue": 2650,
+            "unit_cost": 53,
+            "items_sold": 50
+        },
+        {
+            "Product": "Product_3",
+            "revenue": 1450,
+            "unit_cost": 25,
+            "items_sold": 58
+        },
+        {
+            "Product": "Product_4",
+            "revenue": 7820,
+            "unit_cost": 68,
+            "items_sold": 115
+        },
+        {
+            "Product": "Product_5",
+            "revenue": 6048,
+            "unit_cost": 96,
+            "items_sold": 63
+        },
+        {
+            "Product": "Product_6",
+            "revenue": 8400,
+            "unit_cost": 80,
+            "items_sold": 105
+        },
+        {
+            "Product": "Product_7",
+            "revenue": 7697,
+            "unit_cost": 5,
+            "items_sold": 1539
+        },
+        {
+            "Product": "Product_8",
+            "revenue": 9495,
+            "unit_cost": 15,
+            "items_sold": 633
+        },
+        {
+            "Product": "Product_9",
+            "revenue": 5785,
+            "unit_cost": 65,
+            "items_sold": 89
+        }
+    ]
+}
