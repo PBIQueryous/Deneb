@@ -1,0 +1,139 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 400,
+  "height": 100,
+  "padding": 5,
+  "data": [
+    {
+      "name": "data_segments",
+      "values": [
+        {"segmentLabel": "min", "segmentStart": 0, "segmentEnd": 26.3},
+        {"segmentLabel": "low", "segmentStart": 26.3, "segmentEnd": 42.9},
+        {"segmentLabel": "mid", "segmentStart": 42.9, "segmentEnd": 54.8},
+        {"segmentLabel": "high", "segmentStart": 54.8, "segmentEnd": 70.7}
+      ]
+    }
+  ],
+
+  "signals": [
+    {
+      "name": "signal_score",
+      "value": "56",
+      "bind": {"input": "range", "min": 0, "max": 70.7, "step": 0.01, "name": "Score: "}
+    },
+  {
+      "name": "signal_score_mid",
+      "value": "42.9"
+    }
+    
+  ],
+  "scales": [
+    {
+      "name": "scale_x",
+      "type": "linear",
+      "domain": {"data": "data_segments", "fields": ["segmentStart", "segmentEnd"]},
+      "range": "width",
+      "padding": 0.05,
+      "round": true
+    },
+    {
+      "name": "scale_y",
+      "domain": [0, 1],
+      "range": "height"
+    },
+    {
+      "name": "scale_segment_color",
+      "type": "ordinal",
+      "domain": ["min", "low", "mid", "high"],
+      "range": ["grey", "green", "orange", "red"]
+    },
+    {
+      "name": "scale_segment_opacity",
+      "type": "ordinal",
+      "domain": ["min", "low", "mid", "high"],
+      "range": [0.5, 0.5, 0.5, 0.5]
+    }
+  ],
+  "axes": [
+    { "orient": "bottom", "scale": "scale_x" },
+    { "orient": "left", "scale": "scale_y",  "domainOpacity": 0, "tickOpacity": 0, "labelOpacity": 0}
+  ],
+
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data":"data_segments"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "scale_x", "field": "segmentStart"},
+          "x2": {"scale": "scale_x", "field": "segmentEnd"},
+          "y": {"scale": "scale_y", "value": 0.5},
+          "y2": {"scale": "scale_y", "value": 0.7},
+          "fill": {"scale": "scale_segment_color", "field": "segmentLabel"},
+          "fillOpacity":{"scale": "scale_segment_opacity", "field": "segmentLabel"},
+          "stroke": {"value": "white"}    
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data":"data_segments"},
+      "encode": {
+        "enter": {
+          "align": {"value": "center"},
+          "baseline": {"value": "top"},
+          "fill": {"value": "black"},
+          "fillOpacity": {"signal": "datum['segmentLabel'] == 'min' ? 0 : 1 "},
+          "x": {"scale": "scale_x", "field": "segmentStart"},
+          "y": {"scale": "scale_y", "value": 0.4},
+          "text": {"field": "segmentLabel"}
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {"data":"data_segments"},
+      "encode": {
+        "update": {
+          "x": {"signal": "scale('scale_x', signal_score) - 5"},
+          "x2": {"signal": "scale('scale_x', signal_score) + 5"},
+          "y": {"scale": "scale_y", "value": 0.45},
+          "y2": {"scale": "scale_y", "value": 0.75},
+          "fill": {"value": "red"},
+          "fillOpacity":{"value": 0.7},
+          "stroke": {"value": "grey"},
+          "tooltip": {"signal": "signal_score"} 
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {"data":"data_segments"},
+      "encode": {
+        "update": {
+          "x": {"signal": "scale('scale_x', signal_score_mid)"},
+          "x2": {"signal": "scale('scale_x', signal_score) + ((signal_score > signal_score_mid) ? -15 : 15)"},
+          "y": {"scale": "scale_y", "value": 0.6},
+          "stroke": {"value": "blue"},
+          "strokeWidth": {"value": 2},
+          "opacity": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": {"data":"data_segments"},
+      "encode": {
+        "update": {
+          "x": {"signal": "scale('scale_x', signal_score) + ((signal_score > signal_score_mid) ? -15 : 15)"},
+          "y": {"scale": "scale_y", "value": 0.6},
+          "angle": {"signal": "signal_score > signal_score_mid ? 90 : -90"},
+          "size": {"value": 100},
+          "shape": {"value": "triangle"},
+          "opacity": {"value": 1},
+          "fill": {"value": "blue"}
+        }
+      }
+    }
+  ]
+}

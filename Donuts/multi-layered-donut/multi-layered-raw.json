@@ -1,0 +1,236 @@
+{
+  "data": {"name": "dataset"},
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "Advertising Share",
+          "as": "groupby_mediumType"
+        }
+      ],
+      "groupby": ["Medium-Type"]
+    },
+    {
+      "window": [
+        {
+          "op": "dense_rank",
+          "as": "rank_groupby_mediumType"
+        }
+      ],
+      "sort": [
+        {
+          "field": "groupby_mediumType",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank_medium"
+        }
+      ],
+      "sort": [
+        {
+          "field": "Advertising Share",
+          "order": "descending"
+        }
+      ],
+      "groupby": ["Medium-Type"]
+    },
+    
+    {
+      "calculate": "'' + datum.rank_groupby_mediumType + datum.rank_medium",
+      "as": "text_rank"
+    }
+  ],
+  "width": "container",
+  "height": "container",
+  "padding": {
+    "top": 5,
+    "right": 0,
+    "bottom": 5,
+    "left": 0
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "strokeWidth": 1.5,
+        "outerRadius": {
+          "expr": "(height * 0.5 ) "
+        },
+        "innerRadius": {
+          "expr": "(height * 0.4 ) "
+        },
+        "stroke": "black",
+        "cornerRadius": 5,
+        "padAngle": 0.02
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "strokeWidth": 0,
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "radius": {
+          "expr": "(height * 0.55)"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "groupby_mediumType",
+          "type": "quantitative"
+        },
+        "theta": {
+          "field": "Advertising Share",
+          "type": "quantitative",
+          "stack": "normalize"
+        },
+        "color": {"value": "black"}
+      }
+    },
+    {
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "strokeWidth": 0,
+            "fontSize": 15,
+            "fontWeight": "bold",
+            "align": "center",
+            "radius": {
+              "expr": "(height * 0.31)"
+            }
+          },
+          "encoding": {
+            "text": {
+              "field": "Advertising Share",
+              "type": "quantitative"
+            },
+            "theta": {
+              "field": "Advertising Share",
+              "type": "quantitative",
+              "stack": "normalize"
+            },
+            "color": {"value": "black"}
+          }
+        },
+        {
+          "name": "test_transforms",
+          "mark": {
+            "type": "arc",
+            "strokeWidth": 1,
+            "strokeOpacity": 1,
+            "stroke": "black",
+            "outerRadius": {
+              "expr": "(height * 0.39 ) "
+            },
+            "innerRadius": {
+              "expr": "(height * 0.35 ) "
+            },
+            "cornerRadius": 3,
+            "padAngle": 0.02
+          }
+        }
+      ],
+      "encoding": {
+        "theta": {
+          "field": "Advertising Share",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "stack": "normalize"
+        },
+        "order": {
+          "field": "text_rank",
+          "sort": "ascending",
+          "type": "quantitative"
+        },
+        "color": {
+          "legend": {
+            "title": "---",
+            "legendY": -10,
+            "orient": "right",
+            "symbolSize": {
+              "expr": "(height * 1.5 ) "
+            },
+            "labelFontSize": {
+              "expr": "(height * 0.05 ) "
+            },
+            "titleFontSize": {
+              "expr": "(height * 0.07 ) "
+            }
+          },
+          "scale": {
+            "range": [
+              "blue",
+              "blue",
+              "blue",
+              "orange",
+              "orange",
+              "orange",
+              "red"
+            ]
+          },
+          "field": "Medium",
+          "type": "nominal",
+          "sort": {
+            "field": "Medium-Type",
+            "order": "ascending"
+          }
+        },
+        "opacity": {"value": 0.5}
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {"color": "independent"}
+  },
+  "encoding": {
+    "theta": {
+      "field": "Advertising Share",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "stack": "normalize"
+    },
+    "order": {
+      "field": "Advertising Share",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "descending"
+    },
+    "color": {
+      "scale": {
+        "range": [
+          "blue",
+          "orange",
+          "red"
+        ]
+      },
+      "legend": {
+        "title": "Medium (%)",
+        "legendY": -10,
+        "orient": "right",
+        "symbolSize": {
+          "expr": "(height * 1.5 ) "
+        },
+        "labelFontSize": {
+          "expr": "(height * 0.05 ) "
+        },
+        "titleFontSize": {
+          "expr": "(height * 0.07 ) "
+        }
+      },
+      "field": "Medium-Type",
+      "type": "nominal",
+      "sort": {
+        "field": "Advertising Share",
+        "order": "descending"
+      }
+    },
+    "opacity": {"value": 0.9}
+  }
+}

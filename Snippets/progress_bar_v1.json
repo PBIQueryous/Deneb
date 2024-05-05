@@ -1,0 +1,18 @@
+{
+  "data": {
+    "values": [{"segment": "Enterprise", "achieved": 0.731, "remaining": 0.269}]
+  },
+  "transform": [
+    {"fold": ["achieved", "remaining"], "as": ["label", "percentage"]}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "segment", "type": "nominal"},
+    "x": {
+      "field": "percentage",
+      "type": "quantitative",
+      "axis": {"format": ".0%"}
+    },
+    "color": {"field": "label", "type": "nominal"}
+  }
+}

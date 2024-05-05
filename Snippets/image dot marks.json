@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {"x": 0.5, "y": 0.5, "img": "data/ffox.png"},
+      {"x": 1.5, "y": 1.5, "img": "data/gimp.png"},
+      {"x": 2.5, "y": 2.5, "img": "data/7zip.png"}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "image", "width": 50, "height": 50},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"},
+        "url": {"field": "img", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [{"calculate": "-.2", "as": "axis"}],
+      "mark": {"type": "image", "width": 25, "height": 25},
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "axis": {"labelExpr": "", "title": null}
+        },
+        "y": {
+          "field": "axis",
+          "type": "quantitative",
+          "scale": {"domain": [0, 2.5]}
+        },
+        "url": {"field": "img", "type": "nominal"}
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "shared"}}
+}

@@ -1,0 +1,430 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.6.0.2",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.16.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": false,
+      "highlight": false,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "IBCS Donut",
+      "description": "IBCS-Style Donut Chart with Variances and Responsiveness",
+      "author": "PBI QUERYOUS",
+      "uuid": "fa0aa693-af63-468e-b9b6-fddf56097865",
+      "generated": "2023-11-19T14:26:34.518Z",
+      "previewImageBase64PNG": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAABkCAYAAABkW8nwAAAAAXNSR0IArs4c6QAAIABJREFUeF7tXQd4lFXWPt/0PplJL6SRSgolpBFKBAlgowgIKgsq6L/qrq5tbbuyru76W5a1seiuoq5rw1UjTUAwtEwqIW1CQkghjdSZzGQy9fu+/zkx4x8xwMw3yWSCnueZJ5Dce+69575z77nnnnMuAb/QLxIYBwkQ48DzF5a/SAB+AdYvIBgXCfwCrFHEumzZMj5BEAqj0Shns9kiAOADAEev14tomrbRNG0iCMLA5XI1FEV1q1Qq47jMziRm+rMH1rJly6aq1eqVPnx+koLFmtp5/nymgsulfXk82pfNBm82m6VgswFomrWdLQSxSEJbLGbaarXQZouJNlvMhMVqIQICAstZAE16g64sNDT0K5VKVTmJceFy1392wFqyZEmgVqvN0nd33+Ld3X1zlkRC3BwcTAdZLISIxQL88IifiqXFYoEN0iAIDgz9idBtpA1sVgtYrBYwm03Q3tkCvX3dlJfS61sul/WxQqE4euzYsUaXZ2sSMfhZAGvRokXe7e3t62JIcrOXRpM8TyRiXe/tDd4AwB0FRKPN3+WANVp5iiLBaBqE1o7z0NXTQUqlojNmi+m9gICAj06ePNk+iTDCqKtXNbBmzpy5wFhTk3edQkGtCAqiE0mSPbStMSBngXVxEwgyk9lA1tarWf06Le3n731TTU3NXgZdmRRVrkpg5eTkzGG1t7+W1Nc36wF/fyKQxQKWi9PhKrBGNq/T90Pj+bN0W0cTRESGrygrK/vaxe55XPWrClg5OTkplvb2l5N7e+f/PjSUFWSzjZnAxxJY9k4ZBgeg9lwVTYOtUu4l/V1RUdGRMevwBDO6KoCVk5MzRdfZ+deECxfW/SEqihVmMo35uMYDWPa5N1mMUF5ZTBNs+jsvhezekpKS2gnGhcvNj/kEuNwjJxnExcU9ntTb++enY2KIZJOJmQLlQJvjCSx784MmHVVSVgAEQf2zpa3lfxzolscWmbTAuuGGG0KPHjxY986cOXBDfz9fyHJVi7r8HLkDWNgDm80GGl03WVKmYsXGRScUFBTUeCx6LtOxSQmsRYsWXdNdUvLNRxkZ3ISeHreMwV3Ass/VgEEHhaeO0z6+ik3V1dUfTDZwuWVSxlIoGRkZmwMaG9/8IDCQJ2VoOmDSH3cDC/totpjgdFURTYFlW2Nj48NM+j1RdSYNsLKzsznd3d3PrdRqH9vq70+wHTRsOitYM03DIEWBiaLAQtNgJQiwKBTQSNPwkk04quXd2TacLd/cVm+rb1TvjY+Pvz0vL2/A2foTUX5SACs7O9tL39z8z51K5aokcNkk9SM5GygKtCQJOpIEbUwM2GJiQBgUBHx/f+D5+QHHxwfYUimcOXMGXn3pbVAqfCZinqBP20UVnz5RGhcXt2IyWO49HljLli3zpaqqVG95eU0N4/HGZFKNFAXdNht0yeVgiY4GWVoaSK65BqQ+PsDnoyPDT6myshKeffqlCQMW9kjb3wenqgo6wsOnzCkoKGgaE2GMExOPBtaSJUuUXWVl5bn+/iFTxgBUfTYbdEgk0JuWBt7p6aCcPx+kUukVRUvTNJSXl8Pzz/xtQoGFHe3XaaCsUtURExedlpeX13rFzk9QAY8FVnZ2tqCzru7QXj+/uREuKukIqBaxGExZWeC7di34xcWNKm69Xg86nQ70er1Br9cPGAyGQYPBYDSbzca6ujr62NH8qUovJW0ym/hsFpdDk8AlbRSLx+MDnycAPl/glmnElatCXXh8StiUFSqVqs8tjTrZiMcCKzw8/N3PFYqNKSzmBipUwpvEYtBlZkLAunXgExPzI/FQuCV2d0Nvby80NzdXabXaUy0tLQd6e3vP0jTda7FYtFOmTBnYunWrZWTF5ORksVQqReeIIJKEWBawUry8FAtYLFYojyOQ2yw0IRZJgCDGz7ZmMOlsFeqi/zQ2Nm5ycs7dUtwjgTVjxoxHH+nvf/E2pZKxEFotFqhbuBBC1q2DoMTEH/HBVamtrU1/9uzZszabLb+9vf2/Go2m9MUXX9QzbhAA5syZ4ycUCucrvXwe7Nfok7kcoYTPExICvtAVtpesW1ZRAMCx/bmmpuaP49KAC0w9DliLFi1auqS2dt+j/v6M+oZmgnouFyxbtsCU5ctBKPz/SdVqtdDU1DTQ0NCQ39XVtb2mpubIu+++6xKYLiX7lJQUn7CwsC2UjbiXzxUFWUwUSyhAL+expYKSPJu3n9em4uLi/4wtZ9e4MZo815q8dO3s7Oy45Jqa6r8EBbHEDHZA1KVqp04F5aOPQvCIVcpkMkFDQ4Olrq7uhMlkem3Lli254zWG0fjefffd93Rd6PujzUQHCgUSgssdm9MttmW1WeFkwbfWsMgpc1UqVZE7x3W5tjwKWEvlcvK9sDCWP5frtHw6rFaoy86GiIcfBuWILbS1tRWKiopUJpPprXvuued9pxmPYYX1t9z+SldX7xY+Ryz1kinGjPOAQQ8nCr+1RkSGiUtLS61jxtgFRh4DrFkzZ+7Yxudvnm+1Ou2hgPrU+bvugqj160Ek+n67sVgsoFar+9Rq9c6ysrIXd+zY0eWCnMas6vz58yO85D4fAclOE3AlLA6HMya8tfpeqqX93NeVVeUrx4Shi0w8AljXXnttfGhlZdVbwcEsjpNXNXiH17ZpE0Rv3PiDcRN1qbKysqampqanf/vb33qU7mGfr7Vr1z47qLc+xmWJ+GOhe6GtrbjsBOUXqJybn5+vchEXLlf3CGBdl5h4YrtYnBXmpMdnu9UKzYsXQ8wTT/wAKjQfqFSq6uPHj6/bsWNHlcsSGkcGqampixRyv1wBRyKWiGUut2Q0DcChvD30gEE/fnYOB3s54cCaP39+zqLGxv1/9PNzShi9NhvUpKVBzHPP/bD9dXR0wJEjR76qrKx88M0332x2UAYTWiwtLW26TOJ9UMCR+smkcpf7Ul5VRAul3NtKSko+dpmZCwwmHFhpYjF5MDqaJXfCuo6Gz9LkZIh47jnw8vIaGn5nZyfs2bNnZ319/dNvvPHGpAqvSktLi5GJFXuFPHmUVOIauDCu8dtje+g5WRnC/fv3m13AhktVJxRYs2bNuu1ejebfdymVTvWjLDERxE8+CUFBQUOD12g0sG/fvoMVFRWbt2/f3uKSRCaocmpqaoK/X+BuDi2JEAnFLvVCXVdOW8iBB9Vq9WsuMXKhslMT6kI7o1ZdpVTa3gsNZTvjsNfI4UD/009DVHb2EE+0UR0+fLj4xIkTv3rjjTfOjHUf3ckvLS1tnr9PUC6fI1fwXLB1WSxmyMv/hg4Ln8KfKPPDhAErOjp602NW687N3njl5hj1kyRU5ORA4uOPA3fY1lVYWNjw7bff3vPCCy986xgXzy6Vk5OzUcCRvS0RKlyyotbWV4FG3/lQQ0PDtokY8YQBK0EqNR+LjOQpnbDjnPb1Bem2beAfEjIkq8bGRtPx48efu++++56fCOGNV5urV639eEBrWadU+DJuwmQaBFXpMbrjQotThyLGDV5UcUKAlZGRMSuhoaHkX1OmONx+p9UKLXfeCXF33TU0BLxI3rt378HKyso1r7/+um6sBOIJfNBjViKUVfBY0ikCF+4XK9SlwOLaFlVUVLg9ENbhiR1LgScmJv7zQz+/u6b39zvcfmFsLIS8+CLI5d+fmk6dOtWVn59/2xNPPHFVbIEXy3fFihW3C3mydwiSz3hL1Om1cO68em/NmeobxnL+HOHl8MQ6wszRMjMlEmt+dDRH4OBF8wWrFdoffxxibrxxqImuri40gn52++233+Jom5Ox3G3rby/T9VlmMDVBkCQJ353cT8vkYmF9fb1bTQ9uBxbmV0isrCx6JSjI4b2/JDoaAl566QebVX5+frtKpbp+69atpycjYBzt88qVKxfaTKxvpCKl87fyw41UqEtosYy3pLCw8JCj7Y5FObcDKy4u7k+7fHyeTjQaHQKWhiShbv16SLj33qHx4pXNyZMnP9ywYcOGsRCAp/NYvfKWaosRpjG98tEb+ulydcFb58+f/7U7x+p2YGVKJNSh6GjCUX+rWpMJ2O+9BwHDfupFRUUNX3/99cpXX321wp2Cmqi25s+ff52I55WrlPszcoNAf61ydWFn3dmaAHeOwa3AwjSN8eXlrduCgx1arSgAOBEdDUnbtw/ZrQYHB2H//v0HN23atMSdQnKxrT8AwLMAcDsAMPK0uH7Z8gsCtsyfabBGUdkJ2tffa5pKpXKbAdmtwEpKSlrzvJfXxzcODjrkc9Vjs0Hzli0Qu3Hj0Nw2NTVBSUnJg3fcccerTkw2GoMeAwCM8/odANgzHOPYkwHgAQBYjlkjAeAbAHgBAMoAgL5CG/jlWAgAjwPAIgDAS+8PAQD71j2irsvAumPDne93tPX9iqldq6fvAt3QUnN/fX39difk5lJRtwIrISFh91cBATdEabUOdbrebAZq1y4IGjaInjx5suWLL76Y+/bbb593gAH6oaAe9hsAiAWAty4C1lIA2AEAYQBQgF6+ADADADCcCpF89DJtoNzWD9fH8mcBhlKazgSALwHgnhHgchlYGRkZ8QqZf6VC6ufQF/LifusH+qHhfE1JdU1lqgNyG5MibgWWiMOxtScmsh31ZCiKiIDwN98ccovBO8F9+/Yd2bhxI64OV6IMADg4vEp1AEDgRcDC/2MGlwQA+BUAHB5meA0AvItmMgBAS6zmEg1FAIDdLeUOAMBUQ3hzjNcnWwBgMwC8M1zXZWAhn+uXLu8T8rwY3SFicpGj+Qfont4uh1SQKwnXkb+7FVjxEom1IiaG44iXKCbnKJo9G2a+8srQOC5cuIDAeviBBx74mwMDywQATFyGK1LUMIhGrlh24H0FAPcBgD1SB42RuBUiMJYBwMlLtHXb8LaHoMHrJPu2uXgY0CPbGg1Y6wDgbQBQA4AdmJcd1srla76zGiFbJv3eTchZOnJ8H/U/927hbt26FVXXcSe3ASs7O9uHV15+4UBkpEPLOUbcNK1eDTEPPjgkhKqqqvPvv//+mh07djgbiWIHwcjJzsJzAQD8+yJgoTyeGf5cStnG/v8ZAJ4Y1s1GJqbFLfdT/B4AALbbCwAXAyseAHYCAJ7SrrTl/gCAuZkL7hbwZG/5+TA73J0sOkyFRYREuSvfvNuAlZOTExdbUVH9moMnQgyQ0D/8MEy5+eYh4R49evQUmhkc1K9GfiNHA5Z9K8NZuhMAvhtedTCy9V8AkH6ZUxwGKuKWh3rU3ItWNXQQw5MfhuDgrQDmEh0JLNyeEeDXDq+ouJ1e6ZAwNBbUs6QC7wpf7yBGZofS8nxKphDNKy4uzh/35QrAfY80LV68OGtdff3xOx106jtrNgP7tdfAL/V7fXP37t2FxcXF12zbts3Zd2tGAxauOg8BwIvDQkblHfliUgf8mx9DYKECj8BCwF4MLAyFx9/jVosnSdzjHU7rHBUVxY8Ije7xVYRImACjsqaUEst4KwsKCtyS+tttK9bChQuXPdvWtm+GSASoY+HX7nLJ0yo5HFB89BF4+fmB1WqF3NzcvDvuuAOVa2dpNGAhD+zCTQCAJn08EBwHgL8Pn+yeZggsNG18NLxioR5VP2LFQvDiYeGT4dOpwdmB3LBsRaeIp/BjEjJWW19Fs/nkpqKiIreknXQbsFJTUzclmch3gr2VLD5NAZ8kgU+RICUIkBIAYpoGCUWBmLSB0GqFSoEAFM8+O+TNgAlfv/vuuwNPPfUUmgicpUsBazQ+9m3uVgDIGTZDXFwOU8rgaoOAxDIj7+Aup2N9NrzFov7lkMJ+ccMrbrq5kU2JwpkYSo0WvbWptfaRsrIyt7gruw1Y0dHRT0WFJj2n8PqxxyiCBm/hSdIKJD52NPRvEoCgh0CFFnezxQiDRl3l/oN70aDpLDkDLFSsUe9BEwXawHou0RgaWvF0itvpSA9N+6kQf4fbHWapsetYyA9PZHhSRf8o1NE6nRnMqhVrKykLJ5GJT7zFZiQrzxT/pba21i0JRNwGrLCwsJfjI2c+rFQ67xWJ79CQLGPB17u/QDOCs3QpYKEtCyfWfvxG/Qd1LgTAyBMhrkJokyoGgCeHdbHZAPA5ADQAAOpOaLC127FwC8RoZLttbKTy/sVwG/cDAFrB8UbA4S1xxfLVBbSFm44pkpwlk9lAn1YXvNbQ0PD9MXucyW3ACg4OfispLu1upZfzOTwHjQYgwViwe9+XYwksnHAEHV7F4HXOdADAvEl/Gf7YJ9wOzEIAwC0SwYT6GWYxRkUc64+0vKOeZgcgTt/F5gb/4ZMhXiM5pcSvXLE6jzJzFzABlmFQD6fVqn80Nzd/7yYyzuQ2YEVHRz+bGJv6lJAvdtr6iysWRRgrcvd8gZPvLF1qxcJV5W4AQJsWEq4wuE3hz5GntdFWLCyPyUpXDd81onkCgYdGTzwVjnSqG81Aal/xEMhoyHXI7LBm9fqT1kFiDsOtkCqrUr187ty53zsrQCbl3QashISE38VEJL0o5EudtsNgEKaNMJzL3f0FWtF/tnTLmvWnrYOs6Uz84M1Wg62m/vQf1Go1rrLjTm4DVmpq6m1g430YHTnN6UHZbFYYNGva93yTG3yJymh7Qmd4+3hQb7KvjPjTrkfhv/FjX5EcLYd87YZM/IkfO6+R/Fwth3zxemnUVETLb7i5hcuShDCJOaxvPAPAMW8pKipCA/C4k9uANXv27JusRvgqIW4mozZ7dW2aA4f2XSp35M8CWIsXLdN6y4LkTNKyqmvLaa6QXl9cXIxXTuNOjCaZSa8yMjKy+vsMx2cmZTBqU6PrMhrMmgR33XUxGeN41klPT/eXiX0afRVBjBKa4tMpUi+B23zfGU0yEwGmp6dHd1/oO5MxO9tp5R3b6+7toHXGbrcJhskYx7MOht8rpYFHlF5+Tuuo2K/CU8cob1/5rKKiovLx7Kedt9uAlZmZKWxubB3IzlrKCFiY25ykjW8eOLwPbUA/O5ozZ+5DMoHvK0yfXDmmOkj5B/r4l5aWXsroO6YydRuwsNf+voHk/MwcFpPkrhgybqUMtbv3fzV69v8riOWFyEj5fXL5vyQs1urRilpperDZbF4VXV19wP73hmnT1gwA/F3CZvuLWaw8tdm8+ZozZ354aqQ+ISEqmM8/0GWzPRhWUbGnND4+HWh6pxlAQFPUX7Lq6v5VEBUlnSqR/MlMUa+EVFQwfkli1co1Rykzdz4TU4ONtEHeyW+oru4Oh1yWxgJhbgWW0suHnptxLUjEV35mZLTB9fa3D5pthrC8vDwm3zruvpiY63Mkkv+wCeJHebHxKNZsseS+1d9/xwvnz9u9RvkfREY+9I1We6qZpmt2h4X9tdVqbUiurkZ/LaokJYXrZzb/3ZfLvbdscHDtnNra/3ZPn/7yiYGBQ9UGQ++NCsVDxXr9vbNlsjU2gtDPrq52yFY12rhTUlJEvt6B7QqJv5zJowRoYD6mOkj3aXoY7RZMgOZWYEVGRv4tOjz5d94Mk13oDRpg8a0bc3NzGd3Qz5NIfD+NjPx7IJeLFvQfyEBR/Ud1unXXnzuHq5XdrIDfbgQgPuPGVickPM4jiLCoqiqMz7M1TJ+eQ5HkkzwAUavV+tKc2trd1dOmvdpnte5qJsnO6SLR72sHBl6PF4lW79Jqn9na3j7IZIKwztKlS1fxCMnnEpGC0XxptL2gri91m9Ud+8yoo0wFlJGRkW7otxYkTZvFiAVeS7B45Okvc3dh0AITYr8XGpp9q4/PJ1yCGLpbQkPWWZPpned7eh74d2fnqPd2H0RHxy8RCj9stVpfTKmp+aw8OTk8kCDe+U6n25Yhkfy2zWJ5e05t7Ze5ERFzUqXSN1kAdK3J9LyUw5muB9i1QK3GqB/GdPOqW1QWA2RIJczylFadKQOeEK4pKSnJY9wJJyu6FVgpKSnc1vMd5oXzlhFMlnQcW1dfm1Gj60wqLS095+RYh4orAWQlSUnPh/N49+PgtSTZcUCrXbWuqQn9pX5Cn0dGzo4XCHbK2Ox9uzSardcqFAIfgtjZYrF8+k5PT94zgYEfNH8PLLyUxhMbXkYPHIiJuSGAw4mP4vMxR8UmM003A5u9UVRc7FTGwXnz5gUKefI6b3mAhHAyo7R9MEeO76XjpsUo8/LyHAuPYiLYi+q4FVjY9rT4aUejw6fPZ3KRivX7ND0glvFy//vVpysYjp/1dlhYxgZv70+4AFPUJtPr69TqR9Tfu7iMJGJXePiCOTLZe/kDAx/9vqHhfxsAdLkREfNmSSRf9pKkEhWWAC536CHNVovl2YV1dVtxK30hKCj0Oi+vJ3ut1s8TRKJbt/f3P7ROLL6fz2J1R1RWomuyw7Rhw8Y3+roM98klzB4cwHvWqtriwrP1dRhA4jZyO7ASEhI2B/qG/cPPO5iRPQb9t3q17YODFt0Upk+q+QOIv5027Sk/Lnf9YZ1u+a2NjT8J19+qVMruCgl510aS9Y9VVz+1C4AcnpWhV79QjYgTCsV7IiOfO6TXf/Lr8+f3A0AbekrkxcY+KKbpyjNW60CaSPTr17Ta32ySy+8XE0TjNCceDkcTja9PYAuPkHozucbB/vZoLlhbL5x7WK1Wv+42VLlbx8KBZWVlhbY0dzTOTV/E+ITS29cFPgHyz//z8QdrGAqLeMzHJyVJJkvd0NCAHgl20PzA7rPY2IgcofAbOZs99BYdavQXLJZDhXr92pVNTUNbystBQT7rvL0/Pv//WyH8IzR0zgKpdGkVTf/5+cZG33v9/F7OEoszfbjcgi6K+nVyZeWlYhV/MpTNm+/e3tup+7WQx+wUjQxPFh2hfP0V00pKSjCww23k9hULR5YwLUkdHZ4Uz8Qmg/XRLtM/0GXo0VyYzlTXGr5ExvH/BFRjKH3kj/5XuDqjV6rDbWVlZQWJhV61cpGPhIndD8eA22BN/amzZ2prfvxQ4xgO8FKsJgRY4eHhD0ZHJL7iqwxkvGqhJZ4vZJ38cvcuDMG66mjNqluODPRbr7nYlduZgfb1d1G15yr+0NjYiM6LbqUJAVZWVpa0o7WrP3XmXILNZqRqDQmpu6/TarZof3Ps5DGnFGK3SphBY+np6csVUv9PlXL/0V8+d4Anvh5bVHacDgjyCcjPz3f7A1UTAiyUy/TpM0+E+EVmyWXMX1FFB0CNvnOgf6B3xmW2RGJXZORKKYtFLq2vx5g6uwH0Ur//ybQ94u8vvkmheKDPbD6+orERI6gdCjK9iBGRo1SG9Pb19ZYCXNJYmpmZGewl9SkXcGXerjzepB/QQnNHvaqiomyOAzgc8yITBqzZs2fH9nb312TOznapD/iqO19INH7x9a7IS0iH2BsdvT6Iw5ndT1Fnn+joOLRZoViuJ0mtF5sNci7X3E2Sutki0YydnZ1Ho4TCSCtAu42mWXyC8PpdS8ue54KDl8YKBE/s0mheeMDXN/qCxXK+yGw+F8HhrKixWIoT+PywQZLUfKHV5v85JOS6sybTuQSBgBSyWOH/1mi+XiQWr8vV6doWSqX3njOZPn+yrQ1DsEYNVl2/9rbq/j7TNC858y8cygG9GfwDvVPy8/MnJJ2mS5PqKswTEpL2R4TELZFJvFzqh6a/B/gSdu5XX30+mm1rCFgiFouwAQS1mEx8G03fqCVJKwdgX6hAoFOw2cFnTaZ/h/B4t1kBrP0k6WMkSRufxVLf2dS087PY2BAlTd/fS1ENHJpWy9nsmR0Wi2EKny/vtFrP9dtsj/WRpE3A4eRFcrkHN9bXn97o53frQpnsOgtF7ROyWIn7BwdfXyWRbOkhiDfW1tY2jia7lStW7zbqrDcoFRiIzZyM5gGq7lzF4eqaaox7nBByaUJd7XF6enpye1vX6Xnp17rcD/2ghu7p63xFVXj80Yu3oM8iIm7vIsmbfLlcqs9s/mSKQJBVaDDUhfH5RKBAYOaQ5Mwum82mYLPVHIKgTBQVJWGz/WoNho/ua2vL+yw2NtyXpu/rpKjjBEXlYJrLAav1sB+fHz4AcJxFUbcgv0geb0DGZs8t1+tLY6TSVKPNFjBA0wf8OZxgHUl2+/H58e1W6/77m5r2XHxCnJeZvU0okD3oo8RDpGuUX3yEDAz2mzORT/m6PKGuiQAgOjpmZ0xE4q/kUm/GJ0R7H/r6u8gBg+aNE6pjo8XOoecltoH3gegfj8YhuwkAlWS8cEb71OX0J5QX1sUonJE5JOz8MMoZ8wxhOWyrfxhAeMmH9issh9eT+PsfaE7G/BckIvkjSrkfm4nb8UheBmM/qT5b/snZs7UYGzlhNOHAysjICG9sON+wIDOH4HAYZ50eEiC+Mqrp76ZtlOmTb7878CMPhgmT8BUaXrL4un+wCf7dMrGS5SqoMIL8WMEhMjjEP8HdBtGLhznhwMIOTZ069Skvif9zsVGYM8N1Qp2Lw6dO6g39q/Py8nAV8TjKzMxU+igD9lMWIk0uc/yhqssNpO6cGrQDnc/W19ejz9iEkkcACyXg6+1PZaZeQzB1ArxYilpdH9Asc2tPX+em4uJie7j7hArb3viCBQtu5LPF77AJga8rBtAfbYGDA6Aq/o6clhgnyMvLczg90ngJxGOAlZiYmG0yWI+kTM8i2E68tno5waDnpMmiHxSKeHvbO1s3FxYWTuhjTnip7O8b/KFeZ7heIvTiM/XwuHjMNE1BaYWKEkv5S8rKyjzibSGPARYKKzQ09C/e8sAn4mOYJJUZHWKod6GrDYtL9voGKF764IMP/ne8vqWX43v7rZue0Wo091tM4IP5K1zVp0a2hbmv9MbeZ+u+d9vxCPIoYKFEwsMiDyfEzsyWS4fcncaM0EpPEVaaxaWaeXz2S7GxsTvckeh1zc3r/2gaNN1nMVO+YpGUEPAZhQVeUg5os1LXnTpQW1d73ZgJawwYeRyw8Fa/o62zKCl+drBYxNxd5FKywWgfmmWjBo36Hi+l16GGxrMvFxcXj6l1OjMzMyksNPLR3h7tMoJxv2WYAAAEI0lEQVRke4vFUsKV65lLjQW3+iPH91IzZk53W9JaRzHnccDCjqNv/Ln6JtX8jMUEk+x1jgzearXAgEEPXD7LyubSnVw+d09zc+OXQqGwwtmT5KJFi/xNA6YU/6CgO0gLmQVAeFvMNE8ikgJTl5crjQHffT5ZfNgWMiXo2uLi4ss9dnAlVuPyd48EFo40LS3t+s72nt1ps+YR4zU5doniJFltFqAJ0jZoHEADqlEoEvQIBLwWLp9z1mw2tfb2agc5BMGTyb18eXyeH0lS/larNWBAbwwhLTYZi8UV8vlCQigQAp+H2STHj9AfraTsBOUX6L2moKAAk7l5HHkssFBSycnJG2Vi5VtBfhF8JgldmUobJ85mtYAV01hSJFAUOWR8RcKABhbBAnT3wT5xObyhn+4iNIJe6D1v0g303ldWVoavaHgkeTSwUGKhoaF/igyLfcxXGSzgumiZ98gZcKJTmKO1q6/N1NBc+0pzczNmdvZY8nhgDa9cd/X19L+dnjKfNd7bjKfOFOqE+cV5tFjKf7Suru77d2A8mCYFsFB+aWlpK87VN306L+NaHlNfeQ+eh8t2DX3X805+Q0bHTF1fVFS0azKMY9IAC4WZmpo6v0Z95vCSRTex+FzRmNq5PHWyrKSJ3HfwS0ienrREpVJ51NXU5WQ2qYCFA0lJSZmq0+n/IeTJFifEzhhSpq9W0uq7Bw8d2cdPmT0rqaCgAJ+umzQ0aWclKirqBTbwH42Pmc662rZGNOJW1pyidYa+T+Pj4zd4wqWys4ietMDCgSYlJa3Q9PZ/Pj1xNiGTKFlXw+plMOnI0tMFNA22x9ra2ka+euHs3E5o+UkNLJRcenq6rF/T/5rRaN0wMzmNEAkkk3JMZquRPlVeSLHYVK6Xwused2XeGy/0TcpJGE0Yc+fOTenr1f7NZqHmTYubQYgEmPTF88loMkD1mXIKWLYSH1/vB/Pz81We3+sr9/CqAZZ9qOnp6YsNeuPfSBISoiPiCYmYWU6pK4vOtRJ4T1nfWEPTYK2TyiUPFxUV7XWNo2fVvuqAZRdvUlLSMqDZb1A2iAgLiSTEYhlMtOUeM+UMDOrgfMs5muDQTTSQj1RVVXnkXZ+rML1qgWUXTFRUVCafy3+qp0dznY/SD6ZGxICAL3I5cMNRwSOYTJZBurG5Hrp7LoCvv/d+s9n017q6OoyovmrpqgfWyJnLyMjIbm1tvU3AE90ENMt3amQszecKWQK+AFyNELK3g0DC9xUtVtMQmFgc6DKaDF8HBAR8qlKp8O1pt7wiP9GI/VkBa6SwMVi2p6dnCUFw1hoNxhQ+XwhCvhD4fAEREhJq43F4LKAJFjo1oBnDbspAL4chTweCBoIAykpa6NbWFrbZYqJNJiPgnZ5YKq6ykeb3fXx8Dk9UiPtEA+v/ALFhRDepDK64AAAAAElFTkSuQmCC"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Actual",
+        "description": "Actual Value",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__1__",
+        "name": "Forecast",
+        "description": "Forecast Value (if forecast is greater than budget, the budget value will be returned)",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__2__",
+        "name": "Budget",
+        "description": "Budget Value",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "bar": {},
+    "line": {
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 75
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+    "text": {
+      "font": "Segoe UI",
+      "fontSize": 12,
+      "fill": "#605E5C"
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#605E5C",
+      "labelFontSize": 12,
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleColor": "#252423",
+      "titleFontSize": 16,
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#C8C6C4",
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleFontSize": 16,
+      "titleColor": "#252423",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C"
+    },
+    "legend": {
+      "titleFont": "Segoe UI",
+      "titleFontWeight": "bold",
+      "titleColor": "#605E5C",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "data": {"name": "dataset"},
+  "params": [
+    {"name": "_ruleLine", "value": 10},
+    {"name": "_pi", "value": 3.142},
+    {"name": "_2pi", "value": 6.284},
+    {
+      "name": "_outerRadiusDonut",
+      "value": 0.66
+    },
+    {
+      "name": "_innerRadiusDonut",
+      "value": 0.45
+    },
+    {
+      "name": "_outerRadiusDelta",
+      "value": 0.5
+    },
+    {
+      "name": "_innerRadiusDelta",
+      "value": 0.66
+    },
+    {"name": "_line", "value": 1.5}
+  ],
+  "transform": [
+    {"calcaulte": 3.14, "as": "pi"},
+    {
+      "calculate": "2*_pi",
+      "as": "full_pi"
+    },
+    {
+      "calculate": "round((datum['__0__'] / datum['__2__']) * 100)",
+      "as": "_pct_ACTUAL_vs_BUDGET"
+    },
+    {
+      "calculate": "datum['__1__'] > datum['__2__'] ? datum['__2__'] : datum['__1__']",
+      "as": "__1__"
+    },
+    {
+      "calculate": "round((datum['__1__'] / datum['__2__']) * 100)",
+      "as": "_pct_FORECAST_vs_BUDGET"
+    },
+    {
+      "calculate": "_2pi*datum['_pct_ACTUAL_vs_BUDGET']/100",
+      "as": "_ACTUAL_THETA_2"
+    },
+    {
+      "calculate": "datum._pct_ACTUAL_vs_BUDGET - datum._pct_FORECAST_vs_BUDGET",
+      "as": "_DELTA_ACTUAL_vs_FORECAST"
+    },
+    {
+      "calcaulte": "datum._DELTA_ACTUAL_vs_FORECAST < 0 ? '#FF3333' : '#36F515'",
+      "as": "_cf_colour"
+    }
+  ],
+  "width": "container",
+  "height": "container",
+  "padding": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "layer": [
+    {
+      "description": "WHOLE_ARC_BACKGROUND",
+      "mark": {
+        "type": "arc",
+        "stroke": "dimgrey",
+        "strokeWidth": 1,
+        "outerRadius": {
+          "expr": "(height * _outerRadiusDonut ) "
+        },
+        "innerRadius": {
+          "expr": "(height * _innerRadiusDonut ) "
+        },
+        "tooltip": false,
+        "color": "#F3F3F3"
+      },
+      "encoding": {
+        "theta": {
+          "value": 0,
+          "type": "quantitative"
+        },
+        "theta2": {
+          "value": {"expr": "_2pi"},
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "description": "ARC_OUTLINE",
+      "mark": {
+        "type": "arc",
+        "outerRadius": {
+          "expr": "(height * _outerRadiusDonut + 0.5 ) "
+        },
+        "innerRadius": {
+          "expr": "(height * _outerRadiusDonut - 0.3 ) "
+        },
+        "tooltip": false,
+        "color": "black"
+      },
+      "encoding": {
+        "theta": {
+          "value": 0,
+          "type": "quantitative"
+        },
+        "theta2": {
+          "value": {"expr": "_2pi"},
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "description": "ACTUAL_ARC",
+      "mark": {
+        "type": "arc",
+        "stroke": "black",
+        "strokeWidth": 0.8,
+        "outerRadius": {
+          "expr": "(height * _outerRadiusDonut ) "
+        },
+        "innerRadius": {
+          "expr": "(height * _innerRadiusDonut ) "
+        },
+        "tooltip": true,
+        "color": "#5A5365"
+      },
+      "encoding": {
+        "theta": {
+          "value": 0,
+          "type": "quantitative"
+        },
+        "theta2": {
+          "field": "_ACTUAL_THETA_2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "description": "DELTA_ARCS",
+      "mark": {
+        "type": "arc",
+        "xOffset": 0,
+        "stroke": "black",
+        "strokeWidth": 0.5,
+        "outerRadius": {
+          "expr": "(height * _outerRadiusDelta ) "
+        },
+        "innerRadius": {
+          "expr": "(height * _innerRadiusDelta ) "
+        },
+        "tooltip": true,
+        "color": {
+          "expr": "datum._DELTA_ACTUAL_vs_FORECAST < 0 ? '#FF3333' : '#36F515'"
+        }
+      },
+      "encoding": {
+        "theta": {
+          "field": "_pct_ACTUAL_vs_BUDGET",
+          "type": "quantitative"
+        },
+        "theta2": {
+          "field": "_pct_FORECAST_vs_BUDGET",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "datum['__0__']/100",
+          "as": "_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "radius": 0,
+        "size": {
+          "expr": "(height * (_outerRadiusDonut / 2.5) )"
+        },
+        "fontWeight": 600,
+        "color": "#000000",
+        "yOffset": {
+          "expr": "(height * (_outerRadiusDonut * -0.09) )"
+        },
+        "xOffset": 0
+      },
+      "encoding": {
+        "text": {
+          "field": "__0__",
+          "aggregate": "sum",
+          "format": ",.3s"
+        },
+        "theta": {
+          "field": "__0__",
+          "type": "quantitative",
+          "scale": {"domain": [0, 100]}
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "datum['_DELTA_ACTUAL_vs_FORECAST']/100",
+          "as": "_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "stroke": "black",
+        "strokeWidth": 0.1,
+        "align": "center",
+        "baseline": "bottom",
+        "radius": 0,
+        "size": {
+          "expr": "(height * (_outerRadiusDonut / 6) )"
+        },
+        "fontWeight": 0,
+        "color": "black",
+        "yOffset": {
+          "expr": "(height * (_outerRadiusDonut / _ruleLine) )"
+        },
+        "xOffset": 0
+      },
+      "encoding": {
+        "text": {
+          "value": "_______________",
+          "aggregate": "sum"
+        },
+        "theta": {
+          "field": "__0__",
+          "type": "quantitative",
+          "scale": {"domain": [0, 100]}
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "datum['_DELTA_ACTUAL_vs_FORECAST']/100",
+          "as": "_varianceLabel"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "stroke": "black",
+        "strokeWidth": 0.3,
+        "align": "center",
+        "baseline": "middle",
+        "radius": 0,
+        "size": {
+          "expr": "(height * (_outerRadiusDonut / 4.5) )"
+        },
+        "fontWeight": 600,
+        "color": {
+          "expr": "datum._DELTA_ACTUAL_vs_FORECAST < 0 ? '#FF3333' : '#38b000'"
+        },
+        "yOffset": {
+          "expr": "(height * (_outerRadiusDonut / (_ruleLine/2.5)) )"
+        },
+        "xOffset": 0
+      },
+      "encoding": {
+        "text": {
+          "field": "_varianceLabel",
+          "format": "▲ 0%; ▼ 0% ",
+          "formatType": "pbiFormat"
+        },
+        "theta": {
+          "field": "__0__",
+          "type": "quantitative",
+          "scale": {"domain": [0, 100]}
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "stroke": "black",
+        "strokeWidth": 0.3,
+        "align": "center",
+        "baseline": "middle",
+        "radius": 0,
+        "size": {
+          "expr": "(height * (_outerRadiusDonut / 9) )"
+        },
+        "fontWeight": 600,
+        "color": {
+          "expr": "datum._DELTA_ACTUAL_vs_FORECAST < 0 ? '#FF3333' : '#38b000'"
+        },
+        "yOffset": {
+          "expr": "(height * (_outerRadiusDonut / (_ruleLine/4.5)) )"
+        },
+        "xOffset": 0
+      },
+      "encoding": {
+        "text": {
+          "value": {
+            "expr": "datum._DELTA_ACTUAL_vs_FORECAST < 0 ? 'below forecast' : 'above forecast'"
+          }
+        },
+        "theta": {
+          "field": "__0__",
+          "type": "quantitative",
+          "scale": {"domain": [0, 100]}
+        }
+      }
+    }
+  ]
+}

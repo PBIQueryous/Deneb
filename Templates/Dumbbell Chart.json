@@ -1,0 +1,243 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.6.2.1",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.16.3"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": false,
+      "highlight": false,
+      "dataPointLimit": 50
+    },
+    "information": {
+      "name": "Dumbbell Chart",
+      "description": "[No Description Provided]",
+      "author": "[No Author Details Provided]",
+      "uuid": "bfd76d64-53e3-4795-89a1-5816651098f9",
+      "generated": "2024-02-29T13:39:49.185Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Category",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Year",
+        "description": "",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__2__",
+        "name": "Metric",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "autosize": {
+      "type": "fit",
+      "contains": "padding"
+    },
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "bar": {},
+    "line": {
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 75
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+    "text": {
+      "font": "Segoe UI",
+      "fontSize": 12,
+      "fill": "#605E5C"
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#605E5C",
+      "labelFontSize": 12,
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleColor": "#252423",
+      "titleFontSize": 16,
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#C8C6C4",
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "axisBand": {"tickExtra": true},
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleFontSize": 16,
+      "titleColor": "#252423",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C"
+    },
+    "legend": {
+      "titleFont": "Segoe UI",
+      "titleFontWeight": "bold",
+      "titleColor": "#605E5C",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "data": {"name": "dataset"},
+  "width": 600,
+  "layer": [
+    {
+      "mark": {"type": "rule"},
+      "encoding": {
+        "y": {
+          "field": "__0__",
+          "type": "nominal",
+          "sort": null,
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0",
+            "ticks": true,
+            "tickColor": "#ddd",
+            "tickBand": "extent",
+            "tickSize": 70,
+            "title": null,
+            "labelFontSize": 10,
+            "labelPadding": -50
+          }
+        },
+        "x": {
+          "aggregate": "min",
+          "field": "__2__",
+          "type": "quantitative",
+          "axis": {
+            "orient": "top",
+            "grid": true,
+            "gridColor": "#c3c3c3",
+            "title": "__2__",
+            "labelFontSize": 10,
+            "formatType": "pbiFormat",
+            "format": "#,0",
+            "tickCount": 5
+          }
+        },
+        "x2": {
+          "aggregate": "max",
+          "field": "__2__"
+        },
+        "opacity": {
+          "condition": {
+            "test": {
+              "field": "__selected__",
+              "equal": "off"
+            },
+            "value": 0.3
+          },
+          "value": 1
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "tooltip": true,
+        "size": 100,
+        "stroke": "black",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "y": {
+          "field": "__0__",
+          "type": "nominal",
+          "sort": null
+        },
+        "x": {
+          "aggregate": "sum",
+          "field": "__2__",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "__1__",
+            "type": "nominal"
+          },
+          {
+            "field": "__2__",
+            "type": "quantitative",
+            "format": ".2s"
+          }
+        ],
+        "color": {
+          "field": "__1__",
+          "legend": {
+            "offset": 10,
+            "title": null,
+            "orient": "top",
+            "symbolSize": 140,
+            "symbolStrokeWidth": 0.5,
+            "symbolType": "square"
+          },
+          "scale": {
+            "domain": [
+              "19/20",
+              "20/21",
+              "21/22",
+              "22/23"
+            ],
+            "range": [
+              "whitesmoke",
+              "lightyellow",
+              "powderblue",
+              "royalblue"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "test": {
+              "field": "__selected__",
+              "equal": "off"
+            },
+            "value": 0.3
+          },
+          "value": 1
+        }
+      }
+    }
+  ]
+}

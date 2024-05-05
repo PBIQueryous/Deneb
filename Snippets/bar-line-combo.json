@@ -1,0 +1,468 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 1,
+        "Financial Month": "Oct",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": 21.68,
+        "Usage PY": 23.42,
+        "Target": 21.89,
+        "Production CY": 4768196,
+        "Production PY": 5145233
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 1,
+        "Financial Month": "Oct",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": 101.07,
+        "Usage PY": 55.14,
+        "Target": 51.53,
+        "Production CY": 4768196,
+        "Production PY": 5145233
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 2,
+        "Financial Month": "Nov",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": 20.14,
+        "Usage PY": 27.57,
+        "Target": 25.77,
+        "Production CY": 5425327,
+        "Production PY": 5044930
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 2,
+        "Financial Month": "Nov",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": 82.12,
+        "Usage PY": 67.23,
+        "Target": 62.83,
+        "Production CY": 5425327,
+        "Production PY": 5044930
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 3,
+        "Financial Month": "Dec",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": 45.15,
+        "Usage PY": 44.36,
+        "Target": 41.45,
+        "Production CY": 4612380,
+        "Production PY": 3746604
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 3,
+        "Financial Month": "Dec",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": 108.51,
+        "Usage PY": 93.61,
+        "Target": 87.48,
+        "Production CY": 4612380,
+        "Production PY": 3746604
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 4,
+        "Financial Month": "Jan",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": 39.93,
+        "Usage PY": 58.3,
+        "Target": 54.48,
+        "Production CY": 3190793,
+        "Production PY": 2938725
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 4,
+        "Financial Month": "Jan",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": 97.38,
+        "Usage PY": 111.09,
+        "Target": 103.81,
+        "Production CY": 3190793,
+        "Production PY": 2938725
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 5,
+        "Financial Month": "Feb",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": 31.19,
+        "Usage PY": 41.06,
+        "Target": 38.37,
+        "Production CY": 3768347,
+        "Production PY": 3175390
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 5,
+        "Financial Month": "Feb",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": 103.53,
+        "Usage PY": 115.71,
+        "Target": 108.13,
+        "Production CY": 3768347,
+        "Production PY": 3175390
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 6,
+        "Financial Month": "Mar",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": "",
+        "Usage PY": 24.33,
+        "Target": 22.73,
+        "Production CY": "",
+        "Production PY": 4686034
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 6,
+        "Financial Month": "Mar",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": "",
+        "Usage PY": 99.38,
+        "Target": 92.87,
+        "Production CY": "",
+        "Production PY": 4686034
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 7,
+        "Financial Month": "Apr",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": "",
+        "Usage PY": 28.84,
+        "Target": 26.95,
+        "Production CY": "",
+        "Production PY": 2916675
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 7,
+        "Financial Month": "Apr",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": "",
+        "Usage PY": 159.67,
+        "Target": 149.21,
+        "Production CY": "",
+        "Production PY": 2916675
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 8,
+        "Financial Month": "May",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": "",
+        "Usage PY": 149.29,
+        "Target": 139.51,
+        "Production CY": "",
+        "Production PY": 2436180
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 8,
+        "Financial Month": "May",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": "",
+        "Usage PY": 22.58,
+        "Target": 21.1,
+        "Production CY": "",
+        "Production PY": 2436180
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 9,
+        "Financial Month": "Jun",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": "",
+        "Usage PY": 16.31,
+        "Target": 15.24,
+        "Production CY": "",
+        "Production PY": 3307022
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 9,
+        "Financial Month": "Jun",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": "",
+        "Usage PY": 114.53,
+        "Target": 107.02,
+        "Production CY": "",
+        "Production PY": 3307022
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 10,
+        "Financial Month": "Jul",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": "",
+        "Usage PY": 136.08,
+        "Target": 127.17,
+        "Production CY": "",
+        "Production PY": 2783133
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 10,
+        "Financial Month": "Jul",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": "",
+        "Usage PY": 17.78,
+        "Target": 16.61,
+        "Production CY": "",
+        "Production PY": 2783133
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 11,
+        "Financial Month": "Aug",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": "",
+        "Usage PY": 21.4,
+        "Target": 20,
+        "Production CY": "",
+        "Production PY": 3485137
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 11,
+        "Financial Month": "Aug",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": "",
+        "Usage PY": 128.52,
+        "Target": 120.1,
+        "Production CY": "",
+        "Production PY": 3485137
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 12,
+        "Financial Month": "Sep",
+        "KPI Name": "Elec from Renewables",
+        "KPI Sort": 2,
+        "Usage CY": "",
+        "Usage PY": 15.86,
+        "Target": 14.82,
+        "Production CY": "",
+        "Production PY": 4529008
+      },
+      {
+        "Site": 7,
+        "Fin Year": 2023,
+        "Financial Month Nr": 12,
+        "Financial Month": "Sep",
+        "KPI Name": "Elec from Non-Renewables",
+        "KPI Sort": 1,
+        "Usage CY": "",
+        "Usage PY": 99.09,
+        "Target": 92.6,
+        "Production CY": "",
+        "Production PY": ""
+      }
+    ]
+  },
+  "transform": [
+    {"calculate": "'Production Current FY'", "as": "Production CY Legend"},
+    {"calculate": "'Production Prior FY'", "as": "Production PY Legend"},
+    {"calculate": "'Electricity Target'", "as": "Target Legend"},
+    {"calculate": "datum['KPI Name'] + ' PY'", "as": "CategoryPY"},
+    {"calculate": "datum['KPI Name'] + ' CY'", "as": "CategoryCY"}
+  ],
+  "height": 300,
+  "width": 600,
+  "config": {
+    "legend": {
+      "orient": "bottom",
+      "columns": 2,
+      "layout": {"bottom": {"anchor": "middle"}}
+    }
+  },
+  "layer": [
+    {
+      "layer": [
+        {
+          "name": "Electricity CY",
+          "mark": {"type": "bar", "xOffset": 0, "size": 10, "tooltip": true},
+          "encoding": {
+            "x": {
+              "field": "Financial Month Nr",
+              "type": "ordinal",
+              "axis": {"labelAngle": 0}
+            },
+            "y": {
+              "field": "Usage CY",
+              "type": "quantitative",
+              "title": "Electricity Intensity (kWh / ton Production)"
+            },
+            "color": {
+              "field": "CategoryCY",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Elec from Renewables PY",
+                  "Elec from Non-Renewables PY",
+                  "Elec from Renewables CY",
+                  "Elec from Non-Renewables CY"
+                ],
+                "range": ["#4496BC", "#5AC8FA", "#39A34B", "#4CD964"]
+              },
+              "legend": {"title": ""}
+            },
+            "order": {"field": ["CategoryCY"], "order": ["ascending"]}
+          }
+        },
+        {
+          "name": "Electricity PY",
+          "mark": {"type": "bar", "xOffset": -11, "size": 10, "tooltip": true},
+          "encoding": {
+            "x": {
+              "field": "Financial Month Nr",
+              "type": "ordinal",
+              "axis": {"labelAngle": 0}
+            },
+            "y": {"field": "Usage PY", "type": "quantitative", "axis": null},
+            "color": {
+              "field": "CategoryPY",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Elec from Renewables PY",
+                  "Elec from Non-Renewables PY",
+                  "Elec from Renewables CY",
+                  "Elec from Non-Renewables CY"
+                ],
+                "range": ["#4496BC", "#5AC8FA", "#39A34B", "#4CD964"]
+              },
+              "legend": {"title": ""}
+            },
+            "order": {"field": ["CategoryPY"], "order": ["ascending"]}
+          }
+        },
+        {
+          "name": "TARGET",
+          "mark": {
+            "type": "bar",
+            "xOffset": 11,
+            "size": 10,
+            "color": "#FFCC00",
+            "tooltip": true
+          },
+          "encoding": {
+            "x": {
+              "field": "Financial Month Nr",
+              "type": "ordinal",
+              "axis": {"labelAngle": 0}
+            },
+            "y": {
+              "aggregate": "sum",
+              "field": "Target",
+              "type": "quantitative",
+              "axis": null
+            },
+            "fill": {
+              "field": "Target Legend",
+              "scale": {"range": ["#FFCC00"]},
+              "legend": {"title": ""}
+            }
+          }
+        }
+      ],
+      "resolve": {"scale": {"y": "shared"}, "axis": {"y": "independent"}}
+    },
+    {
+      "layer": [
+        {
+          "name": "Production CY",
+          "mark": {"type": "line", "tooltip": true},
+          "encoding": {
+            "x": {"field": "Financial Month Nr", "type": "ordinal"},
+            "y": {
+              "field": "Production CY",
+              "type": "quantitative",
+              "title": "Production (ton)"
+            },
+            "stroke": {
+              "field": "Production CY Legend",
+              "scale": {"range": ["black"]},
+              "legend": {"title": ""}
+            }
+          }
+        },
+        {
+          "name": "Production PY",
+          "mark": {"type": "line", "tooltip": true},
+          "encoding": {
+            "x": {"field": "Financial Month Nr", "type": "ordinal"},
+            "y": {
+              "aggregate": "sum",
+              "field": "Production PY",
+              "type": "quantitative",
+              "axis": null
+            },
+            "stroke": {
+              "field": "Production PY Legend",
+              "scale": {"range": ["red"]},
+              "legend": {"title": ""}
+            }
+          }
+        }
+      ],
+      "resolve": {"scale": {"y": "independent", "stroke": "independent"}}
+    }
+  ]
+}
