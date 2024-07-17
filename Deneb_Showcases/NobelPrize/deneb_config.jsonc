@@ -1,0 +1,40 @@
+{
+  "view": {"stroke": null},
+  "padding": 10,
+  "font": "FranklinITCProLight, Helvetica, Arial, sans-serif",
+  "point": {
+    "filled": true,
+    "fillOpacity": 0.8,
+    "strokeWidth": 1,
+    "cursor": "pointer"
+  },
+  "axis": {
+    "domain": false,
+    "labelColor": "#808080",
+    "labelFontSize": 14,
+    "labelPadding": 5,
+    "titleFontSize": 16,
+    "titleFontWeight": 400,
+    "titlePadding": 15
+  },
+  "axisX": {
+    "grid": false,
+    "tickCount": 10,
+    "tickSize": {
+      "expr": "2 * tickSizeY"
+    },
+    "labelFlush": false,
+    "titleAnchor": "end"
+  },
+  "axisY": {
+    "labelExpr": "abs(datum.value)",
+    "tickSize": {"expr": "tickSizeY"},
+    "gridColor": {"expr": "gridClr"},
+    "tickColor": {"expr": "gridClr"},
+    "titleY": {"expr": "0.2 * height"}
+  },
+  "title": {
+    "fontSize": 22,
+    "offset": 20
+  }
+}
