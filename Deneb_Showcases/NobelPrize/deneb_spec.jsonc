@@ -1,0 +1,135 @@
+{
+  "description": "A diverging stacked dot plot showing the gender and award year of Nobel Prize laureates. If you prefer using squares instead of circles, set the point-mark `shape` to `square` and add `bandPosition: 0.5` to the `y` channel to align the squares with the rule mark. The `size` of the point mark (`sizeSq` param) is calculated as the area of a square, s^2, for consistency with the square shape if used.",
+  "usermeta": {"author": "Shad Frigui"},
+  "title": "Nobel Prize Laureates",
+  "width": 850,
+  "height": 150,
+  "data": {"name": "dataset"},
+  "params": [
+    {
+      "name": "highlight",
+      "select": {
+        "type": "point",
+        "on": "mouseover",
+        "clear": "mouseout"
+      },
+      "views": ["layer1"]
+    },
+    {"name": "s", "value": 7},
+    {
+      "name": "sizeSq",
+      "expr": "pow(s, 2)"
+    },
+    {"name": "tickSizeY", "value": 5},
+    {
+      "name": "gridClr",
+      "value": "#e2e2e2"
+    }
+  ],
+  //-- removed flatten step as this is achieved in Power Query when expanding the nested records
+  "transform": [
+    {
+      /* {"flatten": ["nobelPrizes"]}, */
+      "calculate": "datum['gender'] === 'female' ? 1 : -1",
+      "as": "genderOffset"
+    }
+  ],
+  "layer": [
+    {
+      "name": "layer1",
+      "mark": {"type": "point"},
+      "encoding": {
+        "x": {
+          // it appears Deneb automatically converts fullstops (.) to underscores (_), which was breaking the visual. Replacing the field names to user underscores resolved this
+          "field": "nobelPrizes_awardYear",
+          "type": "temporal",
+          "scale": {
+            "domainMin": {"year": 1900}
+          },
+          "title": "Award year →"
+        },
+        "y": {
+          "field": "genderOffset",
+          "type": "quantitative",
+          "stack": true,
+          "axis": {
+            "values": [5, 0, -5, -10]
+          },
+          "title": "← Men · Women →"
+        },
+        "color": {
+          "field": "gender",
+          "scale": {
+            "domain": [
+              "male",
+              "female"
+            ],
+            "range": [
+              "#bfb498",
+              "#dc5a74"
+            ]
+          },
+          "legend": null
+        },
+        "stroke": {
+          "condition": {
+            "value": "#000",
+            "param": "highlight",
+            "empty": false
+          },
+          "value": "#fff"
+        },
+        "size": {
+          "condition": {
+            "value": {
+              "expr": "sizeSq * 1.2"
+            },
+            "param": "highlight",
+            "empty": false
+          },
+          "value": {"expr": "sizeSq"}
+        },
+        "order": {
+          "condition": {
+            "param": "highlight",
+            "value": 1
+          },
+          "value": 0
+        },
+        // replaced fullstops (.) with underscores (_)
+        "tooltip": [
+          {
+            "field": "knownName_en",
+            "title": "Full name"
+          },
+          {
+            "field": "nobelPrizes_category_en",
+            "title": "Category"
+          },
+          {
+            "field": "nobelPrizes_awardYear",
+            "title": "Award year",
+            "timeUnit": "year"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          "We just need an array of length 1 to draw the rule mark once. You can use a string (as in this example), a number, or just an empty object {}."
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "x": {"expr": "-tickSizeY"},
+        "x2": {
+          "expr": "width + tickSizeY"
+        }
+      },
+      "encoding": {"y": {"datum": 0}}
+    }
+  ],
+  // placed config in the config tab
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json"
+}
